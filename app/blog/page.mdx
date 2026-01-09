@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const metadata = {
   title: "Blog | Your Name",
   description: "Writing on design systems, product strategy, and front-end craft.",
@@ -13,20 +15,54 @@ Short notes on building minimal interfaces, thoughtful brands, and durable UI sy
 
 ## Recent posts
 
-- **Designing for calm** - How to remove friction without removing personality.
-- **Shipping a tiny design system** - Tokens, typography, and reusable patterns.
-- **The craft of fast prototypes** - Keeping momentum without losing polish.
+<section className="mt-10 grid gap-6 sm:grid-cols-2">
+  <Link
+    href="/blog/designing-for-calm"
+    className="group rounded-3xl border border-[color:var(--border)] bg-[color:var(--panel)] p-3 transition hover:-translate-y-1 hover:border-[color:var(--accent)] hover:shadow-[0_24px_50px_-44px_rgba(10,12,16,0.7)]"
+  >
+    <div className="aspect-[4/3] overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel-strong)]">
+      <div className="post-thumb h-full w-full" />
+    </div>
+    <div className="mt-5">
+      <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)]">
+        Design
+      </p>
+      <h2 className="mt-3 font-display text-2xl font-semibold text-[color:var(--fg)] transition group-hover:text-[color:var(--accent)]">
+        Designing for calm
+      </h2>
+      <p className="mt-2 text-base leading-7 text-[color:var(--muted)]">
+        How to remove friction without removing personality.
+      </p>
+      <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--fg)]">
+        Read post <span aria-hidden="true">→</span>
+      </span>
+    </div>
+  </Link>
 
-## Writing archive
+  <Link
+    href="/blog/tiny-design-system"
+    className="group rounded-3xl border border-[color:var(--border)] bg-[color:var(--panel)] p-3 transition hover:-translate-y-1 hover:border-[color:var(--accent)] hover:shadow-[0_24px_50px_-44px_rgba(10,12,16,0.7)]"
+  >
+    <div className="aspect-[4/3] overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel-strong)]">
+      <div className="post-thumb h-full w-full" />
+    </div>
+    <div className="mt-5">
+      <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)]">
+        Systems
+      </p>
+      <h2 className="mt-3 font-display text-2xl font-semibold text-[color:var(--fg)] transition group-hover:text-[color:var(--accent)]">
+        Shipping a tiny design system
+      </h2>
+      <p className="mt-2 text-base leading-7 text-[color:var(--muted)]">
+        Tokens, typography, and reusable patterns.
+      </p>
+      <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--fg)]">
+        Read post <span aria-hidden="true">→</span>
+      </span>
+    </div>
+  </Link>
+</section>
 
-### 2026
-
-- **A portfolio that still feels human** - Building a site that breathes.
-- **The best product meetings are quiet** - Less noise, better decisions.
-
-### 2025
-
-- **Layout as choreography** - Rhythm, spacing, and a sense of pace.
-- **Type choices that carry a brand** - The small details that speak.
+<p className="mt-10 text-sm text-[color:var(--muted)]">More posts coming soon.</p>
 
 </main>

@@ -120,6 +120,21 @@ body {
   animation-delay: 320ms;
 }
 
+.post-thumb {
+  background-image:
+    radial-gradient(circle at 18% 22%, var(--spot-1), transparent 60%),
+    radial-gradient(circle at 82% 18%, var(--spot-2), transparent 55%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.02));
+  background-size: cover;
+  background-position: center;
+  transition: transform 500ms ease, filter 500ms ease;
+}
+
+.group:hover .post-thumb {
+  transform: scale(1.04);
+  filter: saturate(1.08);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .page-intro,
   .stagger > * {
