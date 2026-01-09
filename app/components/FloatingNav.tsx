@@ -6,6 +6,8 @@ import { useEffect, useMemo, useState } from "react";
 
 const navItems = [
   { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Experience", href: "/experience" },
   { label: "Blog", href: "/blog" },
   { label: "Projects", href: "/projects" },
   { label: "Contact", href: "/contact" },
@@ -49,7 +51,7 @@ export default function FloatingNav() {
   };
 
   return (
-    <nav className="fixed left-1/2 top-6 z-50 w-[min(92vw,620px)] -translate-x-1/2">
+    <nav className="fixed left-1/2 top-6 z-50 w-[min(92vw,760px)] -translate-x-1/2">
       <div className="flex items-center justify-between gap-3 rounded-full border border-[color:var(--border)] bg-[color:var(--nav)] px-3 py-2 shadow-[0_16px_40px_-24px_rgba(10,12,16,0.7)] backdrop-blur">
         <div className="flex flex-wrap items-center gap-1">
           {navItems.map((item) => {
