@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 
 export const metadata = {
   title: "Blog | Your Name",
@@ -24,17 +24,16 @@ Short notes on building minimal interfaces, thoughtful brands, and durable UI sy
       <div className="post-thumb h-full w-full" />
     </div>
     <div className="mt-5">
-      <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)]">
-        Design
-      </p>
+      <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)]">{"Design"}</p>
       <h2 className="mt-3 font-display text-2xl font-semibold text-[color:var(--fg)] transition group-hover:text-[color:var(--accent)]">
-        Designing for calm
+        {"Designing for calm"}
       </h2>
       <p className="mt-2 text-base leading-7 text-[color:var(--muted)]">
-        How to remove friction without removing personality.
+        {"How to remove friction without removing personality."}
       </p>
       <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--fg)]">
-        Read post <span aria-hidden="true">→</span>
+        {"Read post "}
+        <span aria-hidden="true">{"->"}</span>
       </span>
     </div>
   </Link>
@@ -47,22 +46,21 @@ Short notes on building minimal interfaces, thoughtful brands, and durable UI sy
       <div className="post-thumb h-full w-full" />
     </div>
     <div className="mt-5">
-      <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)]">
-        Systems
-      </p>
+      <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)]">{"Systems"}</p>
       <h2 className="mt-3 font-display text-2xl font-semibold text-[color:var(--fg)] transition group-hover:text-[color:var(--accent)]">
-        Shipping a tiny design system
+        {"Shipping a tiny design system"}
       </h2>
       <p className="mt-2 text-base leading-7 text-[color:var(--muted)]">
-        Tokens, typography, and reusable patterns.
+        {"Tokens, typography, and reusable patterns."}
       </p>
       <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--fg)]">
-        Read post <span aria-hidden="true">→</span>
+        {"Read post "}
+        <span aria-hidden="true">{"->"}</span>
       </span>
     </div>
   </Link>
 </section>
 
-<p className="mt-10 text-sm text-[color:var(--muted)]">More posts coming soon.</p>
+<p className="mt-10 text-sm text-[color:var(--muted)]">{"More posts coming soon."}</p>
 
 </main>
