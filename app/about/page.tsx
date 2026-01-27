@@ -6,11 +6,14 @@ export default function AboutPage() {
           About
         </p>
         <h1 className="mt-4 font-display text-4xl font-semibold tracking-tight text-[color:var(--fg)] sm:text-5xl">
-          Building minimal, durable, and human products.
+          IT Professional | Systems • Network • Applications
         </h1>
         <p className="mt-4 text-base leading-7 text-[color:var(--muted)]">
-          I work across strategy, design, and front-end engineering. My goal is
-          to build products that feel calm, purposeful, and ready to scale.
+          Hello! I'm Ricardo, an IT professional focused on building reliable, user friendly applications and 
+          supporting secure, efficient systems and networks. 
+          This portfolio showcases some of my projects, technical skills and approach 
+          to practical problem-solving in the IT field. Let's connect!
+
         </p>
       </header>
     </main>

@@ -7,18 +7,18 @@
       "Own product vision, design systems, and front-end direction for launch-ready MVPs.",
   },
   {
-    title: "Senior Product Designer",
-    company: "Atlas Labs",
-    period: "2020 - 2023",
+    title: "Parts Sales Manager",
+    company: "AutoZone",
+    period: "2023 - 2025",
     summary:
-      "Built a modular design system and led redesigns across core SaaS workflows.",
+      "Managed store inventory, customer orders and new product shipments. \nUtilized proprietary company software to sell products and maintain customer data. \nExecuted daily opening and closing procedures, including conducting store audits. \nHandled daily cash reconciliation, including safe counts and register balancing. \n",
   },
   {
-    title: "Product Designer",
-    company: "Fieldwork",
-    period: "2018 - 2020",
+    title: "Aviation Structural Mechanic",
+    company: "US Navy",
+    period: "2016 - 2022",
     summary:
-      "Shipped consumer and B2B experiences with a focus on clarity and retention.",
+      "Managed aircraft records and repair data using specialized software. \n Led and qualified a team of 25 sailors in the completion of maintenance inspections. \nSupervised aircraft launch and recovery opertations in a high-tempo environment. \nPerformed maintenance on aircraft including Sikorsky MH-60R and Boeing E-6B Mercury.",
   },
 ];
 
@@ -32,7 +32,7 @@ export default function ExperiencePage() {
         <h1 className="mt-4 font-display text-4xl font-semibold tracking-tight text-[color:var(--fg)] sm:text-5xl">
           Roles and collaborations.
         </h1>
-        <p className="mt-4 text-base leading-7 text-[color:var(--muted)]">
+        <p className="mt-4 text-base leading-7 text-[color:var(--muted)] whitespace-pre-line">
           A snapshot of recent roles and the kind of work I like to take on.
         </p>
       </header>
@@ -51,7 +51,7 @@ export default function ExperiencePage() {
                 {role.period}
               </span>
             </div>
-            <p className="mt-4 text-base leading-7 text-[color:var(--muted)]">
+            <p className="mt-4 text-base leading-7 text-[color:var(--muted)] whitespace-pre-line">
               {role.summary}
             </p>
           </article>
