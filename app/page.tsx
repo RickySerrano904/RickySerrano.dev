@@ -27,15 +27,15 @@ export default function Home() {
       <section className="page-intro mx-auto flex w-full max-w-5xl flex-col gap-12 px-6 pb-24 pt-32">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_220px] lg:items-center lg:gap-8">
           <div className="flex flex-col gap-6">
-          <p className="text-xs uppercase tracking-[0.35em] text-[color:var(--muted)]">
+          {/* <p className="text-xs uppercase tracking-[0.35em] text-[color:var(--muted)]">
             Portfolio
-          </p>
+          </p> */}
           <h1 className="font-display text-5xl font-semibold tracking-tight text-[color:var(--fg)] sm:text-6xl">
             Designing calm digital products with a strong point of view.
           </h1>
           <p className="max-w-2xl text-lg leading-8 text-[color:var(--muted)]">
-            I am a designer and front-end developer focused on minimal
-            interfaces, readable typography, and fast shipping. I help teams
+            Hello! I'm Ricardo, I am a full-stack developer focused on user-friendly minimal
+            interfaces. I help teams
             turn raw ideas into polished products.
           </p>
           {/* <div className="flex flex-wrap gap-3">
@@ -54,7 +54,7 @@ export default function Home() {
           </div> */}
           <div className="flex flex-wrap gap-3 text-sm">
             <a
-              href="https://github.com/yourname"
+              href="https://github.com/RickyRicardo904"
               className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[color:var(--border)] text-[color:var(--fg)] transition hover:-translate-y-0.5 hover:border-[color:var(--accent)]"
               aria-label="GitHub"
               title="GitHub"
@@ -69,7 +69,7 @@ export default function Home() {
               </svg>
             </a>
             <a
-              href="https://linkedin.com/in/yourname"
+              href="https://linkedin.com/in/rickyserrano904"
               className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[color:var(--border)] text-[color:var(--fg)] transition hover:-translate-y-0.5 hover:border-[color:var(--accent)]"
               aria-label="LinkedIn"
               title="LinkedIn"

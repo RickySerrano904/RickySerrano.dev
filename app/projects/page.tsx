@@ -25,9 +25,9 @@ export default function ProjectsPage() {
   return (
     <main className="page-intro mx-auto w-full max-w-5xl px-6 pb-24 pt-32">
       <header className="max-w-3xl">
-        <p className="text-xs uppercase tracking-[0.35em] text-[color:var(--muted)]">
+        {/* <p className="text-xs uppercase tracking-[0.35em] text-[color:var(--muted)]">
           Projects
-        </p>
+        </p> */}
         <h1 className="mt-4 font-display text-4xl font-semibold tracking-tight text-[color:var(--fg)] sm:text-5xl">
           Selected work and ongoing experiments.
         </h1>

@@ -2,9 +2,9 @@ export default function AboutPage() {
   return (
     <main className="page-intro mx-auto w-full max-w-4xl px-6 pb-24 pt-32">
       <header className="max-w-2xl">
-        <p className="text-xs uppercase tracking-[0.35em] text-[color:var(--muted)]">
+        {/* <p className="text-xs uppercase tracking-[0.35em] text-[color:var(--muted)]">
           About
-        </p>
+        </p> */}
         <h1 className="mt-4 font-display text-4xl font-semibold tracking-tight text-[color:var(--fg)] sm:text-5xl">
           IT Professional | Systems • Network • Applications
         </h1>

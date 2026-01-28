@@ -2,14 +2,14 @@ export default function ContactPage() {
   return (
     <main className="page-intro mx-auto w-full max-w-4xl px-6 pb-24 pt-32">
       <header className="max-w-2xl">
-        <p className="text-xs uppercase tracking-[0.35em] text-[color:var(--muted)]">
+        {/* <p className="text-xs uppercase tracking-[0.35em] text-[color:var(--muted)]">
           Contact
-        </p>
+        </p> */}
         <h1 className="mt-4 font-display text-4xl font-semibold tracking-tight text-[color:var(--fg)] sm:text-5xl">
-          Let's build something clear and memorable.
+          Contact
         </h1>
         <p className="mt-4 text-base leading-7 text-[color:var(--muted)]">
-          Tell me about your product, launch, or design system. I typically
+          Let's connect! Fill out the form below to get in contact with me. I typically
           respond within two business days.
         </p>
       </header>
