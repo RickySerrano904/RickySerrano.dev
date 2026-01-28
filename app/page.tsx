@@ -34,9 +34,7 @@ export default function Home() {
             Designing calm digital products with a strong point of view.
           </h1>
           <p className="max-w-2xl text-lg leading-8 text-[color:var(--muted)]">
-            Hello! I'm Ricardo, I am a full-stack developer focused on user-friendly minimal
-            interfaces. I help teams
-            turn raw ideas into polished products.
+            Hello! I'm Ricardo, I am a full-stack developer focused on polished, user-friendly interfaces.
           </p>
           {/* <div className="flex flex-wrap gap-3">
             <Link
@@ -145,9 +143,9 @@ export default function Home() {
                 What I do
               </h2>
             </div>
-            <span className="rounded-full border border-[color:var(--border)] px-3 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-[color:var(--muted)]">
+            {/* <span className="rounded-full border border-[color:var(--border)] px-3 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-[color:var(--muted)]">
               Available for 2026
-            </span>
+            </span> */}
           </div>
           <ul className="stagger mt-6 grid gap-3 text-sm text-[color:var(--muted)] sm:grid-cols-3">
             {focusAreas.map((item) => (
