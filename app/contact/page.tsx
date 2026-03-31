@@ -6,7 +6,7 @@ export default function ContactPage() {
           Contact
         </p> */}
         <h1 className="mt-4 font-display text-4xl font-semibold tracking-tight text-[color:var(--fg)] sm:text-5xl">
-          Contact
+          Get in Touch
         </h1>
         <p className="mt-4 text-base leading-7 text-[color:var(--muted)]">
           Let's connect! Fill out the form below to get in contact with me. I typically

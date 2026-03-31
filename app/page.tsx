@@ -1,10 +1,10 @@
 import Link from "next/link";
 
-const focusAreas = [
-  "Product strategy and narrative",
-  "Design systems with a human touch",
-  "Fast, accessible front-end builds",
-];
+// const focusAreas = [
+//   "Product strategy and narrative",
+//   "Design systems with a human touch",
+//   "Fast, accessible front-end builds",
+// ];
 
 const highlights = [
   {
@@ -131,32 +131,6 @@ export default function Home() {
               ) : null}
             </div>
           ))}
-        </div>
-
-        <div className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--panel-strong)] p-6 shadow-[0_32px_70px_-50px_rgba(10,12,16,0.6)] backdrop-blur">
-          <div className="flex flex-wrap items-center justify-between gap-6">
-            <div>
-              <p className="text-xs uppercase tracking-[0.35em] text-[color:var(--muted)]">
-                Focus
-              </p>
-              <h2 className="mt-3 font-display text-2xl font-semibold text-[color:var(--fg)]">
-                What I do
-              </h2>
-            </div>
-            {/* <span className="rounded-full border border-[color:var(--border)] px-3 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-[color:var(--muted)]">
-              Available for 2026
-            </span> */}
-          </div>
-          <ul className="stagger mt-6 grid gap-3 text-sm text-[color:var(--muted)] sm:grid-cols-3">
-            {focusAreas.map((item) => (
-              <li
-                key={item}
-                className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel)] px-4 py-3"
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
         </div>
       </section>
     </main>

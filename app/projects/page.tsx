@@ -2,23 +2,23 @@ import Link from "next/link";
 
 const projects = [
   {
-    title: "Caldera Studio",
+    title: "Senior Helper",
     summary:
-      "Visual identity and marketing site for a boutique architecture studio.",
-    tags: ["Brand", "Web"],
+      "Full-stack web app that helps older adults and caregivers coordinate daily tasks and appointments while teaching seniors to recognize and avoid online scams so they can stay safe and independent.",
+    tags: ["Java", "Typescript", "Angular", "Postgres" ],
   },
   {
-    title: "Field Notes",
+    title: "Enzo's World",
     summary:
-      "Design system and product UI for a logistics analytics platform.",
-    tags: ["Design system", "Product"],
+      "A playful, interactive website based on Enzo, my younger sister's adorable dog. It features a custom design system, fun animations, and a lighthearted tone to showcase Enzo's personality and adventures.",
+    tags: ["Next.js", "React", "Typescript", "MDX"],
   },
-  {
-    title: "Northwind Labs",
-    summary:
-      "Fast, accessible landing page with a light editorial feel.",
-    tags: ["Next.js", "MDX"],
-  },
+  // {
+  //   title: "JaxTCG",
+  //   summary:
+  //     "Blah blah blah.",
+  //   tags: ["Next.js", "MDX"],
+  // },
 ];
 
 export default function ProjectsPage() {
@@ -29,11 +29,10 @@ export default function ProjectsPage() {
           Projects
         </p> */}
         <h1 className="mt-4 font-display text-4xl font-semibold tracking-tight text-[color:var(--fg)] sm:text-5xl">
-          Selected work and ongoing experiments.
+          Projects Showcase
         </h1>
         <p className="mt-4 text-base leading-7 text-[color:var(--muted)]">
-          A mix of shipped client work and internal explorations. Each project
-          focuses on clarity, typography, and a calm product experience.
+          A mix of various projects and builds to showcase some of my work.
         </p>
       </header>
 
@@ -63,7 +62,7 @@ export default function ProjectsPage() {
         ))}
       </div>
 
-      <div className="mt-12 rounded-3xl border border-[color:var(--border)] bg-[color:var(--panel-strong)] p-6 text-sm text-[color:var(--muted)]">
+      {/* <div className="mt-12 rounded-3xl border border-[color:var(--border)] bg-[color:var(--panel-strong)] p-6 text-sm text-[color:var(--muted)]">
         Want a full case study or metrics? Reach out and I can share details.
         <Link
           href="/contact"
@@ -72,7 +71,7 @@ export default function ProjectsPage() {
           Contact me
         </Link>
         .
-      </div>
+      </div> */}
     </main>
   );
 }
