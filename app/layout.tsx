@@ -3,7 +3,7 @@ import { Fraunces, Space_Grotesk } from "next/font/google";
 import FloatingNav from "./components/FloatingNav";
 import "./globals.css";
 
-const displayFont = Fraunces({
+const displayFont = Space_Grotesk({
   variable: "--font-display",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
