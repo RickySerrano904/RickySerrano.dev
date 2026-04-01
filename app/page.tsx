@@ -175,7 +175,7 @@ export default function Home() {
     <main className="relative">
       <section
         id="home"
-        className="page-intro scroll-mt-28 mx-auto flex w-full max-w-5xl flex-col gap-12 px-6 pb-24 pt-32"
+        className="page-intro mx-auto flex w-full max-w-5xl flex-col gap-12 px-6 pb-24 pt-32"
       >
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_220px] lg:items-center lg:gap-8">
           <div className="flex flex-col gap-6">
@@ -280,7 +280,7 @@ export default function Home() {
 
       <section
         id="about"
-        className="scroll-mt-28 mx-auto w-full max-w-5xl px-6 py-24"
+        className="mx-auto w-full max-w-5xl px-6 py-24"
       >
         <header className="max-w-2xl">
           <h2 className="font-display text-4xl font-semibold tracking-tight text-[color:var(--fg)] sm:text-5xl">
@@ -297,7 +297,7 @@ export default function Home() {
 
       <section
         id="experience"
-        className="scroll-mt-28 mx-auto w-full max-w-5xl px-6 py-24"
+        className="mx-auto w-full max-w-5xl px-6 py-24"
       >
         <header className="max-w-2xl">
           <h2 className="font-display text-4xl font-semibold tracking-tight text-[color:var(--fg)] sm:text-5xl">
@@ -383,7 +383,7 @@ export default function Home() {
 
       <section
         id="skills"
-        className="scroll-mt-28 mx-auto w-full max-w-5xl px-6 py-24"
+        className="mx-auto w-full max-w-5xl px-6 py-24"
       >
         <header className="max-w-2xl">
           <h2 className="font-display text-4xl font-semibold tracking-tight text-[color:var(--fg)] sm:text-5xl">
@@ -424,7 +424,7 @@ export default function Home() {
 
       <section
         id="projects"
-        className="scroll-mt-28 mx-auto w-full max-w-5xl px-6 py-24"
+        className="mx-auto w-full max-w-5xl px-6 py-24"
       >
         <header className="max-w-3xl">
           <h2 className="font-display text-4xl font-semibold tracking-tight text-[color:var(--fg)] sm:text-5xl">
@@ -473,7 +473,7 @@ export default function Home() {
 
       <section
         id="contact"
-        className="scroll-mt-28 mx-auto w-full max-w-5xl px-6 pb-28 pt-24"
+        className="mx-auto w-full max-w-5xl px-6 pb-28 pt-24"
       >
         <header className="max-w-2xl">
           <h2 className="font-display text-4xl font-semibold tracking-tight text-[color:var(--fg)] sm:text-5xl">
