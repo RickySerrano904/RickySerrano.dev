@@ -5,21 +5,21 @@ type EducationItem = {
   program: string;
   school: string;
   period: string;
-  summary: string;
+  points: string[];
 };
 
 type Certification = {
   issuer: string;
   name: string;
   period: string;
-  summary: string;
+  points: string[];
 };
 
 type Role = {
   title: string;
   company: string;
   period: string;
-  summary: string;
+  points: string[];
 };
 
 type Project = {
@@ -35,28 +35,30 @@ type SkillGroup = {
   items: string[];
 };
 
-const highlights = [
-  {
-    title: "Current focus",
-    description:
-      "Designing calm, high-signal experiences for early-stage products.",
-  },
-  {
-    title: "Recent projects",
-    description:
-      "A selection of practical builds across web, UX, and IT-focused work.",
-    href: "/#projects",
-    cta: "View projects",
-  },
-];
+// const highlights = [
+//   {
+//     title: "Current focus",
+//     description:
+//       "Designing calm, high-signal experiences for early-stage products.",
+//   },
+//   {
+//     title: "Recent projects",
+//     description:
+//       "A selection of practical builds across web, UX, and IT-focused work.",
+//     href: "/#projects",
+//     cta: "View projects",
+//   },
+// ];
 
 const education: EducationItem[] = [
   {
     program: "B.A.S. Information Systems Technology",
     school: "Florida State College at Jacksonville",
     period: "2023 - Present",
-    summary:
-      "Completed coursework in programming, database management, and network security. Developed skills in system analysis and troubleshooting. Gained hands-on experience with IT infrastructure and software development principles.",
+    points: [
+      "Completed coursework in application development, database management, troubleshooting, and systems analysis.",
+      "Gained hands-on experience with IT infrastructure and software development principles.",
+    ],
   },
 ];
 
@@ -65,8 +67,10 @@ const certifications: Certification[] = [
     issuer: "CompTIA",
     name: "A+",
     period: "2024",
-    summary:
-      "Demonstrates foundational knowledge of computer hardware, operating systems, networking, and troubleshooting techniques for supporting end users and IT environments.",
+    points: [
+      "Demonstrates foundational knowledge of computer hardware, operating systems, and networking.",
+      "Validates troubleshooting skills for supporting end users and IT environments.",
+    ],
   },
 ];
 
@@ -75,36 +79,51 @@ const roles: Role[] = [
     title: "IT Help Desk Technician",
     company: "Natural Life",
     period: "Sep 2025 - Present",
-    summary:
-      "Delivered technical support for end users by resolving issues with workstations, phones, network connectivity, and printers. Installed and maintained IT infrastructure including Ethernet cabling, workstation setups, charging stations, surveillance systems, and over 180 devices. Worked with systems administrators and engineering teams on infrastructure projects and system improvements.",
+    points: [
+      "Delivered technical support for workstation, phone, printer, and network issues.",
+      "Installed and maintained IT infrastructure including cabling, workstation setups, charging stations, and surveillance systems.",
+      "Supported over 180 devices and collaborated with systems administrators and engineering on infrastructure improvements.",
+    ],
   },
   {
     title: "IT Service Desk Technician",
     company: "Wounded Warrior Project",
     period: "Jun 2025 - Sep 2025",
-    summary:
-      "Provided technical support and troubleshooting for end users, resolving hardware, software, and network issues through ticketing systems. Managed user accounts and permissions across Active Directory and other systems, and handled endpoint deployment and secure decommissioning.",
+    points: [
+      "Resolved hardware, software, and network issues through service desk ticket workflows.",
+      "Managed user accounts and permissions in Active Directory and related systems.",
+      "Handled endpoint deployment, lifecycle management, and secure decommissioning.",
+    ],
   },
   {
     title: "Co-Owner / Operator",
     company: "ProJax Pressure Washing, LLC",
     period: "Jan 2024 - May 2025",
-    summary:
-      "Managed service delivery and client relationships for over 200 residential and commercial customers. Oversaw daily operations including budgeting, scheduling, and resource management, and designed efficient workflows to reduce job time.",
+    points: [
+      "Managed service delivery and client relationships for 200+ residential and commercial customers.",
+      "Oversaw budgeting, scheduling, and day-to-day resource management.",
+      "Designed efficient workflows that reduced job time and improved consistency.",
+    ],
   },
   {
     title: "Parts Sales Manager",
     company: "AutoZone",
     period: "May 2023 - Dec 2023",
-    summary:
-      "Managed store inventory, customer orders, and new product shipments. Used internal systems to process sales and maintain customer records, while executing opening and closing procedures and daily cash reconciliation.",
+    points: [
+      "Managed store inventory, customer orders, and incoming product shipments.",
+      "Used internal systems to process sales and maintain customer records.",
+      "Executed opening and closing procedures, including daily cash reconciliation.",
+    ],
   },
   {
     title: "Aviation Structural Mechanic",
     company: "US Navy",
     period: "Dec 2016 - Nov 2022",
-    summary:
-      "Managed aircraft records and repair data, led and qualified a team of 25 sailors in maintenance inspections, and supported aircraft launch and recovery operations in high-tempo environments.",
+    points: [
+      "Managed aircraft records and maintenance repair data.",
+      "Led and qualified a team of 25 sailors through maintenance inspections.",
+      "Supported aircraft launch and recovery operations in high-tempo environments.",
+    ],
   },
 ];
 
@@ -241,6 +260,28 @@ export default function Home() {
                 </svg>
               </a>
             </div>
+
+            <section className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--panel)] p-4 shadow-[0_24px_60px_-40px_rgba(10,12,16,0.6)]">
+              <div className="mb-3 flex items-center justify-between gap-3">
+                <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-[color:var(--muted)]">
+                  GitHub Contributions
+                </h2>
+                <a
+                  href="https://github.com/RickyRicardo904"
+                  className="text-xs font-semibold text-[color:var(--fg)] hover:text-[color:var(--accent)]"
+                >
+                  View profile -&gt;
+                </a>
+              </div>
+              <div className="overflow-x-auto">
+                <img
+                  src="https://ghchart.rshah.org/ff6a3d/RickyRicardo904"
+                  alt="GitHub contribution calendar for RickyRicardo904"
+                  className="h-auto min-w-[660px] max-w-none"
+                  loading="lazy"
+                />
+              </div>
+            </section>
           </div>
           <div className="flex justify-center lg:justify-end">
             <div className="relative aspect-square w-full max-w-[200px] overflow-hidden rounded-full border border-[color:var(--border)] bg-[color:var(--panel-strong)] shadow-[0_24px_50px_-42px_rgba(10,12,16,0.7)]">
@@ -252,7 +293,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="stagger grid gap-6 md:grid-cols-2">
+        {/* <div className="stagger grid gap-6 md:grid-cols-2">
           {highlights.map((item) => (
             <div
               key={item.title}
@@ -275,7 +316,7 @@ export default function Home() {
               ) : null}
             </div>
           ))}
-        </div>
+        </div> */}
       </section>
 
       <section
@@ -325,9 +366,11 @@ export default function Home() {
                   {item.period}
                 </span>
               </div>
-              <p className="mt-4 text-base leading-7 text-[color:var(--muted)]">
-                {item.summary}
-              </p>
+              <ul className="mt-4 list-disc space-y-2 pl-5 text-base leading-7 text-[color:var(--muted)]">
+                {item.points.map((point, index) => (
+                  <li key={`${item.program}-${index}`}>{point}</li>
+                ))}
+              </ul>
             </article>
           ))}
         </div>
@@ -349,9 +392,11 @@ export default function Home() {
                   {cert.period}
                 </span>
               </div>
-              <p className="mt-4 text-base leading-7 text-[color:var(--muted)]">
-                {cert.summary}
-              </p>
+              <ul className="mt-4 list-disc space-y-2 pl-5 text-base leading-7 text-[color:var(--muted)]">
+                {cert.points.map((point, index) => (
+                  <li key={`${cert.name}-${index}`}>{point}</li>
+                ))}
+              </ul>
             </article>
           ))}
         </div>
@@ -373,9 +418,11 @@ export default function Home() {
                   {role.period}
                 </span>
               </div>
-              <p className="mt-4 text-base leading-7 text-[color:var(--muted)]">
-                {role.summary}
-              </p>
+              <ul className="mt-4 list-disc space-y-2 pl-5 text-base leading-7 text-[color:var(--muted)]">
+                {role.points.map((point, index) => (
+                  <li key={`${role.title}-${index}`}>{point}</li>
+                ))}
+              </ul>
             </article>
           ))}
         </div>
