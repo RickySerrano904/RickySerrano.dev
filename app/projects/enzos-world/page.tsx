@@ -11,7 +11,7 @@ export default function EnzosWorldProjectPage() {
   return (
     <main className="page-intro mx-auto w-full max-w-4xl px-6 pb-24 pt-32">
       <Link
-        href="/projects"
+        href="/#projects"
         className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--fg)]"
       >
         <span aria-hidden="true">&larr;</span>
