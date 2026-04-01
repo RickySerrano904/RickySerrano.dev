@@ -328,11 +328,17 @@ export default function Home() {
             About
           </h2>
           <p className="mt-4 text-base leading-7 text-[color:var(--muted)]">
-            Hello! I&apos;m Ricardo, an IT professional focused on building
+            {/* Hello! I&apos;m Ricardo, an IT professional focused on building
             reliable, user-friendly applications and supporting secure, efficient
             systems and networks. This portfolio showcases some of my projects,
-            technical skills, and approach to practical problem-solving in IT.
-          </p>
+            technical skills, and approach to practical problem-solving in IT. */}
+            I’m Ricky, a full-stack developer and IT professional focused on building reliable, user-friendly software and supporting secure, well-run systems.
+            < br />
+            < br />
+            My background spans application development, technical support, and infrastructure work, which helps me bridge the gap between product needs and real-world operations.
+            < br />
+            < br />
+            I like solving real problems, keeping things simple, and building tools people actually enjoy using.          </p>
         </header>
       </section>
 
@@ -345,7 +351,7 @@ export default function Home() {
             Experience
           </h2>
           <p className="mt-4 text-base leading-7 text-[color:var(--muted)]">
-            An overview of roles, schooling, and certifications.
+            A snapshot of my education, industry certifications, and professional experience across technical and operational roles.
           </p>
         </header>
 

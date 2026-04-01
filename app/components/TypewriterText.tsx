@@ -83,15 +83,22 @@ export default function TypewriterText({
 
   const currentWord = safeWords[wordIndex] ?? safeWords[0];
   const text = reduceMotion ? safeWords[0] : currentWord.slice(0, charCount);
+  const renderedText = text.length > 0 ? text : "\u00A0";
   const widestWordLength = safeWords.reduce((max, word) => Math.max(max, word.length), 0);
 
   return (
     <span
       className={className}
-      style={{ minWidth: `${widestWordLength}ch` }}
+      style={{
+        minWidth: `${widestWordLength}ch`,
+        minHeight: "1em",
+        display: "inline-flex",
+        alignItems: "baseline",
+        whiteSpace: "pre",
+      }}
       aria-label={currentWord}
     >
-      {text}
+      {renderedText}
       <span
         aria-hidden="true"
         className={`typewriter-cursor${reduceMotion ? " typewriter-cursor-static" : ""}`}
