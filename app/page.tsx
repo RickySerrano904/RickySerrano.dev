@@ -261,7 +261,7 @@ export default function Home() {
               </a>
             </div>
 
-            <section className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--panel)] p-4 shadow-[0_24px_60px_-40px_rgba(10,12,16,0.6)]">
+            <section className="w-full max-w-2xl rounded-3xl border border-[color:var(--border)] bg-[color:var(--panel)] p-4 shadow-[0_24px_60px_-40px_rgba(10,12,16,0.6)]">
               <div className="mb-3 flex items-center justify-between gap-3">
                 <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-[color:var(--muted)]">
                   GitHub Contributions
@@ -275,9 +275,9 @@ export default function Home() {
               </div>
               <div className="overflow-x-auto">
                 <img
-                  src="https://ghchart.rshah.org/ff6a3d/RickyRicardo904"
+                  src="https://ghchart.rshah.org/db03fc/RickyRicardo904"
                   alt="GitHub contribution calendar for RickyRicardo904"
-                  className="h-auto min-w-[660px] max-w-none"
+                  className="h-auto w-full"
                   loading="lazy"
                 />
               </div>
