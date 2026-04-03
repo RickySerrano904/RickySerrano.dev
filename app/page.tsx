@@ -132,14 +132,14 @@ const projects: Project[] = [
     slug: "senior-helper",
     title: "Senior Helper",
     summary:
-      "Full-stack web app that helps older adults and caregivers coordinate daily tasks and appointments while teaching seniors to recognize and avoid online scams.",
+      "Full-stack web app that helps older adults and caregivers coordinate tasks and appointments while teaching seniors to recognize and avoid online scams.",
     tags: ["Java", "TypeScript", "Angular", "Postgres"],
   },
   {
     slug: "enzos-world",
     title: "Enzo's World",
     summary:
-      "A playful, interactive website based on Enzo, my younger sister's dog, featuring a custom design system and lighthearted interaction design.",
+      "A playful, interactive website based on Enzo, my younger sister’s Golden Retriever, featuring a custom design, mock merchandise store, blog, and gallery.",
     tags: ["Next.js", "React", "TypeScript", "MDX"],
   },
 ];
@@ -554,6 +554,10 @@ export default function Home() {
                 <input
                   type="text"
                   name="name"
+                  autoComplete="name"
+                  required
+                  minLength={2}
+                  maxLength={80}
                   placeholder="Enter your name"
                   className="h-11 w-full rounded-2xl border border-[color:var(--border)] bg-transparent px-4 text-sm text-[color:var(--fg)] placeholder:text-[color:var(--muted)] focus-visible:border-[color:var(--accent)] focus-visible:outline-none"
                 />
@@ -563,6 +567,10 @@ export default function Home() {
                 <input
                   type="email"
                   name="email"
+                  autoComplete="email"
+                  inputMode="email"
+                  required
+                  maxLength={254}
                   placeholder="Enter your email"
                   className="h-11 w-full rounded-2xl border border-[color:var(--border)] bg-transparent px-4 text-sm text-[color:var(--fg)] placeholder:text-[color:var(--muted)] focus-visible:border-[color:var(--accent)] focus-visible:outline-none"
                 />
@@ -574,9 +582,15 @@ export default function Home() {
               <textarea
                 name="message"
                 rows={6}
+                required
+                minLength={20}
+                maxLength={2000}
                 placeholder="Enter your message"
                 className="w-full resize-none rounded-2xl border border-[color:var(--border)] bg-transparent px-4 py-3 text-sm text-[color:var(--fg)] placeholder:text-[color:var(--muted)] focus-visible:border-[color:var(--accent)] focus-visible:outline-none"
               />
+              <span className="text-xs font-normal text-[color:var(--muted)]">
+                Message must be between 20 and 2000 characters.
+              </span>
             </label>
 
             <button
