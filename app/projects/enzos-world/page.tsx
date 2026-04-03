@@ -29,6 +29,14 @@ export default function EnzosWorldProjectPage() {
           A playful website built around personality-driven visuals, small animations, and reusable design
           tokens.
         </p>
+        <a
+          href="https://enzosworld.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--fg)] hover:text-[color:var(--accent)]"
+        >
+          Visit enzosworld.com <span aria-hidden="true">-&gt;</span>
+        </a>
       </header>
 
       <div className="mt-8 aspect-[16/9] overflow-hidden rounded-3xl border border-[color:var(--border)] bg-[color:var(--panel-strong)]">
@@ -55,14 +63,27 @@ export default function EnzosWorldProjectPage() {
       <section className="mt-10 rounded-3xl border border-[color:var(--border)] bg-[color:var(--panel)] p-6">
         <h2 className="font-display text-2xl font-semibold text-[color:var(--fg)]">Project Details</h2>
         <p className="mt-3 text-base leading-7 text-[color:var(--muted)]">
-          Expand this page with a full write-up: design goals, interaction decisions, implementation details,
-          and what you would improve next.
+          Enzo’s World is a modern, TypeScript-based web application built with Next.js (App Router), 
+          centered around a playful, character-driven brand voice and narrative storytelling. 
+          The project blends performance, usability, and content-driven design.
         </p>
+        <br />
+        <h2 className="font-display text-2xl font-semibold text-[color:var(--fg)]">Key Features</h2>
         <ul className="mt-4 list-disc space-y-2 pl-5 text-[color:var(--muted)]">
-          <li>Design direction and inspiration</li>
-          <li>Component and token strategy</li>
-          <li>Animation and performance decisions</li>
-          <li>Outcomes and future enhancements</li>
+          <li>Fully responsive layout spanning home, blog, gallery, merch, and contact pages</li>
+          <li>MDX-powered blog with dynamic routing and consistent post navigation</li>
+          <li>Tailwind CSS + PostCSS styling with a clean, mobile-first UI</li>
+          <li>Serverless contact endpoint (route.ts) enabling real-time user interaction</li>
+          <li>Modular, reusable component architecture (e.g., Navbar, PostNav)</li>
+          <li>Optimized static asset handling for images and icons</li>
+        </ul>
+        <br />
+        <h2 className="font-display text-2xl font-semibold text-[color:var(--fg)]">Portfolio Highlights</h2>
+        <ul className="mt-4 list-disc space-y-2 pl-5 text-[color:var(--muted)]">
+          <li>Self-directed project with cohesive branding, illustration themes, and tone</li>
+          <li>Full-stack implementation combining frontend UI with backend API functionality</li>
+          <li>Emphasis on UX: intuitive navigation, accessible structure, and responsive design</li>
+          <li>Scalable content system using Markdown/MDX for efficient publishing</li>
         </ul>
       </section>
     </main>
