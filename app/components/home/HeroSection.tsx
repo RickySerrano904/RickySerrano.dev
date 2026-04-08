@@ -15,7 +15,7 @@ export default function HeroSection({
   return (
     <section
       id="home"
-      className="page-intro mx-auto flex w-full max-w-5xl flex-col gap-12 px-6 pb-24 pt-32"
+      className="page-intro mx-auto flex w-full max-w-5xl flex-col gap-12 px-6 pb-16 pt-32"
     >
       <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_220px] lg:items-center lg:gap-8">
         <div className="flex flex-col gap-6">

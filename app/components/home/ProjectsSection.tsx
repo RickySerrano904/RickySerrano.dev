@@ -8,7 +8,7 @@ type ProjectsSectionProps = {
 
 export default function ProjectsSection({ projects }: ProjectsSectionProps) {
   return (
-    <section id="projects" className="mx-auto w-full max-w-5xl px-6 py-24">
+    <section id="projects" className="mx-auto w-full max-w-5xl px-6 py-16">
       <header className="max-w-3xl">
         <h2 className="font-display text-4xl font-semibold tracking-tight text-[color:var(--fg)] sm:text-5xl">
           Projects
