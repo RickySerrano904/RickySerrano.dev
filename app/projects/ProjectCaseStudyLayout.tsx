@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 type ProjectCaseStudyLayoutProps = {
   eyebrow: string;
@@ -7,6 +8,8 @@ type ProjectCaseStudyLayoutProps = {
   summary: string;
   problem: string;
   solution: string;
+  imageSrc?: string;
+  imageAlt?: string;
   projectUrl?: string;
   projectUrlLabel?: string;
   children: ReactNode;
@@ -18,6 +21,8 @@ export default function ProjectCaseStudyLayout({
   summary,
   problem,
   solution,
+  imageSrc,
+  imageAlt,
   projectUrl,
   projectUrlLabel,
   children,
@@ -46,8 +51,18 @@ export default function ProjectCaseStudyLayout({
         </p>
       </header>
 
-      <div className="mt-8 aspect-[16/9] overflow-hidden rounded-3xl border border-[color:var(--border)] bg-[color:var(--panel-strong)]">
-        <div className="post-thumb h-full w-full" />
+      <div className="relative mt-8 aspect-[16/9] overflow-hidden rounded-3xl border border-[color:var(--border)] bg-[color:var(--panel-strong)]">
+        {imageSrc ? (
+          <Image
+            src={imageSrc}
+            alt={imageAlt ?? `${title} project preview`}
+            fill
+            sizes="(min-width: 1024px) 896px, 100vw"
+            className="h-full w-full object-contain"
+          />
+        ) : (
+          <div className="post-thumb h-full w-full" />
+        )}
       </div>
 
       {hasProjectCta ? (

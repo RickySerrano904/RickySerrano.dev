@@ -24,6 +24,8 @@ export type Project = {
   title: string;
   summary: string;
   tags: string[];
+  thumbnailSrc?: string;
+  thumbnailAlt?: string;
 };
 
 export type SkillGroup = {
@@ -166,6 +168,8 @@ export const projects: Project[] = [
     summary:
       "A playful, interactive website based on Enzo, my younger sister's Golden Retriever, featuring a custom design, mock merchandise store, blog, and gallery.",
     tags: ["Next.js", "React", "TypeScript", "MDX"],
+    thumbnailSrc: "/projects/enzos-world/enzosworld-screenshot.jpg",
+    thumbnailAlt: "Screenshot of Enzo's World homepage",
   },
 ];
 

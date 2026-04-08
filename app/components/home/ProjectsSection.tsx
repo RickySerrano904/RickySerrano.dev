@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Project } from "./content";
 
@@ -22,10 +23,21 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
           <Link
             key={project.title}
             href={`/projects/${project.slug}`}
+            scroll={true}
             className="group rounded-3xl border border-[color:var(--border)] bg-[color:var(--panel)] p-3 shadow-[0_24px_60px_-40px_rgba(10,12,16,0.6)] backdrop-blur transition hover:-translate-y-1 hover:border-[color:var(--accent)]"
           >
-            <div className="aspect-[4/3] overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel-strong)]">
-              <div className="post-thumb h-full w-full" />
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel-strong)]">
+              {project.thumbnailSrc ? (
+                <Image
+                  src={project.thumbnailSrc}
+                  alt={project.thumbnailAlt ?? `${project.title} project thumbnail`}
+                  fill
+                  sizes="(min-width: 768px) 420px, 100vw"
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.04]"
+                />
+              ) : (
+                <div className="post-thumb h-full w-full" />
+              )}
             </div>
             <article className="p-3">
               <h3 className="mt-3 font-display text-2xl font-semibold text-[color:var(--fg)] transition group-hover:text-[color:var(--accent)]">
