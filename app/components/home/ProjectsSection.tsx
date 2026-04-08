@@ -56,7 +56,7 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
                   </span>
                 ))}
               </div>
-              <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--fg)]">
+              <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--fg)] transition-colors duration-200 group-hover:text-[color:var(--accent)]">
                 View project <span aria-hidden="true">-&gt;</span>
               </span>
             </article>
