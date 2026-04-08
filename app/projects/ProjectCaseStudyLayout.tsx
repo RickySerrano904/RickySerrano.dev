@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import RouteScrollReset from "@/app/components/RouteScrollReset";
 
 type ProjectCaseStudyLayoutProps = {
   eyebrow: string;
@@ -31,6 +32,8 @@ export default function ProjectCaseStudyLayout({
 
   return (
     <main className="page-intro mx-auto w-full max-w-4xl px-6 pb-24 pt-32">
+      <RouteScrollReset />
+
       <Link
         href="/#projects"
         className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--fg)]"

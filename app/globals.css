@@ -71,8 +71,11 @@
 }
 
 html {
-  scroll-behavior: smooth;
   scroll-padding-top: 2.2rem;
+}
+
+:where(section[id]) {
+  scroll-margin-top: 2.2rem;
 }
 
 body {
@@ -166,10 +169,6 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
   .page-intro,
   .stagger > * {
     animation: none !important;

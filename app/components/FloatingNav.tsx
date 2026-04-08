@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
+import type { MouseEvent } from "react";
 
 type NavItem = {
   label: string;
@@ -161,6 +162,46 @@ export default function FloatingNav() {
     document.documentElement.classList.add(next);
   };
 
+  const handleNavClick = (
+    event: MouseEvent<HTMLAnchorElement>,
+    item: NavItem,
+    isSectionRoute: boolean,
+  ) => {
+    if (!isSectionRoute) {
+      return;
+    }
+
+    setActiveSection(item.sectionId);
+
+    const target = document.getElementById(item.sectionId);
+    if (!target) {
+      return;
+    }
+
+    event.preventDefault();
+
+    const rootStyles = window.getComputedStyle(document.documentElement);
+    const scrollPaddingTop = Number.parseFloat(rootStyles.scrollPaddingTop) || 0;
+    const top = Math.max(
+      0,
+      target.getBoundingClientRect().top + window.scrollY - scrollPaddingTop,
+    );
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    window.scrollTo({
+      top,
+      left: 0,
+      behavior: prefersReducedMotion ? "auto" : "smooth",
+    });
+
+    const nextHash = `#${item.sectionId}`;
+    if (window.location.hash !== nextHash) {
+      window.history.pushState(null, "", nextHash);
+    }
+  };
+
   return (
     <nav className="fixed left-1/2 top-6 z-50 w-[min(92vw,760px)] -translate-x-1/2">
       <div className="flex items-center justify-between gap-3 rounded-full border border-[color:var(--border)] bg-[color:var(--nav)] px-3 py-2 shadow-[0_16px_40px_-24px_rgba(10,12,16,0.7)] backdrop-blur">
@@ -180,11 +221,7 @@ export default function FloatingNav() {
               <Link
                 key={item.href}
                 href={item.href}
-                onClick={() => {
-                  if (isSectionRoute) {
-                    setActiveSection(item.sectionId);
-                  }
-                }}
+                onClick={(event) => handleNavClick(event, item, isSectionRoute)}
                 aria-current={isActive ? (isSectionRoute ? "location" : "page") : undefined}
                 className={`rounded-full px-3 py-2 text-sm font-medium transition ${
                   isActive
