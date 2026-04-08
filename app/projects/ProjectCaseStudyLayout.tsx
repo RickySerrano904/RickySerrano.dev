@@ -7,6 +7,8 @@ type ProjectCaseStudyLayoutProps = {
   summary: string;
   problem: string;
   solution: string;
+  projectUrl?: string;
+  projectUrlLabel?: string;
   children: ReactNode;
 };
 
@@ -16,8 +18,12 @@ export default function ProjectCaseStudyLayout({
   summary,
   problem,
   solution,
+  projectUrl,
+  projectUrlLabel,
   children,
 }: ProjectCaseStudyLayoutProps) {
+  const hasProjectCta = Boolean(projectUrl && projectUrlLabel);
+
   return (
     <main className="page-intro mx-auto w-full max-w-4xl px-6 pb-24 pt-32">
       <Link
@@ -44,7 +50,21 @@ export default function ProjectCaseStudyLayout({
         <div className="post-thumb h-full w-full" />
       </div>
 
-      <section className="mt-10 grid gap-6 md:grid-cols-2">
+      {hasProjectCta ? (
+        <div className="mt-5">
+          <a
+            href={projectUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel)] px-4 py-2 text-sm font-semibold text-[color:var(--fg)] transition hover:-translate-y-0.5 hover:border-[color:var(--accent)]"
+          >
+            {projectUrlLabel}
+            <span aria-hidden="true">-&gt;</span>
+          </a>
+        </div>
+      ) : null}
+
+      <section className={`${hasProjectCta ? "mt-8" : "mt-10"} grid gap-6 md:grid-cols-2`}>
         <article className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--panel)] p-6">
           <h2 className="font-display text-2xl font-semibold text-[color:var(--fg)]">
             Idea
