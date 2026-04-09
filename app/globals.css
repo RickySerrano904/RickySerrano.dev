@@ -240,3 +240,8 @@ a {
 .project-carousel .react-multi-carousel-track:active {
   cursor: grabbing;
 }
+
+.project-carousel .react-multi-carousel-list {
+  padding-top: 0.45rem;
+  margin-top: -0.45rem;
+}
