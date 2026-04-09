@@ -101,7 +101,7 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
             containerClass="project-carousel"
             sliderClass="pb-2"
             itemClass="px-3"
-            dotListClass="project-carousel-dots !static mt-6"
+            dotListClass="project-carousel-dots"
           >
             {projects.map((project) => (
               <div key={project.slug} className="h-full">
