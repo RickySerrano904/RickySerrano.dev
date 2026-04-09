@@ -1,4 +1,5 @@
 import TypewriterText from "@/app/components/TypewriterText";
+import Image from "next/image";
 import type { SocialIcon, SocialLink } from "./content";
 
 type HeroSectionProps = {
@@ -65,10 +66,14 @@ export default function HeroSection({
         </div>
         <div className="flex justify-center lg:justify-end">
           <div className="relative aspect-square w-full max-w-[200px] overflow-hidden rounded-full border border-[color:var(--border)] bg-[color:var(--panel-strong)] shadow-[0_24px_50px_-42px_rgba(10,12,16,0.7)]">
-            <div className="post-thumb h-full w-full" />
-            <div className="absolute inset-0 flex items-center justify-center text-xs uppercase tracking-[0.35em] text-[color:var(--muted)]">
-              Your photo
-            </div>
+            <Image
+              src="/me/headshot.jpg"
+              alt="Headshot of Ricky Serrano"
+              fill
+              priority
+              sizes="200px"
+              className="h-full w-full object-cover"
+            />
           </div>
         </div>
       </div>

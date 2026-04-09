@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Fraunces, Space_Grotesk } from "next/font/google";
 import FloatingNav from "./components/FloatingNav";
 import "./globals.css";
+import "react-multi-carousel/lib/styles.css";
 
 const displayFont = Space_Grotesk({
   variable: "--font-display",

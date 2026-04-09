@@ -171,6 +171,24 @@ export const projects: Project[] = [
     thumbnailSrc: "/projects/enzos-world/enzosworld-screenshot.jpg",
     thumbnailAlt: "Screenshot of Enzo's World homepage",
   },
+  {
+    slug: "portfolio",
+    title: "Portfolio Website",
+    summary:
+      "A responsive portfolio website showcasing my projects, experience, and skills as a software developer.",
+    tags: ["Next.js", "React", "TypeScript", "MDX"],
+    thumbnailSrc: "/projects/portfolio-project/portfolio-screenshot.jpg",
+    thumbnailAlt: "Screenshot of portfolio homepage",
+  },
+  {
+    slug: "editing-station-pc",
+    title: "Editing Station PC",
+    summary:
+      "A custom-built PC optimized for video editing workloads, featuring a high-performance CPU, GPU, and fast storage to handle large media files and complex timelines.",
+    tags: ["PC Building", "Hardware Optimization"],
+    thumbnailSrc: "/projects/editing-station-pc/editing-station-photo.jpg",
+    thumbnailAlt: "Photo of Editing Station PC",
+  },
 ];
 
 export const skills: SkillGroup[] = [

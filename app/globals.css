@@ -183,3 +183,33 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+.react-multiple-carousel__arrow {
+  background: var(--panel) !important;
+  border: 1px solid var(--border) !important;
+  min-width: 2.8rem !important;
+  min-height: 2.8rem !important;
+  backdrop-filter: blur(6px);
+}
+
+.react-multiple-carousel__arrow:hover {
+  background: var(--panel-strong) !important;
+}
+
+.react-multiple-carousel__arrow::before {
+  color: var(--fg) !important;
+  font-size: 1.05rem !important;
+}
+
+.project-carousel-dots .react-multi-carousel-dot button {
+  width: 0.58rem;
+  height: 0.58rem;
+  border: 1px solid var(--border);
+  background: transparent;
+  margin-inline: 0.22rem;
+}
+
+.project-carousel-dots .react-multi-carousel-dot--active button {
+  background: var(--accent);
+  border-color: var(--accent);
+}
