@@ -123,7 +123,7 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
                       event.stopPropagation();
                     }
                   }}
-                  className="group flex h-full select-none flex-col rounded-3xl border border-[color:var(--border)] bg-[color:var(--panel)] p-3 shadow-[0_24px_60px_-40px_rgba(10,12,16,0.6)] backdrop-blur transition hover:-translate-y-1 hover:border-[color:var(--accent)]"
+                  className="group flex h-full select-none flex-col rounded-3xl border border-[color:var(--border)] bg-[color:var(--panel)] p-3 backdrop-blur transition hover:-translate-y-1 hover:border-[color:var(--accent)]"
                 >
                   <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel-strong)]">
                     {project.thumbnailSrc ? (

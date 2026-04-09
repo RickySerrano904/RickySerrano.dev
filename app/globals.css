@@ -189,11 +189,9 @@ a {
   border: 1px solid var(--accent) !important;
   min-width: 2.8rem !important;
   min-height: 2.8rem !important;
-  box-shadow: 0 10px 24px -16px rgba(10, 12, 16, 0.85);
   backdrop-filter: blur(6px);
   transition:
     /* transform 160ms ease, */
-    box-shadow 160ms ease,
     background-color 160ms ease,
     border-color 160ms ease;
 }
@@ -202,7 +200,6 @@ a {
   background: var(--fg) !important;
   border-color: var(--fg) !important;
   /* transform: translateY(-1px) scale(1.06) !important; */
-  box-shadow: 0 18px 30px -16px rgba(10, 12, 16, 0.95) !important;
 }
 
 .project-carousel .react-multiple-carousel__arrow::before {
