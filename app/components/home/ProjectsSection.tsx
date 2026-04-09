@@ -85,7 +85,7 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
       </header>
 
       {hasProjects ? (
-        <div className="mt-8">
+        <div className="project-carousel-shell mt-8">
           <Carousel
             responsive={responsive}
             ssr
@@ -99,8 +99,8 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
             beforeChange={() => setIsCarouselMoving(true)}
             afterChange={() => setIsCarouselMoving(false)}
             containerClass="project-carousel"
-            sliderClass="pb-2"
-            itemClass="px-2 pt-2"
+            sliderClass="pb-3"
+            itemClass="px-4 pt-2 pb-3"
             dotListClass="project-carousel-dots"
           >
             {projects.map((project) => (
@@ -123,7 +123,7 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
                       event.stopPropagation();
                     }
                   }}
-                  className="group flex h-full select-none flex-col rounded-3xl border border-[color:var(--border)] bg-[color:var(--panel)] p-3 backdrop-blur transition hover:-translate-y-1 hover:border-[color:var(--accent)]"
+                  className="group flex h-full select-none flex-col rounded-3xl border border-[color:var(--border)] bg-[color:var(--panel)] p-3 shadow-[0_20px_46px_-28px_rgba(33,41,24,0.42)] backdrop-blur transition hover:-translate-y-1 hover:border-[color:var(--accent)] hover:shadow-[0_26px_56px_-28px_rgba(33,41,24,0.5)]"
                 >
                   <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel-strong)]">
                     {project.thumbnailSrc ? (

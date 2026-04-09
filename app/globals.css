@@ -212,11 +212,21 @@ a {
 }
 
 .project-carousel .react-multiple-carousel__arrow--left {
-  left: calc(2% + 1px) !important;
+  left: 0.45rem !important;
 }
 
 .project-carousel .react-multiple-carousel__arrow--right {
-  right: calc(2% + 1px) !important;
+  right: 0.45rem !important;
+}
+
+@media (max-width: 767px) {
+  .project-carousel .react-multiple-carousel__arrow--left {
+    left: 0.35rem !important;
+  }
+
+  .project-carousel .react-multiple-carousel__arrow--right {
+    right: 0.35rem !important;
+  }
 }
 
 .project-carousel-dots .react-multi-carousel-dot button {
@@ -246,7 +256,20 @@ a {
   cursor: grabbing;
 }
 
+.project-carousel-shell {
+  overflow-x: clip;
+}
+
+@supports not (overflow: clip) {
+  .project-carousel-shell {
+    overflow-x: hidden;
+  }
+}
+
+.project-carousel.react-multi-carousel-list,
 .project-carousel .react-multi-carousel-list {
-  padding-top: 0.45rem;
-  margin-top: -0.45rem;
+  overflow: visible;
+  padding: 0.55rem 0 1rem;
+  margin-top: -0.55rem;
+  margin-bottom: -1rem;
 }
