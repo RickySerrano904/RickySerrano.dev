@@ -100,7 +100,7 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
             afterChange={() => setIsCarouselMoving(false)}
             containerClass="project-carousel"
             sliderClass="pb-3"
-            itemClass="px-4 pt-2 pb-3"
+            itemClass="px-3 pt-2 pb-3"
             dotListClass="project-carousel-dots"
           >
             {projects.map((project) => (
@@ -123,7 +123,7 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
                       event.stopPropagation();
                     }
                   }}
-                  className="group flex h-full select-none flex-col rounded-3xl border border-[color:var(--border)] bg-[color:var(--panel)] p-3 shadow-[0_20px_46px_-28px_rgba(33,41,24,0.42)] backdrop-blur transition hover:-translate-y-1 hover:border-[color:var(--accent)] hover:shadow-[0_26px_56px_-28px_rgba(33,41,24,0.5)]"
+                  className="group flex h-full select-none flex-col rounded-3xl border border-[color:var(--border)] bg-[color:var(--panel)] p-3 shadow-[0_20px_30px_-28px_rgba(33,41,24,0.34)] backdrop-blur transition hover:-translate-y-1 hover:border-[color:var(--accent)] hover:shadow-[0_20px_44px_-24px_rgba(33,41,24,0.42)]"
                 >
                   <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel-strong)]">
                     {project.thumbnailSrc ? (

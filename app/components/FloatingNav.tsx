@@ -223,10 +223,10 @@ export default function FloatingNav() {
                 href={item.href}
                 onClick={(event) => handleNavClick(event, item, isSectionRoute)}
                 aria-current={isActive ? (isSectionRoute ? "location" : "page") : undefined}
-                className={`rounded-full px-3 py-2 text-sm font-medium transition ${
+                className={`rounded-full px-3 py-2 text-sm font-medium transition-[color,background-color,box-shadow,transform] duration-200 ${
                   isActive
-                    ? "bg-[color:var(--nav-active)] text-[color:var(--fg)]"
-                    : "text-[color:var(--muted)] hover:text-[color:var(--fg)]"
+                    ? "bg-[color:var(--nav-active)] text-[color:var(--fg)] shadow-[0_0_0_1px_var(--border),0_0_16px_-10px_var(--accent)]"
+                    : "text-[color:var(--muted)] hover:bg-[color:var(--nav-active)] hover:text-[color:var(--fg)] hover:shadow-[0_0_0_1px_var(--border),0_0_18px_-10px_var(--accent)]"
                 }`}
               >
                 {item.label}
@@ -237,7 +237,7 @@ export default function FloatingNav() {
         <button
           type="button"
           onClick={handleToggle}
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-[color:var(--border)] bg-[color:var(--nav-active)] text-[color:var(--fg)] transition hover:scale-[1.02]"
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-[color:var(--border)] bg-[color:var(--nav-active)] text-[color:var(--fg)] shadow-[0_0_0_1px_var(--border),0_0_14px_-10px_var(--accent)] transition-[transform,box-shadow,border-color,background-color] duration-200 hover:scale-[1.03] hover:border-[color:var(--accent)] hover:shadow-[0_0_0_1px_var(--border),0_0_20px_-8px_var(--accent)]"
           aria-label="Toggle dark mode"
           aria-pressed={theme === "dark"}
           title="Toggle dark mode"
