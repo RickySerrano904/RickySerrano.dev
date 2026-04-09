@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Carousel from "react-multi-carousel";
+import { useEffect, useRef, useState } from "react";
 import type { Project } from "./content";
 
 type ProjectsSectionProps = {
@@ -29,6 +30,48 @@ const responsive = {
 
 export default function ProjectsSection({ projects }: ProjectsSectionProps) {
   const hasProjects = projects.length > 0;
+  const [isCarouselMoving, setIsCarouselMoving] = useState(false);
+  const dragStartRef = useRef<{ x: number; y: number } | null>(null);
+  const isDragGestureRef = useRef(false);
+  const resetDragTimerRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (resetDragTimerRef.current !== null) {
+        window.clearTimeout(resetDragTimerRef.current);
+      }
+    };
+  }, []);
+
+  const handlePointerDown = (clientX: number, clientY: number) => {
+    dragStartRef.current = { x: clientX, y: clientY };
+    isDragGestureRef.current = false;
+  };
+
+  const handlePointerMove = (clientX: number, clientY: number) => {
+    if (!dragStartRef.current) {
+      return;
+    }
+
+    const deltaX = Math.abs(clientX - dragStartRef.current.x);
+    const deltaY = Math.abs(clientY - dragStartRef.current.y);
+
+    if (deltaX > 8 || deltaY > 8) {
+      isDragGestureRef.current = true;
+    }
+  };
+
+  const handlePointerEnd = () => {
+    dragStartRef.current = null;
+
+    if (resetDragTimerRef.current !== null) {
+      window.clearTimeout(resetDragTimerRef.current);
+    }
+
+    resetDragTimerRef.current = window.setTimeout(() => {
+      isDragGestureRef.current = false;
+    }, 0);
+  };
 
   return (
     <section id="projects" className="mx-auto w-full max-w-5xl px-6 py-16">
@@ -52,6 +95,9 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
             arrows={projects.length > 1}
             draggable={projects.length > 1}
             swipeable={projects.length > 1}
+            minimumTouchDrag={24}
+            beforeChange={() => setIsCarouselMoving(true)}
+            afterChange={() => setIsCarouselMoving(false)}
             containerClass="project-carousel"
             sliderClass="pb-2"
             itemClass="px-3"
@@ -62,7 +108,22 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
                 <Link
                   href={`/projects/${project.slug}`}
                   scroll={true}
-                  className="group flex h-full flex-col rounded-3xl border border-[color:var(--border)] bg-[color:var(--panel)] p-3 shadow-[0_24px_60px_-40px_rgba(10,12,16,0.6)] backdrop-blur transition hover:-translate-y-1 hover:border-[color:var(--accent)]"
+                  draggable={false}
+                  onPointerDown={(event) =>
+                    handlePointerDown(event.clientX, event.clientY)
+                  }
+                  onPointerMove={(event) =>
+                    handlePointerMove(event.clientX, event.clientY)
+                  }
+                  onPointerUp={handlePointerEnd}
+                  onPointerCancel={handlePointerEnd}
+                  onClickCapture={(event) => {
+                    if (isCarouselMoving || isDragGestureRef.current) {
+                      event.preventDefault();
+                      event.stopPropagation();
+                    }
+                  }}
+                  className="group flex h-full select-none flex-col rounded-3xl border border-[color:var(--border)] bg-[color:var(--panel)] p-3 shadow-[0_24px_60px_-40px_rgba(10,12,16,0.6)] backdrop-blur transition hover:-translate-y-1 hover:border-[color:var(--accent)]"
                 >
                   <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel-strong)]">
                     {project.thumbnailSrc ? (
@@ -70,6 +131,7 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
                         src={project.thumbnailSrc}
                         alt={project.thumbnailAlt ?? `${project.title} project thumbnail`}
                         fill
+                        draggable={false}
                         sizes="(min-width: 1280px) 500px, (min-width: 768px) 72vw, 88vw"
                         className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.04]"
                       />

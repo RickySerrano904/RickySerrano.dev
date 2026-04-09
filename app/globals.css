@@ -213,3 +213,11 @@ a {
   background: var(--accent);
   border-color: var(--accent);
 }
+
+.project-carousel .react-multi-carousel-track {
+  cursor: grab;
+}
+
+.project-carousel .react-multi-carousel-track:active {
+  cursor: grabbing;
+}
