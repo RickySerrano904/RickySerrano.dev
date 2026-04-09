@@ -214,6 +214,14 @@ a {
   color: var(--accent) !important;
 }
 
+.project-carousel .react-multiple-carousel__arrow--left {
+  left: calc(2% + 1px) !important;
+}
+
+.project-carousel .react-multiple-carousel__arrow--right {
+  right: calc(2% + 1px) !important;
+}
+
 .project-carousel-dots .react-multi-carousel-dot button {
   width: 0.9rem !important;
   height: 0.9rem !important;
