@@ -100,7 +100,7 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
             afterChange={() => setIsCarouselMoving(false)}
             containerClass="project-carousel"
             sliderClass="pb-2"
-            itemClass="px-3 pt-2"
+            itemClass="px-2 pt-2"
             dotListClass="project-carousel-dots"
           >
             {projects.map((project) => (
