@@ -41,8 +41,20 @@ export default function HeroSection({
               </a>
             ))}
           </div>
-
-          <section className="w-full max-w-2xl rounded-3xl border border-[color:var(--border)] bg-[color:var(--panel)] p-4 shadow-[0_24px_60px_-40px_rgba(10,12,16,0.6)]">
+        </div>
+        <div className="flex justify-center md:justify-end">
+          <div className="relative aspect-square w-full max-w-[200px] overflow-hidden rounded-full border border-[color:var(--border)] bg-[color:var(--panel-strong)] shadow-[0_24px_50px_-42px_rgba(10,12,16,0.7)]">
+            <Image
+              src="/me/headshot.jpg"
+              alt="Headshot of Ricky Serrano"
+              fill
+              priority
+              sizes="200px"
+              className="h-full w-full object-cover"
+            />
+          </div>
+        </div>
+        <section className="w-full max-w-2xl rounded-3xl border border-[color:var(--border)] bg-[color:var(--panel)] p-4 shadow-[0_24px_60px_-40px_rgba(10,12,16,0.6)] md:col-span-2">
             <div className="mb-3 flex items-center justify-between gap-3">
               <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-[color:var(--muted)]">
                 GitHub Contributions
@@ -63,19 +75,6 @@ export default function HeroSection({
               />
             </div>
           </section>
-        </div>
-        <div className="flex justify-center lg:justify-end">
-          <div className="relative aspect-square w-full max-w-[200px] overflow-hidden rounded-full border border-[color:var(--border)] bg-[color:var(--panel-strong)] shadow-[0_24px_50px_-42px_rgba(10,12,16,0.7)]">
-            <Image
-              src="/me/headshot.jpg"
-              alt="Headshot of Ricky Serrano"
-              fill
-              priority
-              sizes="200px"
-              className="h-full w-full object-cover"
-            />
-          </div>
-        </div>
       </div>
     </section>
   );
