@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Fraunces, Space_Grotesk } from "next/font/google";
 import FloatingNav from "./components/Navbar";
-import ThemeProvider from "./components/ThemeProvider";
 import "./globals.css";
 import "react-multi-carousel/lib/styles.css";
 
@@ -34,10 +33,8 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-screen antialiased text-[color:var(--fg)]">
-        <ThemeProvider>
-          <FloatingNav />
-          {children}
-        </ThemeProvider>
+        <FloatingNav />
+        {children}
       </body>
     </html>
   );

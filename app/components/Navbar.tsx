@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import type { MouseEvent } from "react";
-import { useTheme } from "./ThemeProvider";
+import { useTheme } from "./useTheme";
 
 type NavItem = {
   label: string;
