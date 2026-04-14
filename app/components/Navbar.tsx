@@ -36,7 +36,7 @@ const navItems: NavItem[] = [
     label: "Projects",
     href: "/#projects",
     sectionId: "projects",
-    routePrefixes: ["/home/projects"],
+    routePrefixes: ["/projects"],
   },
   {
     label: "Contact",
