@@ -53,6 +53,8 @@ export const heroWords = [
 export const heroDescription =
   "Bringing ideas to life through code, with a focus on practical, user-friendly designs.";
 
+export const heroLocation = "Jacksonville, Florida";
+
 export const socialLinks: SocialLink[] = [
   {
     href: "https://github.com/RickyRicardo904",

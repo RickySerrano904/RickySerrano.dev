@@ -1,16 +1,18 @@
-import TypewriterText from "@/app/components/TypewriterText";
+import TypewriterText from "@/app/home/TypewriterText";
 import Image from "next/image";
 import type { SocialIcon, SocialLink } from "./content";
 
 type HeroSectionProps = {
   words: string[];
   description: string;
+  location: string;
   socialLinks: SocialLink[];
 };
 
 export default function HeroSection({
   words,
   description,
+  location,
   socialLinks,
 }: HeroSectionProps) {
   return (
@@ -27,6 +29,17 @@ export default function HeroSection({
           </h1>
           <p className="max-w-2xl text-lg leading-8 text-[color:var(--muted)]">
             {description}
+          </p>
+          <p className="inline-flex items-center gap-2 text-sm font-medium tracking-wide text-[color:var(--muted)]">
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              className="h-5 w-5 shrink-0 text-[color:var(--accent)]"
+              fill="currentColor"
+            >
+              <path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 10a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+            </svg>
+            <span>{location}</span>
           </p>
           <div className="flex flex-wrap gap-3 text-sm">
             {socialLinks.map((link) => (

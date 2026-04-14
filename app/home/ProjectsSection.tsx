@@ -106,7 +106,7 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
             {projects.map((project) => (
               <div key={project.slug} className="h-full">
                 <Link
-                  href={`/projects/${project.slug}`}
+                  href={`/home/projects/${project.slug}`}
                   scroll={true}
                   draggable={false}
                   onPointerDown={(event) =>

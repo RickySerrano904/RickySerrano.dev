@@ -1,20 +1,21 @@
-import AboutSection from "@/app/components/home/AboutSection";
-import ContactSection from "@/app/components/home/ContactSection";
-import ExperienceSection from "@/app/components/home/ExperienceSection";
-import HeroSection from "@/app/components/home/HeroSection";
-import ProjectsSection from "@/app/components/home/ProjectsSection";
-import SkillsSection from "@/app/components/home/SkillsSection";
+import AboutSection from "@/app/home/AboutSection";
+import ContactSection from "@/app/home/ContactSection";
+import ExperienceSection from "@/app/home/ExperienceSection";
+import HeroSection from "@/app/home/HeroSection";
+import ProjectsSection from "@/app/home/ProjectsSection";
+import SkillsSection from "@/app/home/SkillsSection";
 import {
   aboutParagraphs,
   certifications,
   education,
   heroDescription,
+  heroLocation,
   heroWords,
   projects,
   roles,
   skills,
   socialLinks,
-} from "@/app/components/home/content";
+} from "@/app/home/content";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <HeroSection
         words={heroWords}
         description={heroDescription}
+        location={heroLocation}
         socialLinks={socialLinks}
       />
       <AboutSection paragraphs={aboutParagraphs} />
