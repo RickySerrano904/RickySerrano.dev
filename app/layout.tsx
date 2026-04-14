@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Fraunces, Space_Grotesk } from "next/font/google";
-import FloatingNav from "./home/FloatingNav";
+import FloatingNav from "./components/Navbar";
 import "./globals.css";
 import "react-multi-carousel/lib/styles.css";
 
