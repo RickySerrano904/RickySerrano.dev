@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import type { MouseEvent } from "react";
+import { useTheme } from "./ThemeProvider";
 
 type NavItem = {
   label: string;
@@ -56,19 +57,8 @@ function normalizePath(pathname: string) {
 
 export default function FloatingNav() {
   const pathname = usePathname();
-  const [mounted, setMounted] = useState(false);
-  const [theme, setTheme] = useState<"light" | "dark">("light");
+  const { mounted, theme, toggleTheme } = useTheme();
   const [activeSection, setActiveSection] = useState("home");
-
-  useEffect(() => {
-    setMounted(true);
-    const stored = window.localStorage.getItem("theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const initial = stored === "dark" || (!stored && prefersDark) ? "dark" : "light";
-    setTheme(initial);
-    document.documentElement.classList.remove("light", "dark");
-    document.documentElement.classList.add(initial);
-  }, []);
 
   const normalizedPath = useMemo(() => normalizePath(pathname ?? "/"), [pathname]);
 
@@ -155,11 +145,7 @@ export default function FloatingNav() {
       return;
     }
 
-    const next = theme === "dark" ? "light" : "dark";
-    setTheme(next);
-    window.localStorage.setItem("theme", next);
-    document.documentElement.classList.remove("light", "dark");
-    document.documentElement.classList.add(next);
+    toggleTheme();
   };
 
   const handleNavClick = (
