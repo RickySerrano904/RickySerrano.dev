@@ -163,6 +163,8 @@ export const projects: Project[] = [
     summary:
       "Full-stack web app that helps older adults and caregivers coordinate tasks and appointments while teaching seniors to recognize and avoid online scams.",
     tags: ["Java", "TypeScript", "Angular", "Postgres"],
+    thumbnailSrc: "/projects/senior-helper/seniorhelperr.jpg",
+    thumbnailAlt: "Screenshot of Senior Helper homepage",
   },
   {
     slug: "enzos-world",
@@ -170,7 +172,7 @@ export const projects: Project[] = [
     summary:
       "A playful, interactive website based on Enzo, my younger sister's Golden Retriever, featuring a custom design, mock merchandise store, blog, and gallery.",
     tags: ["Next.js", "React", "TypeScript", "MDX"],
-    thumbnailSrc: "/projects/enzos-world/enzosworld-screenshot.jpg",
+    thumbnailSrc: "/projects/enzos-world/enzosworld.jpg",
     thumbnailAlt: "Screenshot of Enzo's World homepage",
   },
   {

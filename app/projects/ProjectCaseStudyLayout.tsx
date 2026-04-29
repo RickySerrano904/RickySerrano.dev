@@ -58,6 +58,7 @@ export default function ProjectCaseStudyLayout({
             alt={imageAlt ?? `${title} project preview`}
             fill
             sizes="(min-width: 1024px) 896px, 100vw"
+            loading="eager"
             className="h-full w-full object-contain"
           />
         ) : (
