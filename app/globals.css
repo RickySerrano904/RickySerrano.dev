@@ -184,6 +184,14 @@ a {
   text-decoration: none;
 }
 
+.github-calendar-title {
+  color: #a6a7ab;
+}
+
+.github-calendar-link {
+  color: #f3f1e8;
+}
+
 .github-calendar-card:hover .github-calendar-title,
 .github-calendar-card:hover .github-calendar-link,
 .github-calendar-link:focus-visible {
