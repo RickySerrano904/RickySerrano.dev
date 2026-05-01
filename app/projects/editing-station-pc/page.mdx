@@ -36,6 +36,44 @@ RAM pricing made the budget tighter than expected, so I donated my RTX 2070 Supe
 - **Cable extensions:** White extensions donated to keep the interior consistent with the case and overall visual direction.
 - **Budget:** RAM pricing forced tradeoffs, so reusing strong existing parts helped protect the $2,000 target.
 
+## Parts List
+
+<div className="mt-4 overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel-strong)]">
+  {[
+    ["CPU", "AMD Ryzen 9 9900X 4.4 GHz 12-Core Processor", "/projects/editing-station-pc/AMDRyzen9.jpg"],
+    ["Cooler", "Corsair NAUTILUS 240 RS ARGB 74.37 CFM Liquid CPU Cooler", "/projects/editing-station-pc/CorsairNautilus.jpg"],
+    ["Motherboard", "Asus X870 MAX GAMING WIFI7 W ATX AM5 Motherboard", "/projects/editing-station-pc/AsusX870.jpg"],
+    ["Memory", "G.Skill Flare X5 64 GB (2 x 32 GB) DDR5-6000 CL36 Memory", "/projects/editing-station-pc/RAM.jpg"],
+    ["Storage", "Samsung 9100 PRO 2 TB M.2-2280 PCIe 5.0 X4 NVME Solid State Drive", "/projects/editing-station-pc/Samsung9100.jpg"],
+    ["GPU", "Gigabyte WINDFORCE OC 3X GeForce RTX 2070 SUPER 8 GB Video Card", "/projects/editing-station-pc/RTX2070.jpg"],
+    ["Case", "Fractal Design North ATX Mid Tower Case", "/projects/editing-station-pc/FractalNorth.jpg"],
+    ["PSU", "MSI MAG A750GL PCIE5 750 W 80+ Gold Certified Fully Modular ATX Power Supply", "/projects/editing-station-pc/MSIMag.jpg"],
+    ["OS", "Microsoft Windows 11 Home OEM - DVD 64-bit", "/projects/editing-station-pc/Windows11.jpg"],
+    ["Fans", "3 x NZXT F120Q (2024) 74.26 CFM 120 mm Fan", "/projects/editing-station-pc/NZXTF120.jpg"],
+    ["Cables", "AsiaHorse white sleeved PSU extension cable kit", "/projects/editing-station-pc/AsiaHorseCables.jpg"],
+  ].map(([category, part, imageSrc]) => (
+    <div
+      key={`${category}-${part}`}
+      className="grid grid-cols-[4rem_minmax(0,1fr)] gap-4 border-b border-[color:var(--border)] px-4 py-4 last:border-b-0 sm:grid-cols-[4.5rem_7rem_minmax(0,1fr)] sm:items-center"
+    >
+      <span className="flex h-16 w-16 items-center justify-center overflow-hidden rounded-xl border border-[color:var(--border)] bg-white p-2">
+        <img
+          src={imageSrc}
+          alt=""
+          loading="lazy"
+          className="h-full w-full object-contain"
+        />
+      </span>
+      <span className="col-start-2 inline-flex w-fit rounded-full border border-[color:var(--border)] bg-[color:var(--panel)] px-2 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-[color:var(--muted)] sm:col-start-auto">
+        {category}
+      </span>
+      <span className="col-span-2 text-sm font-semibold leading-6 text-[color:var(--fg)] sm:col-span-1">
+        {part}
+      </span>
+    </div>
+  ))}
+</div>
+
 ## What I Learned
 
 This build was a good reminder that a PC project is not only about raw specs. The final system needed to fit the user, the room, the budget, and the intended workload. It may be more machine than she strictly needs right now, but it should serve her well for years and still came in as a better value than many prebuilt photo editing PCs with similar advertised specs.
