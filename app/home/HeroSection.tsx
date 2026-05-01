@@ -68,14 +68,14 @@ export default function HeroSection({
             />
           </div>
         </div>
-        <section className="w-full max-w-2xl rounded-3xl border border-[color:var(--border)] bg-[color:var(--panel)] p-4 shadow-[0_24px_60px_-40px_rgba(10,12,16,0.6)] md:col-span-2">
+        <section className="w-full max-w-2xl rounded-3xl border border-white/10 bg-[#151922] p-4 shadow-[0_24px_60px_-40px_rgba(10,12,16,0.75)] md:col-span-2">
             <div className="mb-3 flex items-center justify-between gap-3">
-              <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-[color:var(--muted)]">
+              <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-[#a6a7ab]">
                 GitHub Contributions
               </h2>
               <a
                 href="https://github.com/RickyRicardo904"
-                className="inline-flex items-center gap-1.5 text-xs font-semibold text-[color:var(--fg)] hover:text-[color:var(--accent)]"
+                className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#f3f1e8] hover:text-[color:var(--accent)]"
               >
                 View profile <ArrowRightIcon className="h-3.5 w-3.5" />
               </a>

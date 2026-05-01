@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #e2d9c8;
-  --fg: #1f2617;
-  --muted: #575c47;
-  --accent: #607446;
-  --border: rgba(33, 41, 24, 0.2);
-  --nav: rgba(242, 235, 223, 0.9);
-  --nav-active: rgba(44, 58, 34, 0.12);
-  --panel: rgba(247, 241, 230, 0.84);
-  --panel-strong: rgba(252, 247, 238, 0.95);
-  --spot-1: rgba(133, 149, 93, 0.34);
-  --spot-2: rgba(148, 102, 73, 0.26);
+  --bg: #eef4ef;
+  --fg: #10231c;
+  --muted: #50635b;
+  --accent: #047857;
+  --border: rgba(16, 35, 28, 0.16);
+  --nav: rgba(248, 252, 249, 0.9);
+  --nav-active: rgba(4, 120, 87, 0.12);
+  --panel: rgba(248, 252, 249, 0.84);
+  --panel-strong: rgba(255, 255, 255, 0.94);
+  --spot-1: rgba(16, 185, 129, 0.22);
+  --spot-2: rgba(56, 189, 248, 0.14);
   color-scheme: light;
 }
 
@@ -33,17 +33,17 @@
 }
 
 :root.light {
-  --bg: #e2d9c8;
-  --fg: #1f2617;
-  --muted: #575c47;
-  --accent: #607446;
-  --border: rgba(33, 41, 24, 0.2);
-  --nav: rgba(242, 235, 223, 0.9);
-  --nav-active: rgba(44, 58, 34, 0.12);
-  --panel: rgba(247, 241, 230, 0.84);
-  --panel-strong: rgba(252, 247, 238, 0.95);
-  --spot-1: rgba(133, 149, 93, 0.34);
-  --spot-2: rgba(148, 102, 73, 0.26);
+  --bg: #eef4ef;
+  --fg: #10231c;
+  --muted: #50635b;
+  --accent: #047857;
+  --border: rgba(16, 35, 28, 0.16);
+  --nav: rgba(248, 252, 249, 0.9);
+  --nav-active: rgba(4, 120, 87, 0.12);
+  --panel: rgba(248, 252, 249, 0.84);
+  --panel-strong: rgba(255, 255, 255, 0.94);
+  --spot-1: rgba(16, 185, 129, 0.22);
+  --spot-2: rgba(56, 189, 248, 0.14);
   color-scheme: light;
 }
 
