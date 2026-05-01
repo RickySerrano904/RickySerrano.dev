@@ -54,7 +54,7 @@ export default function ExperienceSection({
           download
           className="mt-5 inline-flex items-center gap-2 rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel)] px-4 py-2 text-sm font-semibold text-[color:var(--fg)] transition hover:-translate-y-0.5 hover:border-[color:var(--accent)] hover:text-[color:var(--accent)]"
         >
-          Download resume <span aria-hidden="true">-&darr;</span>
+          Download resume <span aria-hidden="true">&darr;</span>
         </a>
       </header>
 
