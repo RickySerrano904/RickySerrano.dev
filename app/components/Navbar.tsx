@@ -223,7 +223,7 @@ export default function FloatingNav() {
         <button
           type="button"
           onClick={handleToggle}
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-[color:var(--border)] bg-[color:var(--nav-active)] text-[color:var(--fg)] shadow-[0_0_0_1px_var(--border),0_0_14px_-10px_var(--accent)] transition-[transform,box-shadow,border-color,background-color] duration-200 hover:scale-[1.03] hover:border-[color:var(--accent)] hover:shadow-[0_0_0_1px_var(--border),0_0_20px_-8px_var(--accent)]"
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-[color:var(--border)] bg-[color:var(--nav-active)] text-[color:var(--fg)] shadow-[0_0_0_1px_var(--border),0_0_14px_-10px_var(--accent)] transition-[transform,background-color,border-color,color,box-shadow] duration-200 hover:scale-105 hover:border-[color:var(--accent)] hover:bg-[color:var(--accent)] hover:text-[color:var(--bg)] hover:shadow-[0_0_0_1px_var(--accent),0_0_26px_-5px_var(--accent)] focus-visible:border-[color:var(--accent)] focus-visible:bg-[color:var(--accent)] focus-visible:text-[color:var(--bg)] focus-visible:outline-none focus-visible:shadow-[0_0_0_3px_var(--bg),0_0_26px_-4px_var(--accent)]"
           aria-label="Toggle dark mode"
           aria-pressed={theme === "dark"}
           title="Toggle dark mode"
