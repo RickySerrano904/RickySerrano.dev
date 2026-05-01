@@ -1,0 +1,56 @@
+.root {
+  --marquee-item-width: min(82vw, 20rem);
+  --marquee-gap: 1.5rem;
+  --marquee-duration: 38s;
+  overflow: hidden;
+  padding-block: 0.55rem 1rem;
+}
+
+.track {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  width: max-content;
+  animation: scroll var(--marquee-duration) linear infinite;
+  will-change: transform;
+}
+
+.root:hover .track,
+.root:focus-within .track {
+  animation-play-state: paused;
+}
+
+.item {
+  display: flex;
+  flex: 0 0 calc(var(--marquee-item-width) + var(--marquee-gap));
+  width: calc(var(--marquee-item-width) + var(--marquee-gap));
+  padding-right: var(--marquee-gap);
+}
+
+.item > * {
+  width: var(--marquee-item-width);
+}
+
+@keyframes scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .root {
+    overflow-x: auto;
+  }
+
+  .track {
+    animation: none;
+  }
+
+  .item[aria-hidden="true"] {
+    display: none;
+  }
+}
