@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Carousel from "react-multi-carousel";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import ArrowRightIcon from "@/app/components/ArrowRightIcon";
 import type { Project } from "./content";
 
@@ -31,7 +31,7 @@ const responsive = {
 
 export default function ProjectsSection({ projects }: ProjectsSectionProps) {
   const hasProjects = projects.length > 0;
-  const [isCarouselMoving, setIsCarouselMoving] = useState(false);
+  const isCarouselMovingRef = useRef(false);
   const dragStartRef = useRef<{ x: number; y: number } | null>(null);
   const isDragGestureRef = useRef(false);
   const resetDragTimerRef = useRef<number | null>(null);
@@ -62,16 +62,20 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
     }
   };
 
-  const handlePointerEnd = () => {
-    dragStartRef.current = null;
-
+  const scheduleDragReset = () => {
     if (resetDragTimerRef.current !== null) {
       window.clearTimeout(resetDragTimerRef.current);
     }
 
     resetDragTimerRef.current = window.setTimeout(() => {
+      isCarouselMovingRef.current = false;
       isDragGestureRef.current = false;
-    }, 0);
+    }, 160);
+  };
+
+  const handlePointerEnd = () => {
+    dragStartRef.current = null;
+    scheduleDragReset();
   };
 
   return (
@@ -97,8 +101,10 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
             draggable={projects.length > 1}
             swipeable={projects.length > 1}
             minimumTouchDrag={24}
-            beforeChange={() => setIsCarouselMoving(true)}
-            afterChange={() => setIsCarouselMoving(false)}
+            beforeChange={() => {
+              isCarouselMovingRef.current = true;
+            }}
+            afterChange={scheduleDragReset}
             containerClass="project-carousel"
             sliderClass="pb-3"
             itemClass="px-3 pt-2 pb-3"
@@ -119,9 +125,13 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
                   onPointerUp={handlePointerEnd}
                   onPointerCancel={handlePointerEnd}
                   onClickCapture={(event) => {
-                    if (isCarouselMoving || isDragGestureRef.current) {
+                    if (
+                      isCarouselMovingRef.current ||
+                      isDragGestureRef.current
+                    ) {
                       event.preventDefault();
                       event.stopPropagation();
+                      scheduleDragReset();
                     }
                   }}
                   className="group flex h-full select-none flex-col rounded-3xl border border-[color:var(--border)] bg-[color:var(--panel)] p-3 shadow-[0_20px_30px_-28px_rgba(33,41,24,0.34)] backdrop-blur transition hover:-translate-y-1 hover:border-[color:var(--accent)] hover:shadow-[0_20px_44px_-24px_rgba(33,41,24,0.42)]"
