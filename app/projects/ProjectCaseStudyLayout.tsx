@@ -34,7 +34,7 @@ export default function ProjectCaseStudyLayout({
     <main className="page-intro mx-auto w-full max-w-4xl px-6 pb-24 pt-32">
       <Link
         href="/#projects"
-        className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--fg)]"
+        className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--fg)] transition-[transform,color,text-shadow] duration-200 hover:-translate-y-0.5 hover:text-[color:var(--accent)] hover:[text-shadow:0_0_8px_var(--accent),0_0_18px_var(--accent)] focus-visible:text-[color:var(--accent)] focus-visible:underline focus-visible:underline-offset-4 focus-visible:outline-none focus-visible:[text-shadow:0_0_8px_var(--accent),0_0_18px_var(--accent)]"
       >
         <span aria-hidden="true">&larr;</span>
         Back to projects
@@ -73,7 +73,7 @@ export default function ProjectCaseStudyLayout({
             href={projectUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel)] px-4 py-2 text-sm font-semibold text-[color:var(--fg)] transition hover:-translate-y-0.5 hover:border-[color:var(--accent)]"
+            className="inline-flex items-center gap-2 rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel)] px-4 py-2 text-sm font-semibold text-[color:var(--fg)] transition-[transform,background-color,border-color,color,box-shadow] duration-200 hover:-translate-y-0.5 hover:border-[color:var(--accent)] hover:bg-[color:var(--accent)] hover:text-[color:var(--bg)] hover:shadow-[0_0_0_1px_var(--accent),0_0_26px_-5px_var(--accent)] focus-visible:border-[color:var(--accent)] focus-visible:bg-[color:var(--accent)] focus-visible:text-[color:var(--bg)] focus-visible:outline-none focus-visible:shadow-[0_0_0_3px_var(--bg),0_0_26px_-4px_var(--accent)]"
           >
             {projectUrlLabel}
             <ArrowRightIcon className="h-4 w-4" />
