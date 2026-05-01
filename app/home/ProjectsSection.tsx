@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Carousel from "react-multi-carousel";
 import { useEffect, useRef, useState } from "react";
+import ArrowRightIcon from "@/app/components/ArrowRightIcon";
 import type { Project } from "./content";
 
 type ProjectsSectionProps = {
@@ -139,7 +140,7 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
                       <div className="post-thumb h-full w-full" />
                     )}
                   </div>
-                  <article className="p-3">
+                  <article className="flex flex-1 flex-col p-3">
                     <h3 className="mt-3 font-display text-2xl font-semibold text-[color:var(--fg)] transition group-hover:text-[color:var(--accent)]">
                       {project.title}
                     </h3>
@@ -156,8 +157,9 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
                         </span>
                       ))}
                     </div>
-                    <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--fg)] transition-colors duration-200 group-hover:text-[color:var(--accent)]">
-                      View project <span aria-hidden="true">-&gt;</span>
+                    <span className="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-semibold text-[color:var(--fg)] transition-colors duration-200 group-hover:text-[color:var(--accent)]">
+                      View project{" "}
+                      <ArrowRightIcon className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
                     </span>
                   </article>
                 </Link>

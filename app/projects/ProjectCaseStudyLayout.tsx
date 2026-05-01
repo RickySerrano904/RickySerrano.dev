@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import ArrowRightIcon from "@/app/components/ArrowRightIcon";
 
 type ProjectCaseStudyLayoutProps = {
   eyebrow: string;
@@ -75,7 +76,7 @@ export default function ProjectCaseStudyLayout({
             className="inline-flex items-center gap-2 rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel)] px-4 py-2 text-sm font-semibold text-[color:var(--fg)] transition hover:-translate-y-0.5 hover:border-[color:var(--accent)]"
           >
             {projectUrlLabel}
-            <span aria-hidden="true">-&gt;</span>
+            <ArrowRightIcon className="h-4 w-4" />
           </a>
         </div>
       ) : null}

@@ -1,5 +1,6 @@
 import TypewriterText from "@/app/home/TypewriterText";
 import Image from "next/image";
+import ArrowRightIcon from "@/app/components/ArrowRightIcon";
 import type { SocialIcon, SocialLink } from "./content";
 
 type HeroSectionProps = {
@@ -74,9 +75,9 @@ export default function HeroSection({
               </h2>
               <a
                 href="https://github.com/RickyRicardo904"
-                className="text-xs font-semibold text-[color:var(--fg)] hover:text-[color:var(--accent)]"
+                className="inline-flex items-center gap-1.5 text-xs font-semibold text-[color:var(--fg)] hover:text-[color:var(--accent)]"
               >
-                View profile -&gt;
+                View profile <ArrowRightIcon className="h-3.5 w-3.5" />
               </a>
             </div>
             <div className="overflow-x-auto">

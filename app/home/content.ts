@@ -159,7 +159,7 @@ export const roles: Role[] = [
 export const projects: Project[] = [
   {
     slug: "senior-helper",
-    title: "Senior Helper",
+    title: "SeniorHelper",
     summary:
       "Full-stack web app that helps older adults and caregivers coordinate tasks and appointments while teaching seniors to recognize and avoid online scams.",
     tags: ["Java", "TypeScript", "Angular", "Postgres"],
