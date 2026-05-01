@@ -184,6 +184,17 @@ a {
   text-decoration: none;
 }
 
+.github-calendar-card:hover .github-calendar-title,
+.github-calendar-card:hover .github-calendar-link,
+.github-calendar-link:focus-visible {
+  color: #ff9c6f;
+}
+
+.github-calendar-card:hover .github-calendar-arrow,
+.github-calendar-link:focus-visible .github-calendar-arrow {
+  transform: translateX(0.25rem);
+}
+
 .project-carousel .react-multiple-carousel__arrow {
   background: var(--accent) !important;
   border: 1px solid var(--accent) !important;
