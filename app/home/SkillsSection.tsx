@@ -6,6 +6,8 @@ type SkillsSectionProps = {
 
 type SkillIconConfig = {
   src?: string;
+  srcs?: string[];
+  custom?: "connectwise" | "powerbi";
   label?: string;
 };
 
@@ -18,6 +20,24 @@ const skillIcons: Record<string, SkillIconConfig> = {
   },
   Java: {
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+  },
+  HTML: {
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+  },
+  CSS: {
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+  },
+  "HTML & CSS": {
+    srcs: [
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+    ],
+  },
+  Python: {
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+  },
+  "C#": {
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg",
   },
   "Spring Boot": {
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg",
@@ -55,20 +75,23 @@ const skillIcons: Record<string, SkillIconConfig> = {
   Linux: {
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg",
   },
-  "Windows Server": {
+  Windows: {
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows11/windows11-original.svg",
   },
   "Active Directory": {
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg",
   },
   ConnectWise: {
-    src: "https://cdn.simpleicons.org/connectwise",
+    custom: "connectwise",
   },
   Jira: {
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg",
   },
   Figma: {
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
+  },
+  "Power BI": {
+    custom: "powerbi",
   },
   AWS: {
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
@@ -125,18 +148,37 @@ export default function SkillsSection({ skills }: SkillsSectionProps) {
 
 function SkillIcon({ item }: { item: string }) {
   const icon = skillIcons[item] ?? { label: item.slice(0, 2) };
+  const iconSources = icon.srcs ?? (icon.src ? [icon.src] : []);
 
-  if (icon.src) {
+  if (icon.custom) {
     return (
       <span
         aria-hidden="true"
         className="inline-flex h-7 w-7 shrink-0 items-center justify-center overflow-hidden rounded-full bg-white p-1 shadow-[0_0_0_1px_rgba(16,35,28,0.12)]"
       >
-        <img
-          src={icon.src}
-          alt=""
-          className="max-h-full max-w-full object-contain"
-        />
+        <CustomSkillIcon icon={icon.custom} />
+      </span>
+    );
+  }
+
+  if (iconSources.length > 0) {
+    return (
+      <span
+        aria-hidden="true"
+        className="inline-flex h-7 w-7 shrink-0 items-center justify-center overflow-hidden rounded-full bg-white p-1 shadow-[0_0_0_1px_rgba(16,35,28,0.12)]"
+      >
+        {iconSources.map((src) => (
+          <img
+            key={src}
+            src={src}
+            alt=""
+            className={
+              iconSources.length > 1
+                ? "h-full min-w-0 flex-1 object-contain"
+                : "max-h-full max-w-full object-contain"
+            }
+          />
+        ))}
       </span>
     );
   }
@@ -148,5 +190,44 @@ function SkillIcon({ item }: { item: string }) {
     >
       {icon.label}
     </span>
+  );
+}
+
+function CustomSkillIcon({ icon }: { icon: "connectwise" | "powerbi" }) {
+  if (icon === "connectwise") {
+    return (
+      <svg
+        viewBox="0 0 24 24"
+        className="h-full w-full"
+        role="img"
+        aria-label=""
+      >
+        <rect width="24" height="24" rx="6" fill="#0E60AA" />
+        <path
+          d="M6.75 13.5a3.75 3.75 0 1 1 3.38-5.38l-1.8.95A1.72 1.72 0 1 0 8.3 11.9l1.83.91a3.74 3.74 0 0 1-3.38.69Zm7.35.13h-2.04L9.8 6.6h2.15l1.22 4.22 1.38-4.22h1.72l1.38 4.22 1.22-4.22H21l-2.25 7.03H16.7l-1.3-3.87-1.3 3.87Z"
+          fill="#FFFFFF"
+        />
+        <path
+          d="M7 17.2h10"
+          stroke="#8DD7F7"
+          strokeLinecap="round"
+          strokeWidth="2"
+        />
+      </svg>
+    );
+  }
+
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      className="h-full w-full"
+      role="img"
+      aria-label=""
+    >
+      <rect width="24" height="24" rx="6" fill="#F2C811" />
+      <rect x="5" y="11" width="3.8" height="7" rx="1.4" fill="#6B4E00" />
+      <rect x="10.1" y="7" width="3.8" height="11" rx="1.4" fill="#9B7200" />
+      <rect x="15.2" y="4" width="3.8" height="14" rx="1.4" fill="#2F2400" />
+    </svg>
   );
 }
