@@ -85,8 +85,9 @@ export const education: EducationItem[] = [
     school: "Florida State College at Jacksonville",
     period: "2023 - Present",
     points: [
-      "Completed coursework in application development, database management, troubleshooting, and systems analysis.",
-      "Gained hands-on experience with IT infrastructure and software development principles.",
+      "Completed coursework in application development, systems design, database management, networking, and cyber security.",
+      "Gained hands-on experience with IT infrastructure, configuring and maintaining servers and network devices.",
+      "Worked with a team to design and build full-stack application projects, applying agile development practices and version control workflows.",
     ],
   },
 ];
@@ -99,6 +100,7 @@ export const certifications: Certification[] = [
     points: [
       "Demonstrates foundational knowledge of computer hardware, operating systems, and networking.",
       "Validates troubleshooting skills for supporting end users and IT environments.",
+      "Reinforces strong practices in endpoint support, OS installation, hardware diagnostics, and technical documentation.",
     ],
   },
 ];
