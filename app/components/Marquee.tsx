@@ -52,10 +52,9 @@ export default function Marquee({
         {items.map((item, index) => (
           <div
             key={`duplicate-${index}`}
-            className={styles.item}
-            aria-hidden="true"
+            className={[styles.item, styles.duplicate].join(" ")}
           >
-            <div inert>{item}</div>
+            {item}
           </div>
         ))}
       </div>

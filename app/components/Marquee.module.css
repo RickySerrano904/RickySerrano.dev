@@ -50,7 +50,7 @@
     animation: none;
   }
 
-  .item[aria-hidden="true"] {
+  .duplicate {
     display: none;
   }
 }
