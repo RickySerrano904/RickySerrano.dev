@@ -74,9 +74,7 @@ export const socialLinks: SocialLink[] = [
 ];
 
 export const aboutParagraphs = [
-  "I'm Ricky, a full-stack developer and IT professional focused on building reliable, user-friendly software and supporting secure, well-run systems.",
-  "My background spans application development, technical support, and infrastructure work, which helps me bridge the gap between product needs and real-world operations.",
-  "I like solving real problems, keeping things simple, and building tools people actually enjoy using.",
+  "Hello! My name is Ricky, I'm a full-stack developer with a passion for creating accessible, user-friendly tools and interfaces. I’ve always loved the world of computers and code, especially the ability to create things that make people smile, solve real problems, and make life a little easier.",
 ];
 
 export const education: EducationItem[] = [
