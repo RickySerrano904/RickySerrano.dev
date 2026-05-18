@@ -190,7 +190,7 @@ export const projects: Project[] = [
     summary:
       "A custom-built PC optimized for video editing workloads, featuring a high-performance CPU, GPU, and fast storage to handle large media files and complex timelines.",
     tags: ["PC Building", "Hardware Optimization"],
-    thumbnailSrc: "/projects/editing-station-pc/editing-station-photo.jpg",
+    thumbnailSrc: "/projects/editing-station-pc/maddy-build-inside.jpg",
     thumbnailAlt: "Photo of Editing Station PC",
   },
 ];
