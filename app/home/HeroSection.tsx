@@ -69,9 +69,9 @@ export default function HeroSection({
           </div>
         </div>
         <a
-          href="https://github.com/RickyRicardo904"
+          href="https://github.com/RickySerrano904"
           className="github-calendar-card group block w-full max-w-2xl rounded-3xl border border-white/10 bg-[#151922] p-4 shadow-[0_24px_60px_-40px_rgba(10,12,16,0.75)] transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-0.5 hover:border-[#ff9c6f] hover:shadow-[0_24px_70px_-38px_rgba(10,12,16,0.85),0_0_34px_-18px_#ff9c6f] focus-visible:-translate-y-0.5 focus-visible:border-[#ff9c6f] focus-visible:outline-none focus-visible:shadow-[0_0_0_3px_var(--bg),0_24px_70px_-38px_rgba(10,12,16,0.85),0_0_34px_-18px_#ff9c6f] md:col-span-2"
-          aria-label="View RickyRicardo904 on GitHub"
+          aria-label="View RickySerrano904 on GitHub"
         >
           <div className="mb-3 flex items-center justify-between gap-3">
             <h2 className="github-calendar-title text-sm font-semibold uppercase tracking-[0.2em] transition-colors duration-300">
@@ -84,8 +84,8 @@ export default function HeroSection({
           </div>
           <div className="overflow-x-auto">
             <img
-              src="https://ghchart.rshah.org/db03fc/RickyRicardo904"
-              alt="GitHub contribution calendar for RickyRicardo904"
+              src="https://ghchart.rshah.org/db03fc/RickySerrano904"
+              alt="GitHub contribution calendar for RickySerrano904"
               className="h-auto w-full transition-[filter,opacity] duration-300 group-hover:brightness-110 group-hover:contrast-110 group-hover:saturate-125"
               loading="lazy"
             />
