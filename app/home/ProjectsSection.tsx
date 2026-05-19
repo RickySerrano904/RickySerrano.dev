@@ -1,75 +1,38 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import ArrowRightIcon from "@/app/components/ArrowRightIcon";
 import Marquee from "@/app/components/Marquee";
+import ProjectCard from "@/app/projects/ProjectCard";
 import type { Project } from "./content";
 
 type ProjectsSectionProps = {
   projects: Project[];
 };
 
-function ProjectCard({ project }: { project: Project }) {
-  return (
-    <Link
-      href={`/projects/${project.slug}`}
-      scroll={true}
-      draggable={false}
-      className="group flex h-full min-h-[31rem] w-full select-none flex-col rounded-3xl border border-[color:var(--border)] bg-[color:var(--panel)] p-3 shadow-[0_20px_30px_-28px_rgba(33,41,24,0.34)] backdrop-blur transition hover:-translate-y-1 hover:border-[color:var(--accent)] hover:shadow-[0_20px_44px_-24px_rgba(33,41,24,0.42)]"
-    >
-      <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel-strong)]">
-        {project.thumbnailSrc ? (
-          <Image
-            src={project.thumbnailSrc}
-            alt={project.thumbnailAlt ?? `${project.title} project thumbnail`}
-            fill
-            draggable={false}
-            sizes="(min-width: 1280px) 500px, (min-width: 768px) 72vw, 88vw"
-            className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.04]"
-          />
-        ) : (
-          <div className="post-thumb h-full w-full" />
-        )}
-      </div>
-      <article className="flex flex-1 flex-col p-3">
-        <h3 className="mt-3 font-display text-2xl font-semibold text-[color:var(--fg)] transition group-hover:text-[color:var(--accent)]">
-          {project.title}
-        </h3>
-        <p className="mt-3 text-base leading-7 text-[color:var(--muted)]">
-          {project.summary}
-        </p>
-        <div className="mt-4 flex flex-wrap gap-2">
-          {project.tags.map((tag) => (
-            <span
-              key={tag}
-              className="rounded-full border border-[color:var(--border)] px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--muted)]"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-        <span className="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-semibold text-[color:var(--fg)] transition-colors duration-200 group-hover:text-[color:var(--accent)]">
-          View project{" "}
-          <ArrowRightIcon className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
-        </span>
-      </article>
-    </Link>
-  );
-}
-
 export default function ProjectsSection({ projects }: ProjectsSectionProps) {
   const hasProjects = projects.length > 0;
 
   return (
     <section id="projects" className="mx-auto w-full max-w-5xl px-6 py-16">
-      <header className="max-w-3xl">
-        <h2 className="font-display text-4xl font-semibold tracking-tight text-[color:var(--fg)] sm:text-5xl">
-          Projects
-        </h2>
-        <p className="mt-4 text-base leading-7 text-[color:var(--muted)]">
-          A mix of projects and builds to showcase my work.
-        </p>
+      <header className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+        <div className="max-w-3xl">
+          <h2 className="font-display text-4xl font-semibold tracking-tight text-[color:var(--fg)] sm:text-5xl">
+            Projects
+          </h2>
+          <p className="mt-4 text-base leading-7 text-[color:var(--muted)]">
+            A mix of projects and builds to showcase my work.
+          </p>
+        </div>
+        {hasProjects ? (
+          <Link
+            href="/projects"
+            className="inline-flex w-fit items-center gap-2 rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel)] px-4 py-2 text-sm font-semibold text-[color:var(--fg)] transition-[transform,background-color,border-color,color,box-shadow] duration-200 hover:-translate-y-0.5 hover:border-[color:var(--accent)] hover:bg-[color:var(--accent)] hover:text-[color:var(--bg)] hover:shadow-[0_0_0_1px_var(--accent),0_0_26px_-5px_var(--accent)] focus-visible:border-[color:var(--accent)] focus-visible:bg-[color:var(--accent)] focus-visible:text-[color:var(--bg)] focus-visible:outline-none focus-visible:shadow-[0_0_0_3px_var(--bg),0_0_26px_-4px_var(--accent)]"
+          >
+            See all
+            <ArrowRightIcon className="h-4 w-4" />
+          </Link>
+        ) : null}
       </header>
 
       {hasProjects ? (
