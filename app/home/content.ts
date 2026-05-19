@@ -57,12 +57,12 @@ export const heroLocation = "Jacksonville, Florida";
 
 export const socialLinks: SocialLink[] = [
   {
-    href: "https://github.com/RickyRicardo904",
+    href: "https://github.com/RickySerrano904",
     label: "GitHub",
     icon: "github",
   },
   {
-    href: "https://linkedin.com/in/rickyricardo904",
+    href: "https://linkedin.com/in/rickyserrano904",
     label: "LinkedIn",
     icon: "linkedin",
   },
