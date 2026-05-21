@@ -109,10 +109,10 @@ export const roles: Role[] = [
     company: "Natural Life",
     period: "Sep 2025 - Present",
     points: [
-      "Delivered technical support for workstation, phone, printer, and network issues.",
-      "Installed and maintained IT infrastructure including cabling, workstation setups, charging stations, and surveillance systems.",
-      "Supported over 180 devices and collaborated with systems administrators and engineering on infrastructure improvements.",
-    ],
+      "Provided technical support for workstation, phone, printer, and network issues, including hardware troubleshooting, software support, and device maintenance.",
+      "Installed and maintained IT infrastructure including network cabling, workstation deployments, charging stations, surveillance systems, and other supported devices.",
+      "Coordinated with users, vendors, and internal teams to resolve technical issues and support daily operations.",
+  ],
   },
   {
     title: "IT Service Desk Technician",
@@ -120,7 +120,7 @@ export const roles: Role[] = [
     period: "Jun 2025 - Sep 2025",
     points: [
       "Resolved hardware, software, and network issues through service desk ticket workflows.",
-      "Managed user accounts and permissions in Active Directory and related systems.",
+      "Managed user accounts, password resets, group permissions, and access requests through Active Directory.",
       "Handled endpoint deployment, lifecycle management, and secure decommissioning.",
     ],
   },
