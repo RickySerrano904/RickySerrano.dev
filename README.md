@@ -18,6 +18,17 @@ This portfolio is a Next.js application built to showcase my development work, t
 - **Case studies:** MDX project pages using a shared layout for consistent summaries, screenshots, problem statements, implementation notes, and project details.
 - **Styling:** Tailwind CSS with CSS variables for theme-aware color tokens and responsive layouts.
 - **Assets:** Project screenshots served from the public project asset directory.
+- **Contact:** Cloudflare Turnstile protects the contact form before messages are sent through Resend.
+
+## Environment Variables
+
+The contact form requires these values in local development and production:
+
+- `NEXT_PUBLIC_TURNSTILE_SITE_KEY`
+- `TURNSTILE_SECRET_KEY`
+- `RESEND_API_KEY`
+- `CONTACT_FROM_EMAIL`
+- `CONTACT_TO_EMAIL`
 
 ## Design and UX Decisions
 

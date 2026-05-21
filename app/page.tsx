@@ -38,3 +38,17 @@ export default function Home() {
     </main>
   );
 }
+
+// export default function MaintenancePage() {
+//   return (
+//     <main className="min-h-screen flex items-center justify-center px-6 text-center">
+//       <div>
+//         <h1 className="text-4xl font-bold mb-4">Down for Maintenance</h1>
+//         <p className="text-lg text-gray-600">
+//           This site is temporarily unavailable while updates are being made.
+//           Please check back soon.
+//         </p>
+//       </div>
+//     </main>
+//   );
+// }
