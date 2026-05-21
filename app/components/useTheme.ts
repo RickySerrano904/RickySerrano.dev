@@ -1,41 +1,72 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useSyncExternalStore } from "react";
 
 type Theme = "light" | "dark";
+
+const themeChangeEvent = "portfolio-theme-change";
 
 function applyTheme(theme: Theme) {
   document.documentElement.classList.remove("light", "dark");
   document.documentElement.classList.add(theme);
 }
 
+function getPreferredTheme(): Theme {
+  if (typeof window === "undefined") {
+    return "light";
+  }
+
+  const savedTheme = window.localStorage.getItem("theme");
+  if (savedTheme === "light" || savedTheme === "dark") {
+    return savedTheme;
+  }
+
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+}
+
+function subscribeTheme(onStoreChange: () => void) {
+  const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+  window.addEventListener("storage", onStoreChange);
+  window.addEventListener(themeChangeEvent, onStoreChange);
+  mediaQuery.addEventListener("change", onStoreChange);
+
+  return () => {
+    window.removeEventListener("storage", onStoreChange);
+    window.removeEventListener(themeChangeEvent, onStoreChange);
+    mediaQuery.removeEventListener("change", onStoreChange);
+  };
+}
+
+function subscribeMounted() {
+  return () => {};
+}
+
+function getServerThemeSnapshot(): Theme {
+  return "light";
+}
+
 export function useTheme() {
-  const [mounted, setMounted] = useState(false);
-  const [theme, setTheme] = useState<Theme>("light");
+  const mounted = useSyncExternalStore(subscribeMounted, () => true, () => false);
+  const theme = useSyncExternalStore(
+    subscribeTheme,
+    getPreferredTheme,
+    getServerThemeSnapshot,
+  );
 
   useEffect(() => {
-    const savedTheme = window.localStorage.getItem("theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const initialTheme: Theme =
-      savedTheme === "light" || savedTheme === "dark"
-        ? savedTheme
-        : prefersDark
-          ? "dark"
-          : "light";
+    applyTheme(theme);
+  }, [theme]);
 
-    setTheme(initialTheme);
-    applyTheme(initialTheme);
-    setMounted(true);
-  }, []);
+  const toggleTheme = useCallback(() => {
+    const newTheme: Theme = theme === "light" ? "dark" : "light";
 
-  const toggleTheme = () => {
-    setTheme((currentTheme) => {
-      const newTheme: Theme = currentTheme === "light" ? "dark" : "light";
-      applyTheme(newTheme);
-      window.localStorage.setItem("theme", newTheme);
-      return newTheme;
-    });
-  };
+    applyTheme(newTheme);
+    window.localStorage.setItem("theme", newTheme);
+    window.dispatchEvent(new Event(themeChangeEvent));
+  }, [theme]);
 
   return { mounted, theme, toggleTheme };
 }

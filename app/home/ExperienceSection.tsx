@@ -40,9 +40,9 @@ export default function ExperienceSection({
   }));
 
   return (
-    <section id="experience" className="mx-auto w-full max-w-5xl px-6 py-16">
+    <section id="experience" className="mx-auto w-full max-w-5xl px-5 py-12 sm:px-6 sm:py-16">
       <header className="w-full">
-        <h2 className="font-display text-4xl font-semibold tracking-tight text-[color:var(--fg)] sm:text-5xl">
+        <h2 className="font-display text-3xl font-semibold tracking-tight text-[color:var(--fg)] sm:text-5xl">
           Experience
         </h2>
         <p className="mt-4 text-base leading-7 text-[color:var(--muted)]">
@@ -81,24 +81,24 @@ function ExperienceGroup({
   cards: ExperienceCard[];
 }) {
   return (
-    <div className="stagger mt-12 grid gap-4">
-      <h3 className="font-display text-2xl font-semibold text-[color:var(--fg)]">
+    <div className="stagger mt-10 grid gap-4 sm:mt-12">
+      <h3 className="font-display text-xl font-semibold text-[color:var(--fg)] sm:text-2xl">
         {title}
       </h3>
       {cards.map((card) => (
         <article
           key={card.id}
-          className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--panel)] p-6 shadow-[0_24px_60px_-40px_rgba(10,12,16,0.6)]"
+          className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel)] p-4 shadow-[0_24px_60px_-40px_rgba(10,12,16,0.6)] sm:rounded-3xl sm:p-6"
         >
-          <div className="flex flex-wrap items-center justify-between gap-2">
-            <h4 className="text-lg font-semibold text-[color:var(--fg)]">
+          <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
+            <h4 className="text-base font-semibold leading-6 text-[color:var(--fg)] sm:text-lg">
               {card.title}
             </h4>
-            <span className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)]">
+            <span className="text-xs uppercase tracking-[0.18em] text-[color:var(--muted)] sm:tracking-[0.3em]">
               {card.period}
             </span>
           </div>
-          <ul className="mt-4 list-disc space-y-2 pl-5 text-base leading-7 text-[color:var(--muted)]">
+          <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-6 text-[color:var(--muted)] sm:text-base sm:leading-7">
             {card.points.map((point, index) => (
               <li key={`${card.id}-${index}`}>{point}</li>
             ))}

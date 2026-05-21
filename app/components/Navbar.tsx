@@ -189,9 +189,10 @@ export default function FloatingNav() {
   };
 
   return (
-    <nav className="fixed left-1/2 top-6 z-50 w-[min(92vw,760px)] -translate-x-1/2">
-      <div className="flex items-center justify-between gap-3 rounded-full border border-[color:var(--border)] bg-[color:var(--nav)] px-3 py-2 shadow-[0_16px_40px_-24px_rgba(10,12,16,0.7)] backdrop-blur">
-        <div className="flex flex-wrap items-center gap-1">
+    <nav className="fixed inset-x-3 bottom-3 z-50 md:left-1/2 md:right-auto md:top-6 md:bottom-auto md:w-[min(92vw,760px)] md:-translate-x-1/2">
+      <div className="flex items-center justify-between gap-2 rounded-2xl border border-[color:var(--border)] bg-[color:var(--nav)] px-2 py-2 shadow-[0_16px_40px_-24px_rgba(10,12,16,0.7)] backdrop-blur md:gap-3 md:rounded-full md:px-3">
+        <div className="min-w-0 flex-1 overflow-x-auto md:overflow-visible">
+          <div className="flex w-max items-center gap-1 md:w-auto md:flex-wrap">
           {navItems.map((item) => {
             const isSectionRoute = normalizedPath === "/";
             const isRouteMatch = item.routePrefixes.some(
@@ -209,7 +210,7 @@ export default function FloatingNav() {
                 href={item.href}
                 onClick={(event) => handleNavClick(event, item, isSectionRoute)}
                 aria-current={isActive ? (isSectionRoute ? "location" : "page") : undefined}
-                className={`rounded-full px-3 py-2 text-sm font-medium transition-[color,background-color,box-shadow,transform] duration-200 ${
+                className={`rounded-full px-2.5 py-2 text-xs font-medium transition-[color,background-color,box-shadow,transform] duration-200 md:px-3 md:text-sm ${
                   isActive
                     ? "bg-[color:var(--nav-active)] text-[color:var(--fg)] shadow-[0_0_0_1px_var(--border),0_0_16px_-10px_var(--accent)]"
                     : "text-[color:var(--muted)] hover:bg-[color:var(--nav-active)] hover:text-[color:var(--fg)] hover:shadow-[0_0_0_1px_var(--border),0_0_18px_-10px_var(--accent)]"
@@ -219,11 +220,12 @@ export default function FloatingNav() {
               </Link>
             );
           })}
+          </div>
         </div>
         <button
           type="button"
           onClick={handleToggle}
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-[color:var(--border)] bg-[color:var(--nav-active)] text-[color:var(--fg)] shadow-[0_0_0_1px_var(--border),0_0_14px_-10px_var(--accent)] transition-[transform,background-color,border-color,color,box-shadow] duration-200 hover:border-[color:var(--accent)] hover:bg-[color:var(--accent)] hover:text-[color:var(--bg)] hover:shadow-[0_0_0_1px_var(--accent),0_0_26px_-5px_var(--accent)] focus-visible:border-[color:var(--accent)] focus-visible:bg-[color:var(--accent)] focus-visible:text-[color:var(--bg)] focus-visible:outline-none focus-visible:shadow-[0_0_0_3px_var(--bg),0_0_26px_-4px_var(--accent)]"
+          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[color:var(--border)] bg-[color:var(--nav-active)] text-[color:var(--fg)] shadow-[0_0_0_1px_var(--border),0_0_14px_-10px_var(--accent)] transition-[transform,background-color,border-color,color,box-shadow] duration-200 hover:border-[color:var(--accent)] hover:bg-[color:var(--accent)] hover:text-[color:var(--bg)] hover:shadow-[0_0_0_1px_var(--accent),0_0_26px_-5px_var(--accent)] focus-visible:border-[color:var(--accent)] focus-visible:bg-[color:var(--accent)] focus-visible:text-[color:var(--bg)] focus-visible:outline-none focus-visible:shadow-[0_0_0_3px_var(--bg),0_0_26px_-4px_var(--accent)]"
           aria-label="Toggle dark mode"
           aria-pressed={theme === "dark"}
           title="Toggle dark mode"

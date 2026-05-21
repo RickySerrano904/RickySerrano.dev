@@ -31,7 +31,7 @@ export default function ProjectCaseStudyLayout({
   const hasProjectCta = Boolean(projectUrl && projectUrlLabel);
 
   return (
-    <main className="page-intro mx-auto w-full max-w-4xl px-6 pb-24 pt-32">
+    <main className="page-intro mx-auto w-full max-w-4xl px-5 pb-16 pt-14 sm:px-6 sm:pb-24 sm:pt-32">
       <Link
         href="/#projects"
         className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--fg)] transition-[transform,color,text-shadow] duration-200 hover:-translate-y-0.5 hover:text-[color:var(--accent)] hover:[text-shadow:0_0_8px_var(--accent),0_0_18px_var(--accent)] focus-visible:text-[color:var(--accent)] focus-visible:underline focus-visible:underline-offset-4 focus-visible:outline-none focus-visible:[text-shadow:0_0_8px_var(--accent),0_0_18px_var(--accent)]"
@@ -41,10 +41,10 @@ export default function ProjectCaseStudyLayout({
       </Link>
 
       <header className="mt-6">
-        <p className="text-xs uppercase tracking-[0.35em] text-[color:var(--muted)]">
+        <p className="text-xs uppercase tracking-[0.2em] text-[color:var(--muted)] sm:tracking-[0.35em]">
           {eyebrow}
         </p>
-        <h1 className="mt-3 font-display text-4xl font-semibold tracking-tight text-[color:var(--fg)] sm:text-5xl">
+        <h1 className="mt-3 font-display text-3xl font-semibold tracking-tight text-[color:var(--fg)] sm:text-5xl">
           {title}
         </h1>
         <p className="mt-4 text-base leading-7 text-[color:var(--muted)]">
@@ -52,7 +52,7 @@ export default function ProjectCaseStudyLayout({
         </p>
       </header>
 
-      <div className="relative mt-8 aspect-[16/9] overflow-hidden rounded-3xl border border-[color:var(--border)] bg-[color:var(--panel-strong)]">
+      <div className="relative mt-6 aspect-[16/9] overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel-strong)] sm:mt-8 sm:rounded-3xl">
         {imageSrc ? (
           <Image
             src={imageSrc}
@@ -81,17 +81,17 @@ export default function ProjectCaseStudyLayout({
         </div>
       ) : null}
 
-      <section className={`${hasProjectCta ? "mt-8" : "mt-10"} grid gap-6 md:grid-cols-2`}>
-        <article className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--panel)] p-6">
-          <h2 className="font-display text-2xl font-semibold text-[color:var(--fg)]">
+      <section className={`${hasProjectCta ? "mt-8" : "mt-10"} grid gap-4 sm:gap-6 md:grid-cols-2`}>
+        <article className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel)] p-4 sm:rounded-3xl sm:p-6">
+          <h2 className="font-display text-xl font-semibold text-[color:var(--fg)] sm:text-2xl">
             Idea
           </h2>
           <p className="mt-3 text-base leading-7 text-[color:var(--muted)]">
             {problem}
           </p>
         </article>
-        <article className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--panel)] p-6">
-          <h2 className="font-display text-2xl font-semibold text-[color:var(--fg)]">
+        <article className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel)] p-4 sm:rounded-3xl sm:p-6">
+          <h2 className="font-display text-xl font-semibold text-[color:var(--fg)] sm:text-2xl">
             Implementation
           </h2>
           <p className="mt-3 text-base leading-7 text-[color:var(--muted)]">
@@ -100,8 +100,8 @@ export default function ProjectCaseStudyLayout({
         </article>
       </section>
 
-      <section className="mt-10 rounded-3xl border border-[color:var(--border)] bg-[color:var(--panel)] p-6">
-        <h2 className="font-display text-2xl font-semibold text-[color:var(--fg)]">
+      <section className="mt-8 rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel)] p-4 sm:mt-10 sm:rounded-3xl sm:p-6">
+        <h2 className="font-display text-xl font-semibold text-[color:var(--fg)] sm:text-2xl">
           Project Details
         </h2>
         <div className="mt-3 text-[color:var(--muted)]">{children}</div>

@@ -19,16 +19,16 @@ export default function HeroSection({
   return (
     <section
       id="home"
-      className="page-intro mx-auto flex w-full max-w-5xl flex-col gap-12 px-6 pb-16 pt-32"
+      className="page-intro mx-auto flex w-full max-w-5xl flex-col gap-10 px-5 pb-12 pt-14 sm:px-6 sm:pb-16 sm:pt-32"
     >
       <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_220px] lg:items-center lg:gap-8">
         <div className="flex flex-col gap-6">
-          <h1 className="font-display text-5xl font-semibold tracking-tight text-[color:var(--fg)] sm:text-6xl">
+          <h1 className="font-display text-[2rem] font-semibold leading-[1.08] tracking-tight text-[color:var(--fg)] sm:text-6xl sm:leading-none">
             Hi, I&apos;m Ricky,
             <br />
             <TypewriterText className="inline-flex items-center" words={words} />
           </h1>
-          <p className="max-w-2xl text-lg leading-8 text-[color:var(--muted)]">
+          <p className="max-w-2xl text-base leading-7 text-[color:var(--muted)] sm:text-lg sm:leading-8">
             {description}
           </p>
           <p className="inline-flex items-center gap-2 text-sm font-medium tracking-wide text-[color:var(--muted)]">
@@ -56,8 +56,8 @@ export default function HeroSection({
             ))}
           </div>
         </div>
-        <div className="flex justify-center md:justify-end">
-          <div className="relative aspect-square w-full max-w-[200px] overflow-hidden rounded-full border border-[color:var(--border)] bg-[color:var(--panel-strong)] shadow-[0_24px_50px_-42px_rgba(10,12,16,0.7)]">
+        <div className="flex justify-start md:justify-end">
+          <div className="relative aspect-square w-full max-w-[160px] overflow-hidden rounded-full border border-[color:var(--border)] bg-[color:var(--panel-strong)] shadow-[0_24px_50px_-42px_rgba(10,12,16,0.7)] sm:max-w-[200px]">
             <Image
               src="/me/headshot.jpg"
               alt="Headshot of Ricky Serrano"
@@ -70,11 +70,11 @@ export default function HeroSection({
         </div>
         <a
           href="https://github.com/RickySerrano904"
-          className="github-calendar-card group block w-full max-w-2xl rounded-3xl border border-white/10 bg-[#151922] p-4 shadow-[0_24px_60px_-40px_rgba(10,12,16,0.75)] transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-0.5 hover:border-[#ff9c6f] hover:shadow-[0_24px_70px_-38px_rgba(10,12,16,0.85),0_0_34px_-18px_#ff9c6f] focus-visible:-translate-y-0.5 focus-visible:border-[#ff9c6f] focus-visible:outline-none focus-visible:shadow-[0_0_0_3px_var(--bg),0_24px_70px_-38px_rgba(10,12,16,0.85),0_0_34px_-18px_#ff9c6f] md:col-span-2"
+          className="github-calendar-card group block w-full max-w-2xl rounded-2xl border border-white/10 bg-[#151922] p-3 shadow-[0_24px_60px_-40px_rgba(10,12,16,0.75)] transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-0.5 hover:border-[#ff9c6f] hover:shadow-[0_24px_70px_-38px_rgba(10,12,16,0.85),0_0_34px_-18px_#ff9c6f] focus-visible:-translate-y-0.5 focus-visible:border-[#ff9c6f] focus-visible:outline-none focus-visible:shadow-[0_0_0_3px_var(--bg),0_24px_70px_-38px_rgba(10,12,16,0.85),0_0_34px_-18px_#ff9c6f] sm:rounded-3xl sm:p-4 md:col-span-2"
           aria-label="View RickySerrano904 on GitHub"
         >
-          <div className="mb-3 flex items-center justify-between gap-3">
-            <h2 className="github-calendar-title text-sm font-semibold uppercase tracking-[0.2em] transition-colors duration-300">
+          <div className="mb-3 flex flex-col gap-1.5 sm:flex-row sm:items-center sm:justify-between sm:gap-3">
+            <h2 className="github-calendar-title text-xs font-semibold uppercase tracking-[0.14em] transition-colors duration-300 sm:text-sm sm:tracking-[0.2em]">
               GitHub Contributions
             </h2>
             <span className="github-calendar-link inline-flex items-center gap-1.5 text-xs font-semibold transition-colors duration-300">

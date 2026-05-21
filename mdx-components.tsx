@@ -4,13 +4,13 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     h1: (props) => (
       <h1
-        className="font-display text-4xl font-semibold tracking-tight text-[color:var(--fg)] sm:text-5xl"
+        className="font-display text-3xl font-semibold tracking-tight text-[color:var(--fg)] sm:text-5xl"
         {...props}
       />
     ),
     h2: (props) => (
       <h2
-        className="mt-10 font-display text-2xl font-semibold tracking-tight text-[color:var(--fg)]"
+        className="mt-8 font-display text-xl font-semibold tracking-tight text-[color:var(--fg)] sm:mt-10 sm:text-2xl"
         {...props}
       />
     ),

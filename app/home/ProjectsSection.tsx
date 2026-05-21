@@ -14,10 +14,10 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
   const hasProjects = projects.length > 0;
 
   return (
-    <section id="projects" className="mx-auto w-full max-w-5xl px-6 py-16">
+    <section id="projects" className="mx-auto w-full max-w-5xl px-5 py-12 sm:px-6 sm:py-16">
       <header className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
         <div className="max-w-3xl">
-          <h2 className="font-display text-4xl font-semibold tracking-tight text-[color:var(--fg)] sm:text-5xl">
+          <h2 className="font-display text-3xl font-semibold tracking-tight text-[color:var(--fg)] sm:text-5xl">
             Projects
           </h2>
           <p className="mt-4 text-base leading-7 text-[color:var(--muted)]">
@@ -38,7 +38,7 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
       {hasProjects ? (
         <Marquee
           ariaLabel="Featured projects"
-          className="mt-8"
+          className="mt-6 sm:mt-8"
           duration="38s"
           itemWidth="min(82vw, 20rem)"
         >
@@ -47,7 +47,7 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
           ))}
         </Marquee>
       ) : (
-        <div className="mt-8 rounded-3xl border border-[color:var(--border)] bg-[color:var(--panel)] p-6 text-[color:var(--muted)]">
+        <div className="mt-8 rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel)] p-4 text-[color:var(--muted)] sm:rounded-3xl sm:p-6">
           Projects will be added here soon.
         </div>
       )}

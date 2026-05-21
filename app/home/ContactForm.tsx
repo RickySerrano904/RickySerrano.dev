@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 
 type SendState = "idle" | "sending" | "sent" | "error";
@@ -11,9 +11,20 @@ export default function ContactForm() {
   const [message, setMessage] = useState("");
   const [website, setWebsite] = useState("");
   const [turnstileToken, setTurnstileToken] = useState("");
+  const [useCompactTurnstile, setUseCompactTurnstile] = useState(false);
   const [sendState, setSendState] = useState<SendState>("idle");
   const [statusMessage, setStatusMessage] = useState("");
   const turnstileRef = useRef<TurnstileInstance>(null);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 480px)");
+    const syncTurnstileSize = () => setUseCompactTurnstile(mediaQuery.matches);
+
+    syncTurnstileSize();
+    mediaQuery.addEventListener("change", syncTurnstileSize);
+
+    return () => mediaQuery.removeEventListener("change", syncTurnstileSize);
+  }, []);
 
   const canSubmit = useMemo(() => {
     return (
@@ -61,7 +72,7 @@ export default function ContactForm() {
       setTurnstileToken("");
       turnstileRef.current?.reset();
       setSendState("sent");
-      setStatusMessage("✅ Message sent! I will get back to you as soon as possible.");
+      setStatusMessage("Message sent! I will get back to you as soon as possible.");
     } catch {
       setTurnstileToken("");
       turnstileRef.current?.reset();
@@ -142,7 +153,10 @@ export default function ContactForm() {
                 onSuccess={(token) => setTurnstileToken(token)}
                 onExpire={() => setTurnstileToken("")}
                 onError={() => setTurnstileToken("")}
-                options={{ theme: "auto" }}
+                options={{
+                  theme: "auto",
+                  size: useCompactTurnstile ? "compact" : "flexible",
+                }}
               />
             </div>
           </div>

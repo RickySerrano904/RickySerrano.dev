@@ -90,11 +90,13 @@ export default function TypewriterText({
     <span
       className={className}
       style={{
-        minWidth: `${widestWordLength}ch`,
+        minWidth: `min(${widestWordLength}ch, 100%)`,
+        maxWidth: "100%",
         minHeight: "1em",
         display: "inline-flex",
+        flexWrap: "wrap",
         alignItems: "baseline",
-        whiteSpace: "pre",
+        whiteSpace: "normal",
       }}
       aria-label={currentWord}
     >

@@ -105,9 +105,9 @@ const skillIcons: Record<string, SkillIconConfig> = {
 
 export default function SkillsSection({ skills }: SkillsSectionProps) {
   return (
-    <section id="skills" className="mx-auto w-full max-w-5xl px-6 py-16">
+    <section id="skills" className="mx-auto w-full max-w-5xl px-5 py-12 sm:px-6 sm:py-16">
       <header className="max-w-2xl">
-        <h2 className="font-display text-4xl font-semibold tracking-tight text-[color:var(--fg)] sm:text-5xl">
+        <h2 className="font-display text-3xl font-semibold tracking-tight text-[color:var(--fg)] sm:text-5xl">
           Skills
         </h2>
         <p className="mt-4 text-base leading-7 text-[color:var(--muted)]">
@@ -116,13 +116,13 @@ export default function SkillsSection({ skills }: SkillsSectionProps) {
         </p>
       </header>
 
-      <div className="stagger mt-10 grid gap-6 md:grid-cols-3">
+      <div className="stagger mt-8 grid gap-4 sm:mt-10 sm:gap-6 md:grid-cols-3">
         {skills.map((group) => (
           <article
             key={group.title}
-            className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--panel)] p-6 shadow-[0_24px_60px_-40px_rgba(10,12,16,0.6)]"
+            className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel)] p-4 shadow-[0_24px_60px_-40px_rgba(10,12,16,0.6)] sm:rounded-3xl sm:p-6"
           >
-            <h3 className="font-display text-2xl font-semibold text-[color:var(--fg)]">
+            <h3 className="font-display text-xl font-semibold text-[color:var(--fg)] sm:text-2xl">
               {group.title}
             </h3>
             <p className="mt-3 text-sm leading-6 text-[color:var(--muted)]">
@@ -132,10 +132,10 @@ export default function SkillsSection({ skills }: SkillsSectionProps) {
               {group.items.map((item) => (
                 <li
                   key={item}
-                  className="flex h-11 w-full items-center gap-3 rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel-strong)] px-3 text-xs font-semibold uppercase tracking-[0.14em] text-[color:var(--muted)]"
+                  className="flex min-h-11 w-full items-center gap-3 rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel-strong)] px-3 py-2 text-xs font-semibold uppercase tracking-[0.08em] text-[color:var(--muted)] sm:h-11 sm:py-0 sm:tracking-[0.14em]"
                 >
                   <SkillIcon item={item} />
-                  <span className="truncate">{item}</span>
+                  <span className="min-w-0 break-words">{item}</span>
                 </li>
               ))}
             </ul>

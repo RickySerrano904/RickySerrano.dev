@@ -19,7 +19,7 @@ export default function ProjectCard({
       href={`/projects/${project.slug}`}
       scroll={true}
       draggable={false}
-      className={`group flex h-full min-h-[31rem] w-full select-none flex-col rounded-3xl border border-[color:var(--border)] bg-[color:var(--panel)] p-3 shadow-[0_20px_30px_-28px_rgba(33,41,24,0.34)] backdrop-blur transition hover:-translate-y-1 hover:border-[color:var(--accent)] hover:shadow-[0_20px_44px_-24px_rgba(33,41,24,0.42)] ${className}`}
+      className={`group flex h-full min-h-[28rem] w-full select-none flex-col rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel)] p-2 shadow-[0_20px_30px_-28px_rgba(33,41,24,0.34)] backdrop-blur transition hover:-translate-y-1 hover:border-[color:var(--accent)] hover:shadow-[0_20px_44px_-24px_rgba(33,41,24,0.42)] sm:min-h-[31rem] sm:rounded-3xl sm:p-3 ${className}`}
     >
       <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel-strong)]">
         {project.thumbnailSrc ? (
@@ -36,17 +36,17 @@ export default function ProjectCard({
         )}
       </div>
       <article className="flex flex-1 flex-col p-3">
-        <h3 className="mt-3 font-display text-2xl font-semibold text-[color:var(--fg)] transition group-hover:text-[color:var(--accent)]">
+        <h3 className="mt-3 font-display text-xl font-semibold text-[color:var(--fg)] transition group-hover:text-[color:var(--accent)] sm:text-2xl">
           {project.title}
         </h3>
-        <p className="mt-3 text-base leading-7 text-[color:var(--muted)]">
+        <p className="mt-3 text-sm leading-6 text-[color:var(--muted)] sm:text-base sm:leading-7">
           {project.summary}
         </p>
         <div className="mt-4 flex flex-wrap gap-2">
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="rounded-full border border-[color:var(--border)] px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--muted)]"
+              className="rounded-full border border-[color:var(--border)] px-2.5 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-[color:var(--muted)] sm:px-3 sm:text-xs sm:tracking-[0.2em]"
             >
               {tag}
             </span>

@@ -89,6 +89,16 @@ body {
     linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 40%);
 }
 
+@media (max-width: 767px) {
+  html {
+    scroll-padding-top: 1rem;
+  }
+
+  body {
+    padding-bottom: 5.25rem;
+  }
+}
+
 .font-display {
   font-family: var(--font-display), serif;
 }
