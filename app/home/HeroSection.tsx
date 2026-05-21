@@ -123,6 +123,25 @@ function SocialIconSvg({ icon }: { icon: SocialIcon }) {
     );
   }
 
+  if (icon === "kofi") {
+    return (
+      <svg
+        aria-hidden="true"
+        viewBox="0 0 24 24"
+        className="h-8 w-8"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.9"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M4.5 7.5h12.25v6A4.75 4.75 0 0 1 12 18.25H9.25A4.75 4.75 0 0 1 4.5 13.5v-6Z" />
+        <path d="M16.75 9.75h1.75a2.25 2.25 0 0 1 0 4.5h-1.75" />
+        <path d="M7.8 11.35c0-1.2 1.5-1.6 2.45-.5.95-1.1 2.45-.7 2.45.5 0 1.3-1.55 2.35-2.45 3.05-.9-.7-2.45-1.75-2.45-3.05Z" />
+      </svg>
+    );
+  }
+
   return (
     <svg
       aria-hidden="true"

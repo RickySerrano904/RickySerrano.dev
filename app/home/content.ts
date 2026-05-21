@@ -34,7 +34,7 @@ export type SkillGroup = {
   items: string[];
 };
 
-export type SocialIcon = "github" | "linkedin" | "youtube";
+export type SocialIcon = "github" | "linkedin" | "youtube" | "kofi";
 
 export type SocialLink = {
   href: string;
@@ -67,10 +67,15 @@ export const socialLinks: SocialLink[] = [
     icon: "linkedin",
   },
   {
-    href: "https://youtube.com/@yourname",
-    label: "YouTube",
-    icon: "youtube",
+    href: "https://ko-fi.com/Rickyserrano904",
+    label: "Ko-fi",
+    icon: "kofi",
   },
+  // {
+  //   href: "https://youtube.com/@yourname",
+  //   label: "YouTube",
+  //   icon: "youtube",
+  // },
 ];
 
 export const aboutParagraphs = [
