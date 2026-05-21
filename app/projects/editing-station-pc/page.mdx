@@ -43,21 +43,21 @@ This was a custom PC build I put together for my sister, designed for productivi
 
 <div className="mt-4 overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel-strong)]">
   {[
-    ["CPU", "AMD Ryzen 9 9900X 4.4 GHz 12-Core Processor", "/projects/editing-station-pc/AMDRyzen9.jpg"],
-    ["Cooler", "Corsair NAUTILUS 240 RS ARGB 74.37 CFM Liquid CPU Cooler", "/projects/editing-station-pc/CorsairNautilus.jpg"],
-    ["Motherboard", "Asus X870 MAX GAMING WIFI7 W ATX AM5 Motherboard", "/projects/editing-station-pc/AsusX870.jpg"],
-    ["Memory", "G.Skill Flare X5 64 GB (2 x 32 GB) DDR5-6000 CL36 Memory", "/projects/editing-station-pc/RAM.jpg"],
-    ["Storage", "Samsung 9100 PRO 2 TB M.2-2280 PCIe 5.0 X4 NVME Solid State Drive", "/projects/editing-station-pc/Samsung9100.jpg"],
-    ["GPU", "Gigabyte WINDFORCE OC 3X GeForce RTX 2070 SUPER 8 GB Video Card", "/projects/editing-station-pc/RTX2070.jpg"],
-    ["Case", "Fractal Design North ATX Mid Tower Case", "/projects/editing-station-pc/FractalNorth.jpg"],
-    ["PSU", "MSI MAG A750GL PCIE5 750 W 80+ Gold Certified Fully Modular ATX Power Supply", "/projects/editing-station-pc/MSIMag.jpg"],
-    ["OS", "Microsoft Windows 11 Home OEM - DVD 64-bit", "/projects/editing-station-pc/Windows11.jpg"],
-    ["Fans", "3 x NZXT F120Q (2024) 74.26 CFM 120 mm Fan", "/projects/editing-station-pc/NZXTF120.jpg"],
-    ["Cables", "AsiaHorse white sleeved PSU extension cable kit", "/projects/editing-station-pc/AsiaHorseCables.jpg"],
-  ].map(([category, part, imageSrc]) => (
+    ["CPU", "AMD Ryzen 9 9900X 4.4 GHz 12-Core Processor", "$389.00", "/projects/editing-station-pc/AMDRyzen9.jpg"],
+    ["Cooler", "Corsair NAUTILUS 240 RS ARGB 74.37 CFM Liquid CPU Cooler", "$100.00", "/projects/editing-station-pc/CorsairNautilus.jpg"],
+    ["Motherboard", "Asus X870 MAX GAMING WIFI7 W ATX AM5 Motherboard", "$187.00", "/projects/editing-station-pc/AsusX870.jpg"],
+    ["Memory", "G.Skill Flare X5 64 GB (2 x 32 GB) DDR5-6000 CL36 Memory", "$669.00", "/projects/editing-station-pc/RAM.jpg"],
+    ["Storage", "Samsung 9100 PRO 2 TB M.2-2280 PCIe 5.0 X4 NVME Solid State Drive", "$254.00", "/projects/editing-station-pc/Samsung9100.jpg"],
+    ["GPU", "Gigabyte WINDFORCE OC 3X GeForce RTX 2070 SUPER 8 GB Video Card", "$500.00", "/projects/editing-station-pc/RTX2070.jpg", true],
+    ["Case", "Fractal Design North ATX Mid Tower Case", "$145.00", "/projects/editing-station-pc/FractalNorth.jpg"],
+    ["PSU", "MSI MAG A750GL PCIE5 750 W 80+ Gold Certified Fully Modular ATX Power Supply", "$86.00", "/projects/editing-station-pc/MSIMag.jpg"],
+    ["OS", "Microsoft Windows 11 Home OEM - DVD 64-bit", "$100.00", "/projects/editing-station-pc/Windows11.jpg"],
+    ["Fans", "3 x NZXT F120Q (2024) 74.26 CFM 120 mm Fan", "$15.00 x 3", "/projects/editing-station-pc/NZXTF120.jpg"],
+    ["Cables", "AsiaHorse white sleeved PSU extension cable kit", "$30.00", "/projects/editing-station-pc/AsiaHorseCables.jpg", true],
+  ].map(([category, part, price, imageSrc, donated]) => (
     <div
       key={`${category}-${part}`}
-      className="grid grid-cols-[3.25rem_minmax(0,1fr)] gap-3 border-b border-[color:var(--border)] px-3 py-4 last:border-b-0 sm:grid-cols-[4.5rem_7rem_minmax(0,1fr)] sm:items-center sm:gap-4 sm:px-4"
+      className="grid grid-cols-[3.25rem_minmax(0,1fr)] gap-3 border-b border-[color:var(--border)] px-3 py-4 last:border-b-0 sm:grid-cols-[4.5rem_7rem_minmax(0,1fr)_5.5rem] sm:items-center sm:gap-4 sm:px-4"
     >
       <span className="flex h-[3.25rem] w-[3.25rem] items-center justify-center overflow-hidden rounded-xl border border-[color:var(--border)] bg-white p-2 sm:h-16 sm:w-16">
         <img
@@ -73,9 +73,24 @@ This was a custom PC build I put together for my sister, designed for productivi
       <span className="col-span-2 text-sm font-semibold leading-6 text-[color:var(--fg)] sm:col-span-1">
         {part}
       </span>
+      <span
+        className={`col-start-2 text-sm font-semibold text-[color:var(--muted)] sm:col-start-auto sm:text-right ${
+          donated ? "line-through opacity-60" : ""
+        }`}
+      >
+        {price}
+      </span>
     </div>
   ))}
 </div>
+
+<p className="mt-4 text-sm font-semibold text-[color:var(--fg)]">
+  Out-of-pocket total: $1,975.00
+</p>
+
+<p className="mt-2 text-sm text-[color:var(--muted)]">
+  Donated parts are shown with crossed-out prices.
+</p>
 
 ## What I Learned
 
