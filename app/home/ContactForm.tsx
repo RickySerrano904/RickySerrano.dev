@@ -61,7 +61,7 @@ export default function ContactForm() {
       setTurnstileToken("");
       turnstileRef.current?.reset();
       setSendState("sent");
-      setStatusMessage("Message sent. I will get back to you soon.");
+      setStatusMessage("✅ Message sent! I will get back to you as soon as possible.");
     } catch {
       setTurnstileToken("");
       turnstileRef.current?.reset();
@@ -158,8 +158,8 @@ export default function ContactForm() {
         <p
           className={`rounded-2xl border px-4 py-3 text-sm ${
             sendState === "sent"
-              ? "border-[color:var(--accent)] text-[color:var(--fg)]"
-              : "border-red-500/45 text-red-600 dark:text-red-300"
+              ? "border-green-500/60 bg-green-500/10 text-green-700 dark:text-green-300"
+              : "border-red-500/45 bg-red-500/10 text-red-600 dark:text-red-300"
           }`}
           role="status"
         >
