@@ -60,7 +60,7 @@ export default function ProjectCaseStudyLayout({
             fill
             sizes="(min-width: 1024px) 896px, 100vw"
             loading="eager"
-            className="h-full w-full object-contain"
+            className="h-full w-full object-cover"
           />
         ) : (
           <div className="post-thumb h-full w-full" />
