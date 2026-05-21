@@ -193,6 +193,15 @@ export const projects: Project[] = [
     thumbnailSrc: "/projects/editing-station-pc/maddy-build-inside.jpg",
     thumbnailAlt: "Photo of Editing Station PC",
   },
+  {
+    slug: "lancool-207-gaming-pc",
+    title: "Lancool 207 Gaming PC",
+    summary:
+      "A white 1440p gaming PC built around a Ryzen 5 9600X, RTX 5070, fast DDR5 memory, and long-term upgrade headroom.",
+    tags: ["PC Building", "Gaming", "Hardware"],
+    thumbnailSrc: "/projects/Lancool-207-gaming-pc/lancool.jpg",
+    thumbnailAlt: "White Lian Li Lancool 207 gaming PC case",
+  },
 ];
 
 export const skills: SkillGroup[] = [

@@ -1,0 +1,102 @@
+import ProjectCaseStudyLayout from "@/app/projects/ProjectCaseStudyLayout";
+
+export const metadata = {
+  title: "Lancool 207 Gaming PC | Projects",
+  description:
+    "Case study for a white 1440p gaming PC built around a Ryzen 5 9600X, RTX 5070, fast DDR5 memory, and long-term upgrade room.",
+};
+
+<ProjectCaseStudyLayout
+  eyebrow="Custom PC Build"
+  title="Lancool 207 Gaming PC"
+  summary="A white 1440p gaming PC built for my younger sister with a $2,000 target budget, strong current-gen performance, and enough headroom to avoid upgrades for a long time."
+  problem="Build a clean white gaming PC for modern 1440p titles while getting as much performance as possible out of a roughly $2,000 budget."
+  solution="Balanced a Ryzen 5 9600X, RTX 5070, 32 GB of DDR5, fast PCIe 5.0 storage, and an 850 W Gold power supply so the system feels fast now and still has room for future upgrades."
+  imageSrc="/projects/Lancool-207-gaming-pc/lancool.jpg"
+  imageAlt="White Lian Li Lancool 207 gaming PC case"
+>
+
+This build was for my younger sister, who has been wanting to get into PC gaming for a while. 
+She gave me a $2,000 budget, so the goal was to squeeze out as much performance as possible while still 
+building something cohesive, clean, and elegant.
+
+She plans to play newer games, including Marvel Rivals, on a 1440p monitor. I wanted the system to 
+feel strong enough that she would not have to think about upgrades for a long time and could run most 
+games confidently at high or max graphics settings.
+
+The final price came in at $2,192.94, so it did go over the target. That is not ideal, but a few of the 
+choices were made with the "buy once, cry once" mindset. I would rather spend a little more in the right 
+places than save money now and create an obvious upgrade problem later.
+
+## Build Goals
+
+- Target strong 1440p gaming performance for current games.
+- Keep the system close to the $2,000 budget while avoiding weak links.
+- Use a clean white aesthetic across the case, cooler, motherboard, GPU, and power supply cables.
+- Choose parts that leave practical upgrade room instead of building around the bare minimum.
+- Keep cable routing clean so the finished build looks intentional from every visible angle.
+
+## Parts List
+
+<div className="mt-4 overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel-strong)]">
+  {[
+    ["CPU", "AMD Ryzen 5 9600X 3.9 GHz 6-Core Processor", "$179.00", "/projects/Lancool-207-gaming-pc/ryzen5.jpg"],
+    ["Cooler", "Corsair NAUTILUS 360 RS ARGB 74.37 CFM Liquid CPU Cooler", "$99.99", "/projects/Lancool-207-gaming-pc/nautilus.jpg"],
+    ["Motherboard", "Asus B850 MAX GAMING WIFI W ATX AM5 Motherboard", "$169.99", "/projects/Lancool-207-gaming-pc/b850.jpg"],
+    ["Memory", "Crucial Pro Overclocking 32 GB (2 x 16 GB) DDR5-6000 CL36 Memory", "$409.99", "/projects/Lancool-207-gaming-pc/ram.jpg"],
+    ["Storage", "Samsung 9100 PRO 2 TB M.2-2280 PCIe 5.0 X4 NVME SSD", "$444.99", "/projects/Lancool-207-gaming-pc/m2.jpg"],
+    ["GPU", "Gigabyte AERO OC GeForce RTX 5070 12 GB Video Card", "$689.99", "/projects/Lancool-207-gaming-pc/5070.jpg"],
+    ["Case", "Lian Li Lancool 207 ATX Mid Tower Case", "$89.99", "/projects/Lancool-207-gaming-pc/lancool.jpg"],
+    ["PSU", "MSI MAG A850GL PCIE5 850 W 80+ Gold Fully Modular ATX Power Supply", "$109.00", "/projects/Lancool-207-gaming-pc/psu.jpg"],
+  ].map(([category, part, price, imageSrc]) => (
+    <div
+      key={`${category}-${part}`}
+      className="grid grid-cols-[4rem_minmax(0,1fr)] gap-4 border-b border-[color:var(--border)] px-4 py-4 last:border-b-0 sm:grid-cols-[4.5rem_7rem_minmax(0,1fr)_5.5rem] sm:items-center"
+    >
+      <span className="flex h-16 w-16 items-center justify-center overflow-hidden rounded-xl border border-[color:var(--border)] bg-white p-2">
+        <img
+          src={imageSrc}
+          alt=""
+          loading="lazy"
+          className="h-full w-full object-contain"
+        />
+      </span>
+      <span className="col-start-2 inline-flex w-fit rounded-full border border-[color:var(--border)] bg-[color:var(--panel)] px-2 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-[color:var(--muted)] sm:col-start-auto">
+        {category}
+      </span>
+      <span className="col-span-2 text-sm font-semibold leading-6 text-[color:var(--fg)] sm:col-span-1">
+        {part}
+      </span>
+      <span className="col-start-2 text-sm font-semibold text-[color:var(--muted)] sm:col-start-auto sm:text-right">
+        {price}
+      </span>
+    </div>
+  ))}
+</div>
+
+<p className="mt-4 text-sm font-semibold text-[color:var(--fg)]">
+  Total: $2,192.94
+</p>
+
+## Key Decisions
+
+- **CPU:** The Ryzen 5 9600X is one of the best gaming values in this price range. It gives her strong current performance, and the AM5 platform leaves a clean upgrade path later.
+- **GPU:** The RTX 5070 was the largest single performance decision in the build. Since the target is 1440p gaming, this is where the budget needed to work hardest.
+- **Power supply:** I could have gotten away with a smaller PSU, but I have learned not to build around "just enough" wattage. An 850 W Gold unit gives the system overhead for future upgrades and possible overclocking.
+- **Storage:** A 1 TB drive would have saved money, but modern games are large enough that 1 TB fills up quickly. A 2 TB NVMe drive makes more sense for a gaming system that should stay comfortable for years.
+- **Memory:** RAM pricing was rough on this build. A 32 GB DDR5 kit is expensive right now, but it is the sweet spot for this use case. Going to 64 GB would have been overkill.
+- **Cooler:** This was my second time using a Corsair Nautilus cooler, and I have been happy with them. They look elegant, cool well, stay quiet, and cost less than many similar AIOs from major brands.
+- **Cables:** For a white build, matching power supply cables matter. I have made the mistake before of using a black PSU in a white case and then needing white extensions afterward. Starting with the right PSU avoids extra cost and an extra possible failure point.
+
+## Cable Management
+
+I took my time routing cables because exposed cable runs are one of my biggest pet peeves in PC builds. A clean build starts before anything is plugged in. You have to think through which headers you plan to use, where each run will enter the visible chamber, and how much slack each cable needs.
+
+With a white build, cable management matters even more because dark cables or messy routing stand out immediately. The goal was to make the inside look smartly routed, not just technically functional.
+
+## What I Learned
+
+This build was a reminder that budget PC building is rarely about picking the cheapest version of every part. The better approach is deciding where the machine should be overbuilt and where it can stay practical.
+
+For this system, the extra spend went into places that affect long-term ownership: GPU performance, storage capacity, power supply headroom, and a cohesive white aesthetic. It ended up slightly over budget, but the final system should give her a strong 1440p gaming experience for a long time.
+</ProjectCaseStudyLayout>
