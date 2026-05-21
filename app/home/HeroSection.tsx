@@ -19,7 +19,7 @@ export default function HeroSection({
   return (
     <section
       id="home"
-      className="page-intro mx-auto flex w-full max-w-5xl flex-col gap-10 px-5 pb-12 pt-14 sm:px-6 sm:pb-16 sm:pt-32"
+      className="page-intro mx-auto flex w-full max-w-5xl flex-col gap-10 px-5 pb-12 pt-28 sm:px-6 sm:pb-16 sm:pt-32"
     >
       <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_220px] lg:items-center lg:gap-8">
         <div className="flex flex-col gap-6">
@@ -56,7 +56,7 @@ export default function HeroSection({
             ))}
           </div>
         </div>
-        <div className="flex justify-start md:justify-end">
+        <div className="flex justify-center md:justify-end">
           <div className="relative aspect-square w-full max-w-[160px] overflow-hidden rounded-full border border-[color:var(--border)] bg-[color:var(--panel-strong)] shadow-[0_24px_50px_-42px_rgba(10,12,16,0.7)] sm:max-w-[200px]">
             <Image
               src="/me/headshot.jpg"

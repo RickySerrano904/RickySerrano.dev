@@ -91,11 +91,7 @@ body {
 
 @media (max-width: 767px) {
   html {
-    scroll-padding-top: 1rem;
-  }
-
-  body {
-    padding-bottom: 5.25rem;
+    scroll-padding-top: 5.25rem;
   }
 }
 
