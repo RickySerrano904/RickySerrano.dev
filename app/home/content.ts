@@ -199,8 +199,8 @@ export const projects: Project[] = [
     summary:
       "A white 1440p gaming PC built around a Ryzen 5 9600X, RTX 5070, fast DDR5 memory, and long-term upgrade headroom.",
     tags: ["PC Building", "Gaming", "Hardware"],
-    thumbnailSrc: "/projects/Lancool-207-gaming-pc/lancool.jpg",
-    thumbnailAlt: "White Lian Li Lancool 207 gaming PC case",
+    thumbnailSrc: "/projects/Lancool-207-gaming-pc/lancool-02.jpg",
+    thumbnailAlt: "Completed white Lancool 207 gaming PC build",
   },
 ];
 
