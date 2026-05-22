@@ -2,6 +2,23 @@
 
 This portfolio is a Next.js app that highlights my development work, technical experience, and IT support background. It keeps the presentation clean and personal while giving each project space for a quick overview and the technical details behind it.
 
+## Screenshots
+
+<table>
+  <tr>
+    <td><img src="public/readme-screenshots/screenshot-01.png" alt="Portfolio homepage hero section" width="100%" /></td>
+    <td><img src="public/readme-screenshots/screenshot-02.png" alt="Portfolio homepage content section" width="100%" /></td>
+  </tr>
+  <tr>
+    <td><img src="public/readme-screenshots/screenshot-03.png" alt="Portfolio project cards section" width="100%" /></td>
+    <td><img src="public/readme-screenshots/screenshot-04.png" alt="Portfolio project detail section" width="100%" /></td>
+  </tr>
+  <tr>
+    <td><img src="public/readme-screenshots/screenshot-05.png" alt="Portfolio skills and experience section" width="100%" /></td>
+    <td><img src="public/readme-screenshots/screenshot-06.png" alt="Portfolio contact section" width="100%" /></td>
+  </tr>
+</table>
+
 ## Architecture and Stack
 
 - **Framework:** Next.js App Router with React and TypeScript.
