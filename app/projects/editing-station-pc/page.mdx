@@ -12,7 +12,7 @@ export const metadata = {
   summary="A custom productivity and photo editing workstation built for my sister, Madeline, a Jacksonville/Fernandina-area photographer, balancing long-term performance with a clean white aesthetic."
   problem="Build a capable photo editing and productivity PC within a $2,000 budget while keeping the system visually aligned with a Bohemian home setup."
   solution="Prioritized reliable creator-focused parts, reused a spare GPU to control cost, and chose a white Fractal North case to make the system feel intentional in the room."
-  imageSrc="/projects/editing-station-pc/maddy-build-desktop.jpg"
+  imageSrc="/projects/editing-station-pc/maddy-08.jpg"
   imageAlt="Photo of the Editing Station PC build"
 >
 
@@ -38,6 +38,30 @@ This was a custom PC build I put together for my sister, designed for productivi
 - **Case:** White Fractal North, chosen because its white panels and wood-grain front intake fit naturally with her home's bohemian aesthetic.
 - **Cable extensions:** White sleeved extensions added so the interior matched the case and felt more finished.
 - **Budget:** Being able to reuse a GPU helped stay around the $2,000 target while still leaving room for strong core components.
+
+## Build Gallery
+
+<div className="mt-4 grid gap-4 sm:grid-cols-2">
+  {[
+    ["Interior view of the Editing Station PC", "/projects/editing-station-pc/maddy-01.jpg"],
+    ["Completed Editing Station PC on the desk", "/projects/editing-station-pc/maddy-02.jpg"],
+    ["Editing Station PC side view", "/projects/editing-station-pc/maddy-03.jpg"],
+    ["Editing Station PC setup detail", "/projects/editing-station-pc/maddy-04.jpg"],
+    ["Editing Station PC case and desk setup", "/projects/editing-station-pc/maddy-05.jpg"],
+    ["Editing Station PC thumbnail view", "/projects/editing-station-pc/maddy-06.jpg"],
+    ["Editing Station PC lighting detail", "/projects/editing-station-pc/maddy-09.png"],
+    ["Main photo of the Editing Station PC build", "/projects/editing-station-pc/maddy-08.jpg"],
+  ].map(([alt, src]) => (
+    <figure key={src} className="overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel-strong)]">
+      <img
+        src={src}
+        alt={alt}
+        loading="lazy"
+        className="aspect-[4/3] h-full w-full object-cover"
+      />
+    </figure>
+  ))}
+</div>
 
 ## Parts List
 

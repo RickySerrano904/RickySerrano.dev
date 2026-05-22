@@ -43,11 +43,11 @@ export type SocialLink = {
 };
 
 export const heroWords = [
-  "Fullstack Developer",
   "Systems Builder",
+  "Fullstack Developer",
+  "IT Professional",
   "Veteran",
   "Problem Solver",
-  "IT Professional",
 ];
 
 export const heroDescription =
@@ -191,11 +191,11 @@ export const projects: Project[] = [
   },
   {
     slug: "editing-station-pc",
-    title: "Editing Station PC",
+    title: "Fractal North Editing PC",
     summary:
       "A custom-built PC optimized for video editing workloads, featuring a high-performance CPU, GPU, and fast storage to handle large media files and complex timelines.",
     tags: ["PC Building", "Hardware Optimization"],
-    thumbnailSrc: "/projects/editing-station-pc/maddy-build-inside.jpg",
+    thumbnailSrc: "/projects/editing-station-pc/maddy-09.png",
     thumbnailAlt: "Photo of Editing Station PC",
   },
   {
