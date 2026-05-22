@@ -16,7 +16,7 @@ const bodyFont = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Your Name | Portfolio",
+  title: "Ricky Serrano | Portfolio",
   description: "A minimal portfolio with selected work, writing, and contact.",
 };
 
