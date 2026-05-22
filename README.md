@@ -1,15 +1,6 @@
-# TODO
-
-- Update Editing Station PC photos and page
-- Modify color palette?
-- Add project page for my PC
-- Add project page for family immich photo server
-- Deploy through vercel
-
-
 # Portfolio
 
-This portfolio is a Next.js application built to showcase my development work, technical experience, and background in IT support. The site balances a clean personal brand with practical project documentation, giving each project room for both a quick summary and deeper technical context.
+This portfolio is a Next.js app that highlights my development work, technical experience, and IT support background. It keeps the presentation clean and personal while giving each project space for a quick overview and the technical details behind it.
 
 ## Architecture and Stack
 
