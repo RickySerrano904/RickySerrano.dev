@@ -1,6 +1,6 @@
 # Portfolio
 
-This portfolio is a Next.js app that highlights my development work, technical experience, and IT support background. It keeps the presentation clean and personal while giving each project space for a quick overview and the technical details behind it.
+My personal portfolio built with Next.js, React, TypeScript, Tailwind CSS, and MDX to showcase selected projects, technical experience, and professional background. The site includes a responsive homepage, reusable content sections, detailed project case studies, and a contact form for visitors to get in touch.
 
 ## Screenshots
 
