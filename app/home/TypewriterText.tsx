@@ -12,13 +12,14 @@ type TypewriterTextProps = {
 
 export default function TypewriterText({
   words,
-  typingDelayMs = 95,
+  typingDelayMs = 90,
   deletingDelayMs = 55,
   holdDelayMs = 1200,
   className,
 }: TypewriterTextProps) {
+  const initialWordLength = words.find((word) => word.length > 0)?.length ?? 0;
   const [wordIndex, setWordIndex] = useState(0);
-  const [charCount, setCharCount] = useState(0);
+  const [charCount, setCharCount] = useState(() => initialWordLength);
   const [isDeleting, setIsDeleting] = useState(false);
   const [reduceMotion, setReduceMotion] = useState(false);
 
