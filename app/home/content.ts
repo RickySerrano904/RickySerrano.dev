@@ -249,7 +249,7 @@ export const skills: SkillGroup[] = [
   },
   {
     title: "Currently Learning",
-    summary: "Areas I am actively improving to broaden delivery capabilities.",
+    summary: "Technologies, tools, and concepts that I am currently exploring.",
     items: ["AWS", "CI/CD Workflows", "Kubernetes", "Automation"],
   },
 ];
