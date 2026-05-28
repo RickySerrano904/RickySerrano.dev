@@ -131,14 +131,14 @@ body {
 
 .hero-layout {
   display: grid;
-  gap: 2.5rem;
+  gap: 2rem;
 }
 
 @container hero (min-width: 58rem) {
   .hero-layout {
-    grid-template-columns: minmax(0, 1fr) 220px;
+    grid-template-columns: minmax(0, 42rem) 220px;
     align-items: center;
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
   .hero-headshot {
