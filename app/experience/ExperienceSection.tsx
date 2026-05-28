@@ -1,4 +1,4 @@
-import type { Certification, EducationItem, Role } from "./content";
+import type { Certification, EducationItem, Role } from "@/app/content";
 
 type ExperienceSectionProps = {
   education: EducationItem[];

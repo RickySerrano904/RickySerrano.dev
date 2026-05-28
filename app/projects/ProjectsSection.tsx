@@ -4,7 +4,7 @@ import Link from "next/link";
 import ArrowRightIcon from "@/app/components/ArrowRightIcon";
 import Marquee from "@/app/components/Marquee";
 import ProjectCard from "@/app/projects/ProjectCard";
-import type { Project } from "./content";
+import type { Project } from "@/app/content";
 
 type ProjectsSectionProps = {
   projects: Project[];

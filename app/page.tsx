@@ -1,9 +1,9 @@
-import AboutSection from "@/app/home/AboutSection";
-import ContactSection from "@/app/home/ContactSection";
-import ExperienceSection from "@/app/home/ExperienceSection";
-import HeroSection from "@/app/home/HeroSection";
-import ProjectsSection from "@/app/home/ProjectsSection";
-import SkillsSection from "@/app/home/SkillsSection";
+import AboutSection from "@/app/about/AboutSection";
+import ContactSection from "@/app/contact/ContactSection";
+import ExperienceSection from "@/app/experience/ExperienceSection";
+import HeroSection from "@/app/hero/HeroSection";
+import ProjectsSection from "@/app/projects/ProjectsSection";
+import SkillsSection from "@/app/skills/SkillsSection";
 import {
   aboutParagraphs,
   certifications,
@@ -15,7 +15,7 @@ import {
   roles,
   skills,
   socialLinks,
-} from "@/app/home/content";
+} from "@/app/content";
 
 export default function Home() {
   return (
