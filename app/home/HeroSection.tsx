@@ -19,9 +19,9 @@ export default function HeroSection({
   return (
     <section
       id="home"
-      className="page-intro mx-auto flex w-full max-w-5xl flex-col gap-10 px-5 pb-12 pt-28 sm:px-6 sm:pb-16 sm:pt-32"
+      className="page-intro hero-container mx-auto flex w-full max-w-5xl flex-col gap-10 px-5 pb-12 pt-28 sm:px-6 sm:pb-16 sm:pt-32"
     >
-      <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_220px] lg:items-center lg:gap-8">
+      <div className="hero-layout">
         <div className="flex flex-col gap-6">
           <h1 className="font-display text-[2rem] font-semibold leading-[1.08] tracking-tight text-[color:var(--fg)] sm:text-6xl sm:leading-none">
             Hi, I&apos;m Ricky,
@@ -56,8 +56,8 @@ export default function HeroSection({
             ))}
           </div>
         </div>
-        <div className="flex justify-center md:justify-end">
-          <div className="relative aspect-square w-full max-w-[160px] overflow-hidden rounded-full border border-[color:var(--border)] bg-[color:var(--panel-strong)] shadow-[0_24px_50px_-42px_rgba(10,12,16,0.7)] sm:max-w-[200px]">
+        <div className="hero-headshot flex justify-center">
+          <div className="relative aspect-square w-full max-w-[180px] overflow-hidden rounded-full border border-[color:var(--border)] bg-[color:var(--panel-strong)] shadow-[0_24px_50px_-42px_rgba(10,12,16,0.7)] sm:max-w-[220px]">
             <Image
               src="/me/headshot.jpg"
               alt="Headshot of Ricky Serrano"
@@ -70,7 +70,7 @@ export default function HeroSection({
         </div>
         <a
           href="https://github.com/RickySerrano904"
-          className="github-calendar-card group block w-full max-w-2xl rounded-2xl border border-white/10 bg-[#151922] p-3 shadow-[0_24px_60px_-40px_rgba(10,12,16,0.75)] transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-0.5 hover:border-[#ff9c6f] hover:shadow-[0_24px_70px_-38px_rgba(10,12,16,0.85),0_0_34px_-18px_#ff9c6f] focus-visible:-translate-y-0.5 focus-visible:border-[#ff9c6f] focus-visible:outline-none focus-visible:shadow-[0_0_0_3px_var(--bg),0_24px_70px_-38px_rgba(10,12,16,0.85),0_0_34px_-18px_#ff9c6f] sm:rounded-3xl sm:p-4 md:col-span-2"
+          className="github-calendar-card hero-calendar group block w-full max-w-2xl rounded-2xl border border-white/10 bg-[#151922] p-3 shadow-[0_24px_60px_-40px_rgba(10,12,16,0.75)] transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-0.5 hover:border-[#ff9c6f] hover:shadow-[0_24px_70px_-38px_rgba(10,12,16,0.85),0_0_34px_-18px_#ff9c6f] focus-visible:-translate-y-0.5 focus-visible:border-[#ff9c6f] focus-visible:outline-none focus-visible:shadow-[0_0_0_3px_var(--bg),0_24px_70px_-38px_rgba(10,12,16,0.85),0_0_34px_-18px_#ff9c6f] sm:rounded-3xl sm:p-4"
           aria-label="View RickySerrano904 on GitHub"
         >
           <div className="mb-3 flex flex-col gap-1.5 sm:flex-row sm:items-center sm:justify-between sm:gap-3">

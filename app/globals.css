@@ -125,6 +125,31 @@ body {
   animation: rise-in 700ms ease-out both;
 }
 
+.hero-container {
+  container: hero / inline-size;
+}
+
+.hero-layout {
+  display: grid;
+  gap: 2.5rem;
+}
+
+@container hero (min-width: 58rem) {
+  .hero-layout {
+    grid-template-columns: minmax(0, 1fr) 220px;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .hero-headshot {
+    justify-content: flex-end;
+  }
+
+  .hero-calendar {
+    grid-column: 1 / -1;
+  }
+}
+
 .stagger > * {
   animation: rise-in 700ms ease-out both;
 }
