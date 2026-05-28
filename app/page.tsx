@@ -20,21 +20,35 @@ import {
 export default function Home() {
   return (
     <main className="relative">
+      
       <HeroSection
         words={heroWords}
         description={heroDescription}
         location={heroLocation}
         socialLinks={socialLinks}
       />
-      <AboutSection paragraphs={aboutParagraphs} />
+
+      <AboutSection 
+        paragraphs={aboutParagraphs} 
+      />
+
       <ExperienceSection
         education={education}
         certifications={certifications}
         roles={roles}
       />
-      <SkillsSection skills={skills} />
-      <ProjectsSection projects={projects} />
-      <ContactSection />
+
+      <SkillsSection 
+        skills={skills} 
+      />
+
+      <ProjectsSection 
+        projects={projects} 
+      />
+
+      <ContactSection 
+      />
+
     </main>
   );
 }

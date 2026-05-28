@@ -26,7 +26,7 @@ export default function ExperienceSection({
   }));
 
   const certificationCards: ExperienceCard[] = certifications.map((cert) => ({
-    id: `${cert.name}-${cert.issuer}`,
+    id: `${cert.issuer}-${cert.name}`,
     title: `${cert.issuer} - ${cert.name}`,
     period: cert.period,
     points: cert.points,
