@@ -1,42 +1,113 @@
 import ProjectCaseStudyLayout from "@/app/projects/ProjectCaseStudyLayout";
+import ScreenshotGallery from "@/app/projects/ScreenshotGallery";
 
 export const metadata = {
   title: "Senior Helper | Projects",
   description:
-    "Case study for Senior Helper, a full-stack web app for seniors and caregivers.",
+    "Case study for Senior Helper, a full-stack care coordination and cybersecurity education app for older adults and caregivers.",
 };
 
 <ProjectCaseStudyLayout
   eyebrow="Accessibility + Safety"
   title="Senior Helper"
-  summary="A full-stack app that helps older adults and caregivers coordinate appointments and daily tasks, with built-in scam awareness education."
-  problem="Seniors need a simpler way to manage tasks and appointments, while caregivers need a clear way to support schedules without removing independence."
-  solution="Senior Helper combines scheduling, caregiver collaboration, and bite-sized online safety lessons in one accessible interface."
-    imageSrc="/projects/senior-helper/seniorhelperr.jpg"
-  imageAlt="Screenshot of Senior Helper homepage"
+  summary="A full-stack web application that helps older adults and caregivers stay organized, connected, and safer online."
+  problem="Older adults and caregivers need practical coordination tools that make appointments, support links, and online safety learning easier to manage without adding visual or cognitive friction."
+  solution="Senior Helper combines shared appointments, caregiver connections, guided cybersecurity lessons, quizzes, progress tracking, and account security tools in a high-legibility Angular and Spring Boot application."
+  imageSrc="/projects/senior-helper/seniorhelper-light-01.png"
+  imageAlt="Senior Helper landing page in light mode"
 >
 
-SeniorHelper is a full-stack web application designed for older adults and caregivers to stay organized, connected, and safer online. It combines practical care coordination features (shared appointments and caregiver links) with cybersecurity education (guided lessons, quizzes, and progress tracking) in a simple, high-legibility interface.
+Senior Helper is a full-stack web application designed for older adults and caregivers to stay organized, connected, and safer online. It combines practical care coordination features with cybersecurity education in a simple, high-legibility interface.
+
+## Screenshots
+
+<ScreenshotGallery
+  items={[
+    {
+      title: "Landing Page: Light Mode",
+      src: "/projects/senior-helper/seniorhelper-light-01.png",
+      alt: "Senior Helper landing page in light mode",
+    },
+    {
+      title: "Landing Page: Dark Mode",
+      src: "/projects/senior-helper/seniorhelper-light-02.png",
+      alt: "Senior Helper landing page in dark mode",
+    },
+    {
+      title: "Team Section",
+      src: "/projects/senior-helper/seniorhelper-light-03.png",
+      alt: "Senior Helper team section listing project contributors",
+    },
+    {
+      title: "Dashboard",
+      src: "/projects/senior-helper/seniorhelper-light-04.png",
+      alt: "Senior Helper dashboard with quick links and upcoming appointments",
+    },
+    {
+      title: "Add Appointment",
+      src: "/projects/senior-helper/seniorhelper-light-05.png",
+      alt: "Senior Helper add appointment modal on the calendar",
+    },
+    {
+      title: "Education Modules",
+      src: "/projects/senior-helper/seniorhelper-light-06.png",
+      alt: "Senior Helper online safety education module catalog",
+    },
+    {
+      title: "Module Progress",
+      src: "/projects/senior-helper/seniorhelper-light-07.png",
+      alt: "Senior Helper module page showing lesson progress",
+    },
+    {
+      title: "Module Quiz",
+      src: "/projects/senior-helper/seniorhelper-light-08.png",
+      alt: "Senior Helper quiz for the spotting fake messages module",
+    },
+    {
+      title: "Quiz Completion",
+      src: "/projects/senior-helper/seniorhelper-light-09.png",
+      alt: "Senior Helper completed module quiz section with latest score",
+    },
+    {
+      title: "Settings",
+      src: "/projects/senior-helper/seniorhelper-light-10.png",
+      alt: "Senior Helper security settings tab",
+    },
+    {
+      title: "Sign In",
+      src: "/projects/senior-helper/seniorhelper-light-11.png",
+      alt: "Senior Helper sign in form",
+    },
+    {
+      title: "Register",
+      src: "/projects/senior-helper/seniorhelper-light-12.png",
+      alt: "Senior Helper account registration form",
+    },
+  ]}
+/>
+
+## Core Features
+
+- Appointment calendar with create/edit flows, upcoming appointment summaries, and reminder notifications.
+- Caregiver and family connections so trusted users can stay aligned around schedules and support needs.
+- Online safety education modules covering fake messages, passwords, device defense, and safe shopping.
+- Lesson progress tracking and module quizzes to reinforce cybersecurity topics.
+- JWT-secured authentication with guarded routes, account settings, password updates, and role-aware workflows.
+- Accessible visual design with large text, clear navigation, responsive layouts, and persistent light/dark mode.
 
 ## Architecture and Stack
 
-- **Architecture:** Monolithic full-stack deployment where a Spring Boot API serves both REST endpoints and the built Angular SPA.
-- **Backend:** Java 17, Spring Boot 3, Spring MVC, Spring Data JPA, Spring Security, JWT auth (custom token filter + role/permission checks), PostgreSQL runtime DB, H2 for tests, and Springdoc OpenAPI for docs.
-- **Frontend:** Angular 21 with standalone components, route guards, HTTP interceptor for bearer tokens, template/reactive forms, Cypress E2E, and Angular unit test tooling.
-- **Build/Delivery:** Maven-driven pipeline builds Angular in `frontend/`, then copies `dist` assets into Spring Boot static resources for unified deployment.
+- **Architecture:** Full-stack Spring Boot application with an Angular SPA packaged into the backend for single-app deployment.
+- **Backend:** Java 17, Spring Boot 3.5, Spring MVC, Spring Data JPA, Spring Security, JWT auth, PostgreSQL, H2, Log4j2, and springdoc OpenAPI.
+- **Frontend:** Angular 21 with standalone components, route guards, an HTTP auth interceptor, reactive/template forms, Cypress E2E support, and Vitest-based unit testing.
+- **Build/Delivery:** Maven installs Node/npm, builds the Angular app in `SeniorHelper/frontend`, and copies the production browser assets into Spring Boot's public resources.
 
 ## Key UX and Accessibility Decisions
 
-- Large base typography and plain-language content to reduce cognitive and visual friction.
+- Large typography and plain-language content to reduce cognitive and visual friction.
 - Role-aware workflows for seniors, caregivers, and admins.
-- Progress-first learning UX: module completion status, quiz scoring, and clear "continue" actions.
+- Progress-first learning UX with module completion status, quiz scoring, and clear continue actions.
 - Persistent light/dark theme, mobile-responsive layouts, and consistent navigation patterns.
 - Form-first interaction with inline validation/error states and explicit labels/autocomplete hints.
 
-## Challenges and Tradeoffs
-
-- **Custom JWT revocation in memory:** Simple and effective for a course-scale app, but not ideal for multi-instance production without shared token state.
-- **Eager-loading entity relationships:** Reduced frontend complexity, but can over-fetch and impact scalability.
-- **Hardcoded local API/CORS settings:** Fast dev setup, but needs environment-based config for production.
-- **Heuristic scam detector:** Transparent and explainable for education use, but less accurate than model-based detection.
 </ProjectCaseStudyLayout>

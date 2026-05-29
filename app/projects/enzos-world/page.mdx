@@ -1,37 +1,114 @@
 import ProjectCaseStudyLayout from "@/app/projects/ProjectCaseStudyLayout";
+import ScreenshotGallery from "@/app/projects/ScreenshotGallery";
 
 export const metadata = {
   title: "Enzo's World | Projects",
   description:
-    "Case study for Enzo's World, an interactive site with playful storytelling and animations.",
+    "Case study for Enzo's World, a playful Next.js site with a gallery, MDX blog, contact form, and merch shop bridge.",
 };
 
 <ProjectCaseStudyLayout
   eyebrow="Interactive Storytelling"
   title="Enzo's World"
-  summary="A playful website built around personality-driven visuals, small animations, and reusable design tokens."
-  problem="Build a site that feels fun and personal while still staying clean, performant, and easy to maintain."
-  solution="Combined a lightweight component system with expressive typography and motion to keep the experience lively without becoming noisy."
-  imageSrc="/projects/enzos-world/enzosworld.jpg"
-  imageAlt="Screenshot of Enzo's World homepage"
+  summary="A clean, playful web application dedicated to Enzo, combining photos, field reports, contact, and merch in one warm home base."
+  problem="Create a small but complete site that feels personal and lighthearted while still supporting real content, responsive browsing, accessible interactions, and production form handling."
+  solution="Built a Next.js and MDX application with a curated gallery, blog routes, reusable themed components, a protected contact flow, and a merch bridge to Enzo's Fourthwall shop."
+  imageSrc="/projects/enzos-world/screen-1.png"
+  imageAlt="Enzo's World home page in dark mode"
   projectUrl="https://enzosworld.com"
   projectUrlLabel="Visit enzosworld.com"
 >
-Enzo's World is a modern, TypeScript-based web application built with Next.js (App Router), centered around a playful, character-driven brand voice and narrative storytelling. The project blends performance, usability, and content-driven design.
+Enzo's World is a clean, playful web application dedicated to Enzo: professional snack enthusiast, full-time good boy, and occasional author of suspiciously detailed field reports.
 
-### Key Features
+The site combines a curated photo gallery, MDX-powered blog posts, a contact form, and a merch bridge to Enzo's official Fourthwall shop. The tone is lighthearted, but the implementation focuses on responsive UI, reusable components, accessible interactions, and practical form handling.
 
-- Fully responsive layout spanning home, blog, gallery, merch, and contact pages.
-- MDX-powered blog with dynamic routing and consistent post navigation.
-- Tailwind CSS + PostCSS styling with a clean, mobile-first UI.
-- Serverless contact endpoint (`route.ts`) enabling real-time user interaction.
-- Modular, reusable component architecture (for example, Navbar and PostNav).
-- Optimized static asset handling for images and icons.
+## Overview
 
-### Portfolio Highlights
+Enzo's World is designed to feel like a small, complete home base for everything Enzo: photos, stories, contact, and merch all share the same warm visual style while staying easy to browse on any device.
 
-- Self-directed project with cohesive branding, illustration themes, and tone.
-- Full-stack implementation combining frontend UI with backend API functionality.
-- Emphasis on UX: intuitive navigation, accessible structure, and responsive design.
-- Scalable content system using Markdown/MDX for efficient publishing.
+## Screenshots
+
+<ScreenshotGallery
+  items={[
+    {
+      title: "Home: Dark Mode",
+      src: "/projects/enzos-world/screen-1.png",
+      alt: "Enzo's World home page in dark mode",
+    },
+    {
+      title: "Home: Light Mode",
+      src: "/projects/enzos-world/screen-2.png",
+      alt: "Enzo's World home page in light mode",
+    },
+    {
+      title: "Gallery Grid",
+      src: "/projects/enzos-world/screen-3.png",
+      alt: "Gallery page showing Enzo photos in a responsive grid",
+    },
+    {
+      title: "Gallery Lightbox",
+      src: "/projects/enzos-world/screen-4.png",
+      alt: "Gallery lightbox showing a selected Enzo photo",
+    },
+    {
+      title: "Blog",
+      src: "/projects/enzos-world/screen-5.png",
+      alt: "Blog page listing Enzo field reports",
+    },
+    {
+      title: "About",
+      src: "/projects/enzos-world/screen-6.png",
+      alt: "About page with Enzo details and stats",
+    },
+    {
+      title: "Contact",
+      src: "/projects/enzos-world/screen-7.png",
+      alt: "Contact page with message form and team details",
+    },
+    {
+      title: "Merch Shop Link",
+      src: "/projects/enzos-world/screen-8.png",
+      alt: "Merch page linking to the Enzo shop",
+    },
+    {
+      title: "Shop Landing",
+      src: "/projects/enzos-world/screen-9.png",
+      alt: "Enzo's World Shop landing page",
+    },
+    {
+      title: "Featured Products",
+      src: "/projects/enzos-world/screen-10.png",
+      alt: "Featured products section with an Enzo mug",
+    },
+  ]}
+/>
+
+## Features
+
+1. Gallery: A curated collection of Enzo photos organized in a responsive grid, with a lightbox for browsing full-size images.
+
+2. Blog: Lighthearted MDX posts written from Enzo's perspective, rendered through modern Next.js routing and reusable page layouts.
+
+3. Merch: A dedicated merch page that sends visitors to Enzo's official Fourthwall storefront at `shop.enzosworld.com`.
+
+4. Contact Form: A production contact flow with client-side validation, Cloudflare Turnstile verification, and email delivery through Resend.
+
+5. Responsive Design: The entire site is optimized for both desktop and mobile devices, with layouts that adapt cleanly across screen sizes.
+
+6. Custom Theme: A warm, friendly visual system with light and dark modes, reusable card components, consistent spacing, and polished typography.
+
+## Tech Stack
+
+- **Framework:** Next.js 16
+- **Library:** React 19
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS v4
+- **Content:** MDX
+- **Form protection:** Cloudflare Turnstile and a honeypot field
+- **Email:** Resend
+jur
+
+## Deployment
+
+The main site is deployed on Vercel. DNS is managed through Cloudflare, and the shop subdomain points visitors to the Fourthwall storefront.
 </ProjectCaseStudyLayout>

@@ -164,21 +164,21 @@ export const roles: Role[] = [
 export const projects: Project[] = [
   {
     slug: "senior-helper",
-    title: "SeniorHelper",
+    title: "Senior Helper",
     summary:
-      "Full-stack web app that helps older adults and caregivers coordinate tasks and appointments while teaching seniors to recognize and avoid online scams.",
+      "Full-stack web app that helps older adults and caregivers coordinate appointments, stay connected, and build online safety skills.",
     tags: ["Java", "TypeScript", "Angular", "Postgres"],
-    thumbnailSrc: "/projects/senior-helper/seniorhelperr.jpg",
-    thumbnailAlt: "Screenshot of Senior Helper homepage",
+    thumbnailSrc: "/projects/senior-helper/seniorhelper-light-01.png",
+    thumbnailAlt: "Senior Helper landing page in light mode",
   },
   {
     slug: "enzos-world",
     title: "Enzo's World",
     summary:
-      "A playful, interactive website based on Enzo, my younger sister's Golden Retriever, featuring a custom design, mock merchandise store, blog, and gallery.",
+      "A playful Next.js site for Enzo with a curated photo gallery, MDX field reports, a protected contact form, and a merch shop bridge.",
     tags: ["Next.js", "React", "TypeScript", "MDX"],
-    thumbnailSrc: "/projects/enzos-world/enzosworld.jpg",
-    thumbnailAlt: "Screenshot of Enzo's World homepage",
+    thumbnailSrc: "/projects/enzos-world/screen-1.png",
+    thumbnailAlt: "Enzo's World home page in dark mode",
   },
   {
     slug: "portfolio",
