@@ -44,10 +44,12 @@ export type SocialLink = {
 
 export const heroWords = [
   "Systems Builder",
-  "Fullstack Developer",
+  "Software Developer",
   "IT Professional",
-  "Veteran",
+  "US Navy Veteran",
   "Problem Solver",
+  "Technology Enthusiast",
+  "Digital Creator",
 ];
 
 export const heroDescription =
