@@ -43,7 +43,11 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
           itemWidth="min(82vw, 20rem)"
         >
           {projects.map((project) => (
-            <ProjectCard key={project.slug} project={project} />
+            <ProjectCard
+              key={project.slug}
+              project={getMarqueeProject(project)}
+              imageSizes="(max-width: 390px) 82vw, 320px"
+            />
           ))}
         </Marquee>
       ) : (
@@ -53,4 +57,16 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
       )}
     </section>
   );
+}
+
+function getMarqueeProject(project: Project): Project {
+  if (!project.marqueeThumbnailSrc) {
+    return project;
+  }
+
+  return {
+    ...project,
+    thumbnailAlt: project.marqueeThumbnailAlt ?? project.thumbnailAlt,
+    thumbnailSrc: project.marqueeThumbnailSrc,
+  };
 }
