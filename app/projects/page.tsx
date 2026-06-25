@@ -12,7 +12,7 @@ export default function ProjectsPage() {
   const hasProjects = projects.length > 0;
 
   return (
-    <main className="page-intro mx-auto w-full max-w-6xl px-5 pb-16 pt-14 sm:px-6 sm:pb-24 sm:pt-32">
+    <main className="page-intro mx-auto w-full max-w-6xl px-5 pb-16 pt-24 sm:px-6 sm:pb-24 sm:pt-32">
       <Link
         href="/#projects"
         className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--fg)] transition-[transform,color,text-shadow] duration-200 hover:-translate-y-0.5 hover:text-[color:var(--accent)] hover:[text-shadow:0_0_8px_var(--accent),0_0_18px_var(--accent)] focus-visible:text-[color:var(--accent)] focus-visible:underline focus-visible:underline-offset-4 focus-visible:outline-none focus-visible:[text-shadow:0_0_8px_var(--accent),0_0_18px_var(--accent)]"
