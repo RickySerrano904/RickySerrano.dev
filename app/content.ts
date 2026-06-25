@@ -24,6 +24,8 @@ export type Project = {
   title: string;
   summary: string;
   tags: string[];
+  marqueeThumbnailSrc?: string;
+  marqueeThumbnailAlt?: string;
   thumbnailSrc?: string;
   thumbnailAlt?: string;
 };
@@ -170,6 +172,7 @@ export const projects: Project[] = [
     summary:
       "Full-stack web app that helps older adults and caregivers coordinate appointments, stay connected, and build online safety skills.",
     tags: ["Java", "TypeScript", "Angular", "Postgres"],
+    marqueeThumbnailSrc: "/projects/senior-helper/seniorhelper-marquee.png",
     thumbnailSrc: "/projects/senior-helper/seniorhelper-light-01.png",
     thumbnailAlt: "Senior Helper landing page in light mode",
   },
@@ -179,6 +182,7 @@ export const projects: Project[] = [
     summary:
       "A playful Next.js site for Enzo with a curated photo gallery, MDX field reports, a protected contact form, and a merch shop bridge.",
     tags: ["Next.js", "React", "TypeScript", "MDX"],
+    marqueeThumbnailSrc: "/projects/enzos-world/screen-1-marquee.png",
     thumbnailSrc: "/projects/enzos-world/screen-1.png",
     thumbnailAlt: "Enzo's World home page in dark mode",
   },
@@ -188,6 +192,7 @@ export const projects: Project[] = [
     summary:
       "A responsive portfolio website showcasing my projects, experience, and skills as a software developer.",
     tags: ["Next.js", "React", "TypeScript", "MDX"],
+    marqueeThumbnailSrc: "/projects/portfolio-project/portfolio-marquee.png",
     thumbnailSrc: "/projects/portfolio-project/portfolio-screenshot.jpg",
     thumbnailAlt: "Screenshot of portfolio homepage",
   },
