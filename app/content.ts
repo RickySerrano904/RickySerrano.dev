@@ -32,7 +32,7 @@ export type Project = {
 
 export type SkillGroup = {
   title: string;
-  summary: string;
+  // summary: string;
   items: string[];
 };
 
@@ -219,7 +219,7 @@ export const projects: Project[] = [
 export const skills: SkillGroup[] = [
   {
     title: "Core Stack",
-    summary: "Technologies I use most often when building and shipping projects.",
+    // summary: "Technologies I use most often when building and shipping projects.",
     items: [
       "TypeScript",
       "JavaScript",
@@ -240,7 +240,7 @@ export const skills: SkillGroup[] = [
   },
   {
     title: "Tools & Platforms",
-    summary: "Day-to-day tooling for collaboration, deployment, and support.",
+    // summary: "Day-to-day tooling for collaboration, deployment, and support.",
     items: [
       "Git",
       "GitHub",
@@ -256,7 +256,7 @@ export const skills: SkillGroup[] = [
   },
   {
     title: "Currently Learning",
-    summary: "Technologies, tools, and concepts that I am currently exploring.",
+    // summary: "Technologies, tools, and concepts that I am currently exploring.",
     items: ["AWS", "CI/CD Workflows", "Kubernetes", "Automation"],
   },
 ];

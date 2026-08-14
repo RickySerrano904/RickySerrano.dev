@@ -111,8 +111,7 @@ export default function SkillsSection({ skills }: SkillsSectionProps) {
           Skills
         </h2>
         <p className="mt-4 text-base leading-7 text-[color:var(--muted)]">
-          A quick breakdown of the technologies and platforms I use to build,
-          support, and ship reliable systems.
+          A quick breakdown of the technologies and platforms that I use the most.
         </p>
       </header>
 
@@ -125,9 +124,9 @@ export default function SkillsSection({ skills }: SkillsSectionProps) {
             <h3 className="font-display text-xl font-semibold text-[color:var(--fg)] sm:text-2xl">
               {group.title}
             </h3>
-            <p className="mt-3 text-sm leading-6 text-[color:var(--muted)]">
+            {/* <p className="mt-3 text-sm leading-6 text-[color:var(--muted)]">
               {group.summary}
-            </p>
+            </p> */}
             <ul className="mt-5 grid gap-2">
               {group.items.map((item) => (
                 <li

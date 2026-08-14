@@ -82,7 +82,7 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="mt-6 grid gap-5">
+    <form onSubmit={handleSubmit} className="grid gap-5">
       <input
         value={website}
         onChange={(event) => setWebsite(event.target.value)}
