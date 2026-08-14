@@ -70,7 +70,7 @@ export default function HeroSection({
         </div>
         <a
           href="https://github.com/RickySerrano904"
-          className="github-calendar-card hero-calendar group block w-full max-w-2xl rounded-2xl border border-white/10 bg-[#151922] p-3 shadow-[0_24px_60px_-40px_rgba(10,12,16,0.75)] transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-0.5 hover:border-[#ff9c6f] hover:shadow-[0_24px_70px_-38px_rgba(10,12,16,0.85),0_0_34px_-18px_#ff9c6f] focus-visible:-translate-y-0.5 focus-visible:border-[#ff9c6f] focus-visible:outline-none focus-visible:shadow-[0_0_0_3px_var(--bg),0_24px_70px_-38px_rgba(10,12,16,0.85),0_0_34px_-18px_#ff9c6f] sm:rounded-3xl sm:p-4"
+          className="github-calendar-card hero-calendar group block w-full max-w-2xl rounded-2xl border border-[color:var(--calendar-border)] bg-[color:var(--calendar-bg)] p-3 shadow-[0_24px_60px_-40px_rgba(10,12,16,0.4)] transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-0.5 hover:border-[color:var(--accent)] hover:shadow-[0_24px_70px_-38px_rgba(10,12,16,0.5),0_0_34px_-18px_var(--accent)] focus-visible:-translate-y-0.5 focus-visible:border-[color:var(--accent)] focus-visible:outline-none focus-visible:shadow-[0_0_0_3px_var(--bg),0_24px_70px_-38px_rgba(10,12,16,0.5),0_0_34px_-18px_var(--accent)] sm:rounded-3xl sm:p-4"
           aria-label="View RickySerrano904 on GitHub"
         >
           <div className="mb-3 flex flex-col gap-1.5 sm:flex-row sm:items-center sm:justify-between sm:gap-3">

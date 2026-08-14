@@ -1,17 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #e7e1d4;
-  --fg: #10231c;
-  --muted: #536159;
-  --accent: #065f46;
-  --border: rgba(16, 35, 28, 0.16);
-  --nav: rgba(246, 241, 230, 0.9);
-  --nav-active: rgba(6, 95, 70, 0.12);
-  --panel: rgba(246, 241, 230, 0.86);
-  --panel-strong: rgba(252, 248, 240, 0.94);
-  --spot-1: rgba(6, 95, 70, 0.12);
-  --spot-2: rgba(15, 118, 110, 0.08);
+  --bg: #f5f7fb;
+  --fg: #172033;
+  --muted: #5d6878;
+  --accent: #c94d2d;
+  --border: rgba(23, 32, 51, 0.12);
+  --nav: rgba(255, 255, 255, 0.78);
+  --nav-active: rgba(201, 77, 45, 0.1);
+  --panel: rgba(255, 255, 255, 0.72);
+  --panel-strong: rgba(255, 255, 255, 0.92);
+  --spot-1: rgba(255, 177, 143, 0.3);
+  --spot-2: rgba(144, 181, 255, 0.24);
+  --calendar-bg: #fffdf9;
+  --calendar-title: #687384;
+  --calendar-link: #172033;
+  --calendar-border: rgba(23, 32, 51, 0.1);
   color-scheme: light;
 }
 
@@ -33,17 +37,21 @@
 }
 
 :root.light {
-  --bg: #e7e1d4;
-  --fg: #10231c;
-  --muted: #536159;
-  --accent: #065f46;
-  --border: rgba(16, 35, 28, 0.16);
-  --nav: rgba(246, 241, 230, 0.9);
-  --nav-active: rgba(6, 95, 70, 0.12);
-  --panel: rgba(246, 241, 230, 0.86);
-  --panel-strong: rgba(252, 248, 240, 0.94);
-  --spot-1: rgba(6, 95, 70, 0.12);
-  --spot-2: rgba(15, 118, 110, 0.08);
+  --bg: #f5f7fb;
+  --fg: #172033;
+  --muted: #5d6878;
+  --accent: #c94d2d;
+  --border: rgba(23, 32, 51, 0.12);
+  --nav: rgba(255, 255, 255, 0.78);
+  --nav-active: rgba(201, 77, 45, 0.1);
+  --panel: rgba(255, 255, 255, 0.72);
+  --panel-strong: rgba(255, 255, 255, 0.92);
+  --spot-1: rgba(255, 177, 143, 0.3);
+  --spot-2: rgba(144, 181, 255, 0.24);
+  --calendar-bg: #fffdf9;
+  --calendar-title: #687384;
+  --calendar-link: #172033;
+  --calendar-border: rgba(23, 32, 51, 0.1);
   color-scheme: light;
 }
 
@@ -59,6 +67,10 @@
   --panel-strong: rgba(18, 24, 33, 0.9);
   --spot-1: rgba(87, 112, 255, 0.3);
   --spot-2: rgba(255, 122, 88, 0.2);
+  --calendar-bg: #151922;
+  --calendar-title: #a6a7ab;
+  --calendar-link: #f3f1e8;
+  --calendar-border: rgba(255, 255, 255, 0.1);
   color-scheme: dark;
 }
 
@@ -84,9 +96,11 @@ body {
   font-family: var(--font-body), sans-serif;
   min-height: 100vh;
   background-image:
-    radial-gradient(circle at 12% 18%, var(--spot-1), transparent 60%),
-    radial-gradient(circle at 88% 10%, var(--spot-2), transparent 55%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 40%);
+    radial-gradient(circle at 10% 14%, var(--spot-1), transparent 42%),
+    radial-gradient(circle at 88% 8%, var(--spot-2), transparent 38%),
+    radial-gradient(circle at 52% 68%, var(--spot-1), transparent 42%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.48), transparent 36%);
+  background-attachment: fixed;
 }
 
 @media (max-width: 767px) {
@@ -236,17 +250,17 @@ a {
 }
 
 .github-calendar-title {
-  color: #a6a7ab;
+  color: var(--calendar-title);
 }
 
 .github-calendar-link {
-  color: #f3f1e8;
+  color: var(--calendar-link);
 }
 
 .github-calendar-card:hover .github-calendar-title,
 .github-calendar-card:hover .github-calendar-link,
 .github-calendar-link:focus-visible {
-  color: #ff9c6f;
+  color: var(--accent);
 }
 
 .github-calendar-card:hover .github-calendar-arrow,
