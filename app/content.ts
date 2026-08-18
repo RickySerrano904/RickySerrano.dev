@@ -244,7 +244,9 @@ export const skills: SkillGroup[] = [
     items: [
       "Git",
       "GitHub",
+      "GitHub Actions",
       "Docker",
+      "Cloudflare",
       "Linux",
       "Windows",
       "Active Directory",
@@ -252,11 +254,12 @@ export const skills: SkillGroup[] = [
       "Jira",
       "Figma",
       "Power BI",
+      "Swagger / OpenAPI",
     ],
   },
   {
     title: "Currently Learning",
     summary: "What's next",
-    items: ["AWS", "CI/CD Workflows", "Kubernetes", "Automation"],
+    items: ["AWS", "Kubernetes", "Playwright"],
   },
 ];

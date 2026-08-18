@@ -69,8 +69,14 @@ const skillIcons: Record<string, SkillIconConfig> = {
   GitHub: {
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
   },
+  "GitHub Actions": {
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/githubactions/githubactions-original.svg",
+  },
   Docker: {
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+  },
+  Cloudflare: {
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cloudflare/cloudflare-original.svg",
   },
   Linux: {
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg",
@@ -93,14 +99,18 @@ const skillIcons: Record<string, SkillIconConfig> = {
   "Power BI": {
     custom: "powerbi",
   },
+  Playwright: {
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/playwright/playwright-original.svg",
+  },
+  "Swagger / OpenAPI": {
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swagger/swagger-original.svg",
+  },
   AWS: {
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
   },
-  "CI/CD Workflows": { label: "CI" },
   Kubernetes: {
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-original.svg",
   },
-  Automation: { label: "Au" },
 };
 
 export default function SkillsSection({ skills }: SkillsSectionProps) {
