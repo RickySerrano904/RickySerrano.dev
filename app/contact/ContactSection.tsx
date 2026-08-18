@@ -1,6 +1,9 @@
+import { headers } from "next/headers";
 import ContactForm from "@/app/contact/ContactForm";
 
-export default function ContactSection() {
+export default async function ContactSection() {
+  const nonce = (await headers()).get("x-nonce");
+
   return (
     <section id="contact" className="mx-auto w-full max-w-5xl px-4 py-12 sm:px-6 sm:py-16">
       <header className="max-w-2xl">
@@ -13,7 +16,7 @@ export default function ContactSection() {
       </header>
 
       <section className="stagger mt-8 rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel-strong)] p-4 shadow-[0_30px_70px_-55px_rgba(10,12,16,0.75)] sm:mt-10 sm:rounded-3xl sm:p-8">
-        <ContactForm />
+        <ContactForm nonce={nonce ?? undefined} />
       </section>
     </section>
   );

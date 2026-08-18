@@ -5,7 +5,11 @@ import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 
 type SendState = "idle" | "sending" | "sent" | "error";
 
-export default function ContactForm() {
+type ContactFormProps = {
+  nonce?: string;
+};
+
+export default function ContactForm({ nonce }: ContactFormProps) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -153,6 +157,7 @@ export default function ContactForm() {
                 onSuccess={(token) => setTurnstileToken(token)}
                 onExpire={() => setTurnstileToken("")}
                 onError={() => setTurnstileToken("")}
+                scriptOptions={{ nonce }}
                 options={{
                   theme: "auto",
                   size: useCompactTurnstile ? "compact" : "flexible",

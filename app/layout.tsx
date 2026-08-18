@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
+import { connection } from "next/server";
 import FloatingNav from "./components/Navbar";
 import "./globals.css";
 
@@ -20,11 +21,13 @@ export const metadata: Metadata = {
   description: "A minimal portfolio with selected work, writing, and contact.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  await connection();
+
   return (
     <html
       lang="en"
