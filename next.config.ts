@@ -6,6 +6,15 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
+        source: "/skills/devicon-v2.17.0/:path*.svg",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      {
         source: "/(.*)",
         headers: [
           {

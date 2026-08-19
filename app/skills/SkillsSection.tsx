@@ -11,105 +11,107 @@ type SkillIconConfig = {
   label?: string;
 };
 
+const devicon = (fileName: string) => `/skills/devicon-v2.17.0/${fileName}`;
+
 const skillIcons: Record<string, SkillIconConfig> = {
   TypeScript: {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+    src: devicon("typescript-original.svg"),
   },
   JavaScript: {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+    src: devicon("javascript-original.svg"),
   },
   Java: {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+    src: devicon("java-original.svg"),
   },
   HTML: {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+    src: devicon("html5-original.svg"),
   },
   CSS: {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+    src: devicon("css3-original.svg"),
   },
   "HTML & CSS": {
     srcs: [
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+      devicon("html5-original.svg"),
+      devicon("css3-original.svg"),
     ],
   },
   Python: {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+    src: devicon("python-original.svg"),
   },
   "C#": {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg",
+    src: devicon("csharp-original.svg"),
   },
   "Spring Boot": {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg",
+    src: devicon("spring-original.svg"),
   },
   Angular: {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg",
+    src: devicon("angularjs-original.svg"),
   },
   React: {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+    src: devicon("react-original.svg"),
   },
   "Next.js": {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+    src: devicon("nextjs-original.svg"),
   },
   "Node.js": {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+    src: devicon("nodejs-original.svg"),
   },
   "Tailwind CSS": {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
+    src: devicon("tailwindcss-original.svg"),
   },
   SQL: {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+    src: devicon("mysql-original.svg"),
   },
   PostgreSQL: {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+    src: devicon("postgresql-original.svg"),
   },
   Git: {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+    src: devicon("git-original.svg"),
   },
   GitHub: {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+    src: devicon("github-original.svg"),
   },
   "GitHub Actions": {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/githubactions/githubactions-original.svg",
+    src: devicon("githubactions-original.svg"),
   },
   Docker: {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+    src: devicon("docker-original.svg"),
   },
   Cloudflare: {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cloudflare/cloudflare-original.svg",
+    src: devicon("cloudflare-original.svg"),
   },
   Linux: {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg",
+    src: devicon("linux-original.svg"),
   },
   Windows: {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows11/windows11-original.svg",
+    src: devicon("windows11-original.svg"),
   },
   "Active Directory": {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg",
+    src: devicon("azure-original.svg"),
   },
   ConnectWise: {
     custom: "connectwise",
   },
   Jira: {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg",
+    src: devicon("jira-original.svg"),
   },
   Figma: {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
+    src: devicon("figma-original.svg"),
   },
   "Power BI": {
     custom: "powerbi",
   },
   Playwright: {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/playwright/playwright-original.svg",
+    src: devicon("playwright-original.svg"),
   },
   "Swagger / OpenAPI": {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swagger/swagger-original.svg",
+    src: devicon("swagger-original.svg"),
   },
   AWS: {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
+    src: devicon("amazonwebservices-original-wordmark.svg"),
   },
   Kubernetes: {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-original.svg",
+    src: devicon("kubernetes-original.svg"),
   },
 };
 
@@ -181,6 +183,8 @@ function SkillIcon({ item }: { item: string }) {
             key={src}
             src={src}
             alt=""
+            loading="lazy"
+            decoding="async"
             className={
               iconSources.length > 1
                 ? "h-full min-w-0 flex-1 object-contain"

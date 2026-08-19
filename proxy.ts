@@ -9,7 +9,7 @@ function createContentSecurityPolicy(nonce: string) {
     form-action 'self';
     frame-ancestors 'none';
     frame-src https://challenges.cloudflare.com;
-    img-src 'self' blob: data: https://cdn.jsdelivr.net https://ghchart.rshah.org;
+    img-src 'self' blob: data: https://ghchart.rshah.org;
     object-src 'none';
     script-src 'self' 'nonce-${nonce}' 'strict-dynamic' https://challenges.cloudflare.com;
     script-src-attr 'none';
