@@ -4,13 +4,7 @@ import { connection } from "next/server";
 import FloatingNav from "./components/Navbar";
 import "./globals.css";
 
-const displayFont = Space_Grotesk({
-  variable: "--font-display",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-});
-
-const bodyFont = Space_Grotesk({
+const siteFont = Space_Grotesk({
   variable: "--font-body",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
@@ -31,7 +25,7 @@ export default async function RootLayout({
   return (
     <html
       lang="en"
-      className={`${displayFont.variable} ${bodyFont.variable}`}
+      className={siteFont.variable}
       suppressHydrationWarning
     >
       <body className="min-h-screen antialiased text-[color:var(--fg)]">

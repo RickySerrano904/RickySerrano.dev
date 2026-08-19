@@ -1,5 +1,4 @@
 import { Children, type CSSProperties, type ReactNode } from "react";
-import styles from "./Marquee.module.css";
 
 type MarqueeStyle = CSSProperties & {
   "--marquee-duration"?: string;
@@ -38,13 +37,13 @@ export default function Marquee({
 
   return (
     <div
-      className={[styles.root, className].filter(Boolean).join(" ")}
+      className={["marquee", className].filter(Boolean).join(" ")}
       aria-label={ariaLabel}
       style={style}
     >
-      <div className={styles.track}>
+      <div className="marquee-track">
         {items.map((item, index) => (
-          <div key={`item-${index}`} className={styles.item}>
+          <div key={`item-${index}`} className="marquee-item">
             {item}
           </div>
         ))}
@@ -52,7 +51,7 @@ export default function Marquee({
         {items.map((item, index) => (
           <div
             key={`duplicate-${index}`}
-            className={[styles.item, styles.duplicate].join(" ")}
+            className="marquee-item marquee-duplicate"
           >
             {item}
           </div>
