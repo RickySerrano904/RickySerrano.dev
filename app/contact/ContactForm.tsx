@@ -15,6 +15,7 @@ export default function ContactForm({ nonce }: ContactFormProps) {
   const [message, setMessage] = useState("");
   const [website, setWebsite] = useState("");
   const [turnstileToken, setTurnstileToken] = useState("");
+  const [shouldLoadTurnstile, setShouldLoadTurnstile] = useState(false);
   const [useCompactTurnstile, setUseCompactTurnstile] = useState(false);
   const [sendState, setSendState] = useState<SendState>("idle");
   const [statusMessage, setStatusMessage] = useState("");
@@ -39,6 +40,8 @@ export default function ContactForm({ nonce }: ContactFormProps) {
       !!turnstileToken
     );
   }, [email, message, name, sendState, turnstileToken]);
+
+  const enableTurnstile = () => setShouldLoadTurnstile(true);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -86,7 +89,7 @@ export default function ContactForm({ nonce }: ContactFormProps) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="grid gap-5">
+    <form onSubmit={handleSubmit} onFocus={enableTurnstile} className="grid gap-5">
       <input
         value={website}
         onChange={(event) => setWebsite(event.target.value)}
@@ -147,31 +150,33 @@ export default function ContactForm({ nonce }: ContactFormProps) {
         </span>
       </label>
 
-      <div className="grid gap-2">
-        <div className="relative isolate rounded-2xl border border-[color:var(--border)] bg-transparent p-3">
-          <div className="max-w-full overflow-x-auto">
-            <div className="flex justify-center">
-              <Turnstile
-                ref={turnstileRef}
-                siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
-                onSuccess={(token) => setTurnstileToken(token)}
-                onExpire={() => setTurnstileToken("")}
-                onError={() => setTurnstileToken("")}
-                scriptOptions={{ nonce }}
-                options={{
-                  theme: "auto",
-                  size: useCompactTurnstile ? "compact" : "flexible",
-                }}
-              />
+      {shouldLoadTurnstile ? (
+        <div className="grid gap-2">
+          <div className="relative isolate rounded-2xl border border-[color:var(--border)] bg-transparent p-3">
+            <div className="max-w-full overflow-x-auto">
+              <div className="flex justify-center">
+                <Turnstile
+                  ref={turnstileRef}
+                  siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                  onSuccess={(token) => setTurnstileToken(token)}
+                  onExpire={() => setTurnstileToken("")}
+                  onError={() => setTurnstileToken("")}
+                  scriptOptions={{ nonce }}
+                  options={{
+                    theme: "auto",
+                    size: useCompactTurnstile ? "compact" : "flexible",
+                  }}
+                />
+              </div>
             </div>
           </div>
+          <span className="text-xs font-normal text-[color:var(--muted)]">
+            {turnstileToken
+              ? "Human verification complete."
+              : "Complete the verification to enable sending."}
+          </span>
         </div>
-        <span className="text-xs font-normal text-[color:var(--muted)]">
-          {turnstileToken
-            ? "Human verification complete."
-            : "Complete the verification to enable sending."}
-        </span>
-      </div>
+      ) : null}
 
       {statusMessage && (
         <p
