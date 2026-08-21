@@ -1,21 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #f5f7fb;
-  --fg: #172033;
-  --muted: #5d6878;
+  --bg: #e1e2e1;
+  --fg: #1d2730;
+  --muted: #59656b;
   --accent: #c94d2d;
-  --border: rgba(23, 32, 51, 0.12);
-  --nav: rgba(255, 255, 255, 0.78);
+  --border: rgba(29, 39, 48, 0.14);
+  --nav: rgba(245, 243, 237, 0.8);
   --nav-active: rgba(201, 77, 45, 0.1);
-  --panel: rgba(255, 255, 255, 0.72);
-  --panel-strong: rgba(255, 255, 255, 0.92);
-  --spot-1: rgba(255, 177, 143, 0.3);
-  --spot-2: rgba(144, 181, 255, 0.24);
-  --calendar-bg: #fffdf9;
-  --calendar-title: #687384;
-  --calendar-link: #172033;
-  --calendar-border: rgba(23, 32, 51, 0.1);
+  --panel: rgba(242, 240, 234, 0.78);
+  --panel-strong: rgba(248, 246, 240, 0.92);
+  --spot-1: rgba(218, 145, 107, 0.2);
+  --spot-2: rgba(112, 145, 181, 0.16);
+  --calendar-bg: #151922;
+  --calendar-title: #a6a7ab;
+  --calendar-link: #f3f1e8;
+  --calendar-border: rgba(255, 255, 255, 0.1);
   color-scheme: light;
 }
 
@@ -37,21 +37,21 @@
 }
 
 :root.light {
-  --bg: #f5f7fb;
-  --fg: #172033;
-  --muted: #5d6878;
+  --bg: #e1e2e1;
+  --fg: #1d2730;
+  --muted: #59656b;
   --accent: #c94d2d;
-  --border: rgba(23, 32, 51, 0.12);
-  --nav: rgba(255, 255, 255, 0.78);
+  --border: rgba(29, 39, 48, 0.14);
+  --nav: rgba(245, 243, 237, 0.8);
   --nav-active: rgba(201, 77, 45, 0.1);
-  --panel: rgba(255, 255, 255, 0.72);
-  --panel-strong: rgba(255, 255, 255, 0.92);
-  --spot-1: rgba(255, 177, 143, 0.3);
-  --spot-2: rgba(144, 181, 255, 0.24);
-  --calendar-bg: #fffdf9;
-  --calendar-title: #687384;
-  --calendar-link: #172033;
-  --calendar-border: rgba(23, 32, 51, 0.1);
+  --panel: rgba(242, 240, 234, 0.78);
+  --panel-strong: rgba(248, 246, 240, 0.92);
+  --spot-1: rgba(218, 145, 107, 0.2);
+  --spot-2: rgba(112, 145, 181, 0.16);
+  --calendar-bg: #151922;
+  --calendar-title: #a6a7ab;
+  --calendar-link: #f3f1e8;
+  --calendar-border: rgba(255, 255, 255, 0.1);
   color-scheme: light;
 }
 
