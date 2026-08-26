@@ -23,8 +23,9 @@ export const education: EducationItem[] = [
   {
     program: "B.A.S. Information Systems Technology",
     school: "Florida State College at Jacksonville",
-    period: "2023 - Present",
+    period: "2023 - 2026",
     points: [
+      "Graduated magna cum laude with a 3.78/4.00 GPA.",
       "Completed coursework in application development, systems design, database management, networking, and cyber security.",
       "Gained hands-on experience with IT infrastructure, configuring and maintaining servers and network devices.",
       "Worked with a team to design and build full-stack application projects, applying agile development practices and version control workflows.",
