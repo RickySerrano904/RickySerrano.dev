@@ -1,7 +1,7 @@
 import TypewriterText from "@/app/hero/TypewriterText";
 import Image from "next/image";
 import ArrowRightIcon from "@/app/components/ArrowRightIcon";
-import type { SocialIcon, SocialLink } from "@/app/content";
+import type { SocialIcon, SocialLink } from "@/app/hero/hero.data";
 
 type HeroSectionProps = {
   words: string[];

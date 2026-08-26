@@ -1,4 +1,4 @@
-import type { SkillGroup } from "@/app/content";
+import type { SkillGroup } from "@/app/skills/skills.data";
 
 type SkillsSectionProps = {
   skills: SkillGroup[];

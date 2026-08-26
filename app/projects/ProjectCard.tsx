@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import ArrowRightIcon from "@/app/components/ArrowRightIcon";
-import type { Project } from "@/app/content";
+import type { Project } from "@/app/projects/projects.data";
 
 type ProjectCardProps = {
   project: Project;

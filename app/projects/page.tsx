@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ProjectCard from "@/app/projects/ProjectCard";
-import { projects } from "@/app/content";
+import { projects } from "@/app/projects/projects.data";
 
 export const metadata: Metadata = {
   title: "Projects | Portfolio",

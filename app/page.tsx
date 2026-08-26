@@ -4,18 +4,11 @@ import ExperienceSection from "@/app/experience/ExperienceSection";
 import HeroSection from "@/app/hero/HeroSection";
 import ProjectsSection from "@/app/projects/ProjectsSection";
 import SkillsSection from "@/app/skills/SkillsSection";
-import {
-  aboutParagraphs,
-  certifications,
-  education,
-  heroDescription,
-  heroLocation,
-  heroWords,
-  projects,
-  roles,
-  skills,
-  socialLinks,
-} from "@/app/content";
+import { aboutParagraphs } from "@/app/about/about.data";
+import { certifications, education, roles } from "@/app/experience/experience.data";
+import { heroDescription, heroLocation, heroWords, socialLinks } from "@/app/hero/hero.data";
+import { projects } from "@/app/projects/projects.data";
+import { skills } from "@/app/skills/skills.data";
 
 export default function Home() {
   return (
