@@ -84,7 +84,7 @@ export default function HeroSection({
           </div>
           <div className="overflow-x-auto">
             <img
-              src="https://ghchart.rshah.org/db03fc/RickySerrano904"
+              src="https://ghchart.rshah.org/397ba4/RickySerrano904"
               alt="GitHub contribution calendar for RickySerrano904"
               className="h-auto w-full transition-[filter,opacity] duration-300 group-hover:brightness-110 group-hover:contrast-110 group-hover:saturate-125"
               fetchPriority="high"
