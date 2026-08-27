@@ -153,7 +153,7 @@ export default function ContactForm({ nonce }: ContactFormProps) {
       {shouldLoadTurnstile ? (
         <div className="grid gap-2">
           <div className="relative isolate rounded-2xl border border-[color:var(--border)] bg-transparent p-3">
-            <div className="max-w-full overflow-x-auto">
+            <div className="w-full min-w-0 overflow-hidden">
               <div className="flex justify-center">
                 <Turnstile
                   ref={turnstileRef}
