@@ -11,6 +11,12 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "first-pc-build",
+    title: "First Custom PC Build",
+    summary: "My first custom desktop PC build, documenting the component choices that started my hands-on experience with computer hardware.",
+    tags: ["PC Building", "Hardware", "Gaming"],
+  },
+  {
     slug: "senior-helper",
     title: "Senior Helper",
     summary: "Full-stack web app that helps older adults and caregivers coordinate appointments, stay connected, and build online safety skills.",

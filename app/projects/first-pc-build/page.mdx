@@ -1,0 +1,73 @@
+import ProjectCaseStudyLayout from "@/app/projects/ProjectCaseStudyLayout";
+
+export const metadata = {
+  title: "First Custom PC Build | Projects",
+  description:
+    "Case study for Ricky Serrano's first custom PC build, featuring an AMD Ryzen 5 3600 and RTX 2070 Super.",
+};
+
+<ProjectCaseStudyLayout
+  eyebrow="Custom PC Build"
+  title="First Custom PC Build"
+  summary="The first custom desktop I built for myself: a hands-on introduction to researching compatible parts, assembling a system, and learning the details that make a PC feel truly personal."
+  problem="Build my first custom PC from individual components: a balanced, affordable system capable of 1440p gaming that would also teach me the full assembly process."
+  solution="Used PCPartPicker to verify compatibility, then paired a Ryzen 5 3600 and RTX 2070 Super with liquid cooling, practical airflow, and a reverse-layout darkFlash V22 case."
+>
+
+This was my first custom PC build and the project that got me comfortable working directly with computer hardware. Choosing each component, checking compatibility, and assembling the system piece by piece made the process far more personal than buying a prebuilt machine.
+
+I started with PCPartPicker to research compatible components and create a preliminary parts list. I had a rough idea of what I wanted: a mid-tower case and well-balanced components that would not break the bank while still letting me play games with my friends at solid graphics settings. This build dates back to 2020, so some of the components look dated beside current hardware. At the time, though, it served me well and taught me a great deal about the PC-building process.
+
+A secondary goal was to find a mid-tower case with its glass panel on the opposite side. I planned to place the PC in a corner, where a conventional layout would have left the panel facing away from me. I also needed good airflow and room for a liquid CPU cooler. The darkFlash V22 met those requirements with its reverse layout: the I/O is positioned at the top rather than the back, allowing the glass panel to face the opposite direction. Its required vertical GPU mount also gave the build a distinctive visual element.
+
+## Build Goals
+
+- Build a balanced PC capable of 60 FPS gaming at 1440p.
+- Use a mid-tower case with good airflow and a layout that places the glass panel on the opposite side of most cases.
+- Learn the complete assembly process, from component selection through cable routing and first boot.
+- Choose reliable parts that work well together instead of optimizing around a single specification.
+- Create a strong foundation for future upgrades and later custom PC builds.
+
+## Parts List
+
+<div className="mt-4 overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel-strong)]">
+  {[
+    ["CPU", "AMD Ryzen 5 3600 3.6 GHz 6-Core Processor", "/projects/first-build/ryzen-5-3600.jpg"],
+    ["Cooler", "Deepcool Castle 240 RGB V2 69.34 CFM Liquid CPU Cooler", "/projects/first-build/deepcool-castle.jpg"],
+    ["Motherboard", "MSI MAG B550M BAZOOKA Micro ATX AM4 Motherboard", "/projects/first-build/msi-mag-b550m.jpg"],
+    ["Memory", "G.Skill Ripjaws V 16 GB (2 x 8 GB) DDR4-3200 CL16 Memory", "/projects/first-build/gskill-ripjaws-v-16.jpg"],
+    ["Storage", "Western Digital Blue 2 TB M.2-2280 SATA Solid State Drive", "/projects/first-build/wd-blue-2tb.jpg"],
+    ["GPU", "Gigabyte WINDFORCE OC 3X GeForce RTX 2070 SUPER 8 GB Video Card", "/projects/first-build/gigabyte-windforce-oc-3x-rtx-2070-super.jpg"],
+    ["Case", "darkFlash V22 ATX Mid Tower Case", "/projects/first-build/darkflash-v22.jpg"],
+    ["PSU", "EVGA SuperNOVA 750 G3 750 W 80+ Gold Certified Fully Modular ATX Power Supply", "/projects/first-build/evga-supernova-750-gold.jpg"],
+    ["Fans", "3 x Noctua F12 PWM chromax.black.swap 54.97 CFM 120 mm Fan", "/projects/first-build/noctua-f12-pwm-chromax.jpg"],
+    ["OS", "Microsoft Windows 10 Pro OEM - DVD 64-bit", "/projects/first-build/windows-10.jpg"],
+  ].map(([category, part, imageSrc]) => (
+    <div
+      key={`${category}-${part}`}
+      className="grid grid-cols-[3.25rem_minmax(0,1fr)] gap-3 border-b border-[color:var(--border)] px-3 py-4 last:border-b-0 sm:grid-cols-[4.5rem_7rem_minmax(0,1fr)] sm:items-center sm:gap-4 sm:px-4"
+    >
+      <span className="flex h-[3.25rem] w-[3.25rem] items-center justify-center overflow-hidden rounded-xl border border-[color:var(--border)] bg-white p-2 sm:h-16 sm:w-16">
+        <img
+          src={imageSrc}
+          alt=""
+          loading="lazy"
+          className="h-full w-full object-contain"
+        />
+      </span>
+      <span className="col-start-2 inline-flex w-fit rounded-full border border-[color:var(--border)] bg-[color:var(--panel)] px-2 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-[color:var(--muted)] sm:col-start-auto sm:tracking-[0.18em]">
+        {category}
+      </span>
+      <span className="col-span-2 text-sm font-semibold leading-6 text-[color:var(--fg)] sm:col-span-1">
+        {part}
+      </span>
+    </div>
+  ))}
+</div>
+
+## What I Learned
+
+This build taught me that a successful PC is more than a collection of impressive parts. Planning the order of assembly, understanding where cables need to go, and giving every component enough physical space all matter just as much as the specifications on the box.
+
+It also gave me the confidence to take on the PC projects that followed. Every later build has benefited from the fundamentals I learned here: be deliberate with parts, take your time during assembly, and keep the finished system practical as well as visually considered.
+</ProjectCaseStudyLayout>
