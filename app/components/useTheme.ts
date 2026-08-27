@@ -7,8 +7,7 @@ type Theme = "light" | "dark";
 const themeChangeEvent = "portfolio-theme-change";
 
 function applyTheme(theme: Theme) {
-  document.documentElement.classList.remove("light", "dark");
-  document.documentElement.classList.add(theme);
+  document.documentElement.dataset.theme = theme;
 }
 
 function getPreferredTheme(): Theme {
@@ -61,12 +60,13 @@ export function useTheme() {
   }, [theme]);
 
   const toggleTheme = useCallback(() => {
-    const newTheme: Theme = theme === "light" ? "dark" : "light";
+    const newTheme: Theme =
+      document.documentElement.dataset.theme === "dark" ? "light" : "dark";
 
     applyTheme(newTheme);
     window.localStorage.setItem("theme", newTheme);
     window.dispatchEvent(new Event(themeChangeEvent));
-  }, [theme]);
+  }, []);
 
   return { mounted, theme, toggleTheme };
 }

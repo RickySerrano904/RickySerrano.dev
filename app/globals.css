@@ -19,43 +19,7 @@
   color-scheme: light;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0b0f14;
-    --fg: #f3f1e8;
-    --muted: #a6a7ab;
-    --accent: #ff9c6f;
-    --border: rgba(243, 241, 232, 0.14);
-    --nav: rgba(15, 20, 27, 0.72);
-    --nav-active: rgba(243, 241, 232, 0.12);
-    --panel: rgba(15, 20, 27, 0.78);
-    --panel-strong: rgba(18, 24, 33, 0.9);
-    --spot-1: rgba(87, 112, 255, 0.3);
-    --spot-2: rgba(255, 122, 88, 0.2);
-    color-scheme: dark;
-  }
-}
-
-:root.light {
-  --bg: #e1e2e1;
-  --fg: #1d2730;
-  --muted: #59656b;
-  --accent: #c94d2d;
-  --border: rgba(29, 39, 48, 0.14);
-  --nav: rgba(245, 243, 237, 0.8);
-  --nav-active: rgba(201, 77, 45, 0.1);
-  --panel: rgba(242, 240, 234, 0.78);
-  --panel-strong: rgba(248, 246, 240, 0.92);
-  --spot-1: rgba(218, 145, 107, 0.2);
-  --spot-2: rgba(112, 145, 181, 0.16);
-  --calendar-bg: #151922;
-  --calendar-title: #a6a7ab;
-  --calendar-link: #f3f1e8;
-  --calendar-border: rgba(255, 255, 255, 0.1);
-  color-scheme: light;
-}
-
-:root.dark {
+:root[data-theme="dark"] {
   --bg: #0b0f14;
   --fg: #f3f1e8;
   --muted: #a6a7ab;
@@ -67,10 +31,6 @@
   --panel-strong: rgba(18, 24, 33, 0.9);
   --spot-1: rgba(87, 112, 255, 0.3);
   --spot-2: rgba(255, 122, 88, 0.2);
-  --calendar-bg: #151922;
-  --calendar-title: #a6a7ab;
-  --calendar-link: #f3f1e8;
-  --calendar-border: rgba(255, 255, 255, 0.1);
   color-scheme: dark;
 }
 

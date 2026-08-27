@@ -4,6 +4,20 @@ import { connection } from "next/server";
 import FloatingNav from "./components/Navbar";
 import "./globals.css";
 
+const themeInitScript = `
+  try {
+    const savedTheme = window.localStorage.getItem("theme");
+    const theme =
+      savedTheme === "light" || savedTheme === "dark"
+        ? savedTheme
+        : window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light";
+
+    document.documentElement.dataset.theme = theme;
+  } catch {}
+`;
+
 const siteFont = Space_Grotesk({
   variable: "--font-body",
   subsets: ["latin"],
@@ -28,6 +42,9 @@ export default async function RootLayout({
       className={siteFont.variable}
       suppressHydrationWarning
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body className="min-h-screen antialiased text-[color:var(--fg)]">
         <FloatingNav />
         {children}
