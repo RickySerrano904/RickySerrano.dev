@@ -11,12 +11,6 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "first-pc-build",
-    title: "First Custom PC Build",
-    summary: "My first custom desktop PC build, documenting the component choices that started my hands-on experience with computer hardware.",
-    tags: ["PC Building", "Hardware", "Gaming"],
-  },
-  {
     slug: "senior-helper",
     title: "Senior Helper",
     summary: "Full-stack web app that helps older adults and caregivers coordinate appointments, stay connected, and build online safety skills.",
@@ -42,6 +36,15 @@ export const projects: Project[] = [
     marqueeThumbnailSrc: "/projects/portfolio-project/portfolio-marquee.png",
     thumbnailSrc: "/projects/portfolio-project/portfolio-screenshot.jpg",
     thumbnailAlt: "Screenshot of portfolio homepage",
+  },
+    {
+    slug: "first-pc-build",
+    title: "My First PC Build",
+    summary: "My first custom desktop PC build, documenting the component choices that started my hands-on experience with computer hardware.",
+    tags: ["PC Building", "Hardware", "Gaming"],
+    marqueeThumbnailSrc: "/projects/first-pc-build/first-pc-build-marquee.png",
+    thumbnailSrc: "/projects/first-pc-build/first-pc-build-screenshot.jpg",
+    thumbnailAlt: "My First PC Build completed setup",
   },
   {
     slug: "editing-station-pc",
