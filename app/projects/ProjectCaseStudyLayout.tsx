@@ -9,6 +9,7 @@ type ProjectCaseStudyLayoutProps = {
   summary: string;
   problem: string;
   solution: string;
+  goals?: string[];
   imageSrc?: string;
   imageAlt?: string;
   projectUrl?: string;
@@ -22,6 +23,7 @@ export default function ProjectCaseStudyLayout({
   summary,
   problem,
   solution,
+  goals,
   imageSrc,
   imageAlt,
   projectUrl,
@@ -99,6 +101,19 @@ export default function ProjectCaseStudyLayout({
           </p>
         </article>
       </section>
+
+      {goals?.length ? (
+        <section className="mt-8 rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel)] p-4 sm:mt-10 sm:rounded-3xl sm:p-6">
+          <h2 className="font-display text-xl font-semibold text-[color:var(--fg)] sm:text-2xl">
+            Build Goals
+          </h2>
+          <ul className="mt-3 list-disc space-y-2 pl-5 text-base leading-7 text-[color:var(--muted)] marker:text-[color:var(--accent)]">
+            {goals.map((goal) => (
+              <li key={goal}>{goal}</li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
 
       <section className="mt-8 rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel)] p-4 sm:mt-10 sm:rounded-3xl sm:p-6">
         <h2 className="font-display text-xl font-semibold text-[color:var(--fg)] sm:text-2xl">

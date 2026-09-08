@@ -37,6 +37,15 @@ export const projects: Project[] = [
     thumbnailSrc: "/projects/portfolio-project/portfolio-screenshot.jpg",
     thumbnailAlt: "Screenshot of portfolio homepage",
   },
+    {
+    slug: "first-pc-build",
+    title: "My First PC Build",
+    summary: "My first custom desktop PC build, documenting the component choices that started my hands-on experience with computer hardware.",
+    tags: ["PC Building", "Hardware", "Gaming"],
+    marqueeThumbnailSrc: "/projects/first-pc-build/first-pc-build-marquee.png",
+    thumbnailSrc: "/projects/first-pc-build/first-pc-build-screenshot.jpg",
+    thumbnailAlt: "My First PC Build completed setup",
+  },
   {
     slug: "editing-station-pc",
     title: "Fractal North Editing PC",
