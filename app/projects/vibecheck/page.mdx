@@ -1,0 +1,116 @@
+import ProjectCaseStudyLayout from "@/app/projects/ProjectCaseStudyLayout";
+import ScreenshotGallery from "@/app/projects/ScreenshotGallery";
+
+export const metadata = {
+  title: "VibeCheck | Projects",
+  description:
+    "Case study for VibeCheck, an Angular and Spring Boot application that combines Last.fm music profiles, Ticketmaster event matching, and group voting to simplify live music planning.",
+};
+
+<ProjectCaseStudyLayout
+  eyebrow="Live Music + Group Planning"
+  title="VibeCheck"
+  summary="A full-stack application that helps friends discover nearby live music, match events to their shared listening preferences, and choose where to go through group voting."
+  problem="Choosing a live music event gets complicated when everyone has different tastes. Groups need a relevant shortlist and a shared way to make a decision without an endless back-and-forth in the group chat."
+  solution="Built an Angular and Spring Boot application that imports Last.fm music profiles, scores nearby Ticketmaster events against group preferences, and guides members through voting to a winning event."
+  imageSrc="/projects/vibecheck/01 landing page.png"
+  imageAlt="VibeCheck landing page introducing music matching and group voting"
+>
+
+VibeCheck was developed by a nine-member team for FSCJ's CEN4940 Application Development Capstone in Summer 2026. The application brings music preferences, event discovery, and collaborative decision-making into one workflow, from connecting a Last.fm account to revealing the group's winning event.
+
+## Core Features
+
+- **Music profiles:** Members connect Last.fm to import listening preferences and tag data. Stored profiles provide the musical context for personalized and group event matching.
+- **Private groups:** Users create or join groups and invite friends, giving each group a shared space to coordinate its next event.
+- **Event matching:** When a voting session starts, the backend retrieves nearby Ticketmaster events, maps Last.fm tags to Ticketmaster genres, and scores the options against the group's combined preferences.
+- **Group voting and results:** Group leaders launch sessions with a curated event shortlist. Members vote on multiple options, and completed or expired sessions produce a winning event and results. A scheduled backend task closes expired sessions and saves the winner.
+- **Authenticated access:** Registration and login lead to protected profile, group, and voting screens. Spring Security validates JWTs on the backend, while Angular route guards and an HTTP interceptor support authenticated navigation and requests.
+
+## From Music Taste to a Shared Plan
+
+1. Register or log in, then connect a Last.fm account and import a music profile.
+2. Create a group or join friends who are planning an outing.
+3. Start a voting session to retrieve and score nearby Ticketmaster events.
+4. Review the matched events and vote on the options that appeal to you.
+5. See the winning event and group results when the session ends.
+
+## Screenshots
+
+<ScreenshotGallery
+  items={[
+    {
+      title: "Landing Page",
+      src: "/projects/vibecheck/01 landing page.png",
+      alt: "VibeCheck landing page with an introduction to shared music preferences and group voting",
+    },
+    {
+      title: "Sign In",
+      src: "/projects/vibecheck/02 login.png",
+      alt: "VibeCheck login screen",
+    },
+    {
+      title: "Dashboard",
+      src: "/projects/vibecheck/03 dashboard.png",
+      alt: "VibeCheck dashboard after signing in",
+    },
+    {
+      title: "Profile and Last.fm Connection",
+      src: "/projects/vibecheck/04 profile.png",
+      alt: "User profile showing account information, a connected Last.fm account, and password settings",
+    },
+    {
+      title: "Groups",
+      src: "/projects/vibecheck/05 groups.png",
+      alt: "VibeCheck group management screen",
+    },
+    {
+      title: "Start a Voting Session",
+      src: "/projects/vibecheck/06 start  vote.png",
+      alt: "VibeCheck voting session setup screen",
+    },
+    {
+      title: "Matched Events",
+      src: "/projects/vibecheck/07 voting flow.png",
+      alt: "Event voting cards showing artists, venues, dates, and group match scores",
+    },
+    {
+      title: "Matched Events Continued",
+      src: "/projects/vibecheck/08 voting flow cont.png",
+      alt: "Additional event options in the VibeCheck voting flow",
+    },
+    {
+      title: "Winning Event",
+      src: "/projects/vibecheck/09 winner.png",
+      alt: "Completed voting session showing the winning event, vote summary, and ticket link",
+    },
+    {
+      title: "Tickets",
+      src: "/projects/vibecheck/11 tickets.png",
+      alt: "Ticket page for the selected event",
+    },
+  ]}
+/>
+
+## Architecture and Stack
+
+- **Client:** Angular and TypeScript power the single-page application. Route guards protect authenticated screens, and an HTTP interceptor attaches JWTs to API requests.
+- **API:** Java and Spring Boot separate controllers, business services, repositories, and response models so authentication, groups, music imports, event scoring, and voting can be maintained independently.
+- **Persistence:** Supabase-hosted PostgreSQL stores users, music profiles, groups, memberships, event details and occurrences, scores, voting sessions, votes, and winners. Spring Data JPA handles persistence, with direct SQL for simultaneous vote updates.
+- **Integrations:** Last.fm supplies listening preferences and tags; Ticketmaster supplies nearby event data. The backend translates between the two services to build the group's voting options.
+- **Security and configuration:** BCrypt hashes passwords, Spring Security authorizes requests with JWTs, and environment variables supply database credentials, API credentials, callback configuration, and the JWT signing key. Foreign keys and unique constraints protect relationships and prevent duplicate memberships, profiles, and votes.
+
+{/* ## Challenges and Lessons Learned
+
+- **External API integration:** The team reviewed documentation, tested credentials and requests, and adapted to differences in returned data while connecting Last.fm and Ticketmaster.
+- **Configuration consistency:** Mismatched local environment settings caused integration problems. Moving credentials into environment files excluded from Git and coordinating configuration helped address these issues.
+- **Database evolution:** Schema changes required coordination, testing, and matching application updates to preserve existing functionality. Manual database dumps also highlighted the need for a versioned migration workflow.
+- **Team coordination:** Nine contributors worked across frontend, backend, data, security, integrations, and testing. Regular meetings, Jira tasks, GitHub reviews, and communication through Discord and WebEx helped manage dependencies and merge conflicts.
+
+The project reinforced the value of raising blockers early, validating tool capabilities before designing around them, and treating integration work as a shared responsibility throughout development. */}
+
+## Future Enhancements
+
+Potential next steps beyond the MVP include AI-assisted recommendations and explanations, song previews in voting cards, versioned database migrations through the Supabase CLI, and a native mobile experience with push notifications and location-based discovery.
+
+</ProjectCaseStudyLayout>

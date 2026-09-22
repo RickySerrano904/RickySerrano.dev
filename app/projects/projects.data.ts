@@ -11,6 +11,14 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "vibecheck",
+    title: "VibeCheck",
+    summary: "Full-stack capstone app that matches nearby live music to a group's Last.fm preferences and helps friends choose an event through voting.",
+    tags: ["Angular", "Spring Boot", "PostgreSQL", "APIs"],
+    thumbnailSrc: "/projects/vibecheck/01 landing page.png",
+    thumbnailAlt: "VibeCheck landing page introducing live music matching and group voting",
+  },
+  {
     slug: "senior-helper",
     title: "Senior Helper",
     summary: "Full-stack web app that helps older adults and caregivers coordinate appointments, stay connected, and build online safety skills.",

@@ -12,7 +12,7 @@ type ScreenshotGalleryProps = {
 
 export default function ScreenshotGallery({ items }: ScreenshotGalleryProps) {
   return (
-    <div className="mt-4 grid gap-4 sm:grid-cols-2">
+    <div className="mt-4 grid grid-cols-1 gap-4">
       {items.map((item) => (
         <figure
           key={item.src}
@@ -23,7 +23,7 @@ export default function ScreenshotGallery({ items }: ScreenshotGalleryProps) {
               src={item.src}
               alt={item.alt}
               fill
-              sizes="(min-width: 768px) 432px, 100vw"
+              sizes="(min-width: 896px) 796px, (min-width: 640px) calc(100vw - 100px), calc(100vw - 76px)"
               className="object-contain"
             />
           </div>
