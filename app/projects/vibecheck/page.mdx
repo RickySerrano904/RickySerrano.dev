@@ -27,13 +27,13 @@ VibeCheck was developed by a nine-member team for FSCJ's CEN4940 Application Dev
 - **Group voting and results:** Group leaders launch sessions with a curated event shortlist. Members vote on multiple options, and completed or expired sessions produce a winning event and results. A scheduled backend task closes expired sessions and saves the winner.
 - **Authenticated access:** Registration and login lead to protected profile, group, and voting screens. Spring Security validates JWTs on the backend, while Angular route guards and an HTTP interceptor support authenticated navigation and requests.
 
-## From Music Taste to a Shared Plan
+##  User Flow
 
-1. Register or log in, then connect a Last.fm account and import a music profile.
-2. Create a group or join friends who are planning an outing.
-3. Start a voting session to retrieve and score nearby Ticketmaster events.
-4. Review the matched events and vote on the options that appeal to you.
-5. See the winning event and group results when the session ends.
+- Register or log in, then connect a Last.fm account and import a music profile.
+- Create a group or join friends who are planning an outing.
+- Start a voting session to retrieve and score nearby Ticketmaster events.
+- Review the matched events and vote on the options that appeal to you.
+- See the winning event and group results when the session ends.
 
 ## Screenshots
 
@@ -60,32 +60,27 @@ VibeCheck was developed by a nine-member team for FSCJ's CEN4940 Application Dev
       alt: "User profile showing account information, a connected Last.fm account, and password settings",
     },
     {
-      title: "Groups",
+      title: "Groups - Created groups are given a unique code to share with friends, who can then join the group by entering the code here",
       src: "/projects/vibecheck/05 groups.png",
       alt: "VibeCheck group management screen",
     },
     {
-      title: "Start a Voting Session",
+      title: "Voting Session Creation - Set parameters for the voting session, including location, data range, and amount of time to keep the session active", 
       src: "/projects/vibecheck/06 start  vote.png",
       alt: "VibeCheck voting session setup screen",
     },
     {
-      title: "Matched Events",
+      title: "Matched Events - Events that better fit the group's combined music preferences are scored higher and appear first in the voting flow, vote on as many events as you'd like",
       src: "/projects/vibecheck/07 voting flow.png",
       alt: "Event voting cards showing artists, venues, dates, and group match scores",
     },
     {
-      title: "Matched Events Continued",
-      src: "/projects/vibecheck/08 voting flow cont.png",
-      alt: "Additional event options in the VibeCheck voting flow",
-    },
-    {
-      title: "Winning Event",
+      title: "Winning Event - The event with the highest score and most votes is revealed when the voting session ends",
       src: "/projects/vibecheck/09 winner.png",
       alt: "Completed voting session showing the winning event, vote summary, and ticket link",
     },
     {
-      title: "Tickets",
+      title: "Tickets - Clicking 'buy tickets' on the winner screen redirects to the ticketmaster page for the selected event",
       src: "/projects/vibecheck/11 tickets.png",
       alt: "Ticket page for the selected event",
     },
