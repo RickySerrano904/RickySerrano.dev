@@ -54,7 +54,7 @@ export default function ProjectCaseStudyLayout({
         </p>
       </header>
 
-      <div className="relative mt-6 aspect-[16/9] overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel-strong)] sm:mt-8 sm:rounded-3xl">
+      <div className="relative mt-6 aspect-[16/10] overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel-strong)] sm:mt-8 sm:rounded-3xl">
         {imageSrc ? (
           <Image
             src={imageSrc}
@@ -62,7 +62,7 @@ export default function ProjectCaseStudyLayout({
             fill
             sizes="(min-width: 1024px) 896px, 100vw"
             loading="eager"
-            className="h-full w-full object-cover"
+            className="h-full w-full object-contain"
           />
         ) : (
           <div className="post-thumb h-full w-full" />

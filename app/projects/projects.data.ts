@@ -32,9 +32,8 @@ export const projects: Project[] = [
     title: "Enzo's World",
     summary: "A playful Next.js site for Enzo with a curated photo gallery, MDX field reports, a protected contact form, and a merch shop bridge.",
     tags: ["Next.js", "React", "TypeScript", "MDX"],
-    marqueeThumbnailSrc: "/projects/enzos-world/screen-1-marquee.png",
-    thumbnailSrc: "/projects/enzos-world/screen-1.png",
-    thumbnailAlt: "Enzo's World home page in dark mode",
+    thumbnailSrc: "/projects/enzos-world/01 dashboard.png",
+    thumbnailAlt: "Enzo's World home page in light mode",
   },
   {
     slug: "portfolio",

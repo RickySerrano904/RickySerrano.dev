@@ -21,7 +21,7 @@ export default function ProjectCard({
       draggable={false}
       className={`group flex h-full min-h-[28rem] w-full select-none flex-col rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel)] p-2 shadow-[0_20px_30px_-28px_rgba(33,41,24,0.34)] backdrop-blur transition hover:-translate-y-1 hover:border-[color:var(--accent)] hover:shadow-[0_20px_44px_-24px_rgba(33,41,24,0.42)] sm:min-h-[31rem] sm:rounded-3xl sm:p-3 ${className}`}
     >
-      <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel-strong)]">
+      <div className="relative aspect-[16/10] shrink-0 overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel-strong)]">
         {project.thumbnailSrc ? (
           <Image
             src={project.thumbnailSrc}
@@ -29,7 +29,7 @@ export default function ProjectCard({
             fill
             draggable={false}
             sizes={imageSizes}
-            className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.04]"
+            className="h-full w-full object-contain"
           />
         ) : (
           <div className="post-thumb h-full w-full" />
