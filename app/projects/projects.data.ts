@@ -3,8 +3,6 @@ export type Project = {
   title: string;
   summary: string;
   tags: string[];
-  marqueeThumbnailSrc?: string;
-  marqueeThumbnailAlt?: string;
   thumbnailSrc?: string;
   thumbnailAlt?: string;
 };
@@ -39,7 +37,6 @@ export const projects: Project[] = [
     title: "Portfolio Website",
     summary: "A responsive portfolio website showcasing my projects, experience, and skills as a software developer.",
     tags: ["Next.js", "React", "TypeScript", "MDX"],
-    marqueeThumbnailSrc: "/projects/portfolio-project/portfolio-marquee.png",
     thumbnailSrc: "/projects/portfolio-project/portfolio-screenshot.jpg",
     thumbnailAlt: "Screenshot of portfolio homepage",
   },
@@ -48,7 +45,6 @@ export const projects: Project[] = [
     title: "My First PC Build",
     summary: "My first custom desktop PC build, documenting the component choices that started my hands-on experience with computer hardware.",
     tags: ["PC Building", "Hardware", "Gaming"],
-    marqueeThumbnailSrc: "/projects/first-pc-build/first-pc-build-marquee.png",
     thumbnailSrc: "/projects/first-pc-build/first-pc-build-screenshot.jpg",
     thumbnailAlt: "My First PC Build completed setup",
   },
