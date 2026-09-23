@@ -23,8 +23,7 @@ export const projects: Project[] = [
     title: "Senior Helper",
     summary: "Full-stack web app that helps older adults and caregivers coordinate appointments, stay connected, and build online safety skills.",
     tags: ["Java", "TypeScript", "Angular", "Postgres"],
-    marqueeThumbnailSrc: "/projects/senior-helper/seniorhelper-marquee.png",
-    thumbnailSrc: "/projects/senior-helper/seniorhelper-light-01.png",
+    thumbnailSrc: "/projects/senior-helper/01 landing.png",
     thumbnailAlt: "Senior Helper landing page in light mode",
   },
   {

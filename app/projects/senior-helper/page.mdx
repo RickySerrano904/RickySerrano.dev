@@ -1,5 +1,4 @@
-import ProjectCaseStudyLayout from "@/app/projects/ProjectCaseStudyLayout";
-import ScreenshotGallery from "@/app/projects/ScreenshotGallery";
+import SeniorHelperCaseStudy, { SeniorHelperScreenshots } from "@/app/projects/senior-helper/SeniorHelperCaseStudy";
 
 export const metadata = {
   title: "Senior Helper | Projects",
@@ -7,84 +6,19 @@ export const metadata = {
     "Case study for Senior Helper, a full-stack care coordination and cybersecurity education app for older adults and caregivers.",
 };
 
-<ProjectCaseStudyLayout
+<SeniorHelperCaseStudy
   eyebrow="Accessibility + Safety"
   title="Senior Helper"
   summary="A full-stack web application that helps older adults and caregivers stay organized, connected, and safer online."
   problem="Older adults and caregivers need practical coordination tools that make appointments, support links, and online safety learning easier to manage without adding visual or cognitive friction."
   solution="Senior Helper combines shared appointments, caregiver connections, guided cybersecurity lessons, quizzes, progress tracking, and account security tools in a high-legibility Angular and Spring Boot application."
-  imageSrc="/projects/senior-helper/seniorhelper-light-01.png"
-  imageAlt="Senior Helper landing page in light mode"
 >
 
 Senior Helper is a full-stack web application designed for older adults and caregivers to stay organized, connected, and safer online. It combines practical care coordination features with cybersecurity education in a simple, high-legibility interface.
 
 ## Screenshots
 
-<ScreenshotGallery
-  items={[
-    {
-      title: "Landing Page: Light Mode",
-      src: "/projects/senior-helper/seniorhelper-light-01.png",
-      alt: "Senior Helper landing page in light mode",
-    },
-    {
-      title: "Landing Page: Dark Mode",
-      src: "/projects/senior-helper/seniorhelper-light-02.png",
-      alt: "Senior Helper landing page in dark mode",
-    },
-    {
-      title: "Team Section",
-      src: "/projects/senior-helper/seniorhelper-light-03.png",
-      alt: "Senior Helper team section listing project contributors",
-    },
-    {
-      title: "Dashboard",
-      src: "/projects/senior-helper/seniorhelper-light-04.png",
-      alt: "Senior Helper dashboard with quick links and upcoming appointments",
-    },
-    {
-      title: "Add Appointment",
-      src: "/projects/senior-helper/seniorhelper-light-05.png",
-      alt: "Senior Helper add appointment modal on the calendar",
-    },
-    {
-      title: "Education Modules",
-      src: "/projects/senior-helper/seniorhelper-light-06.png",
-      alt: "Senior Helper online safety education module catalog",
-    },
-    {
-      title: "Module Progress",
-      src: "/projects/senior-helper/seniorhelper-light-07.png",
-      alt: "Senior Helper module page showing lesson progress",
-    },
-    {
-      title: "Module Quiz",
-      src: "/projects/senior-helper/seniorhelper-light-08.png",
-      alt: "Senior Helper quiz for the spotting fake messages module",
-    },
-    {
-      title: "Quiz Completion",
-      src: "/projects/senior-helper/seniorhelper-light-09.png",
-      alt: "Senior Helper completed module quiz section with latest score",
-    },
-    {
-      title: "Settings",
-      src: "/projects/senior-helper/seniorhelper-light-10.png",
-      alt: "Senior Helper security settings tab",
-    },
-    {
-      title: "Sign In",
-      src: "/projects/senior-helper/seniorhelper-light-11.png",
-      alt: "Senior Helper sign in form",
-    },
-    {
-      title: "Register",
-      src: "/projects/senior-helper/seniorhelper-light-12.png",
-      alt: "Senior Helper account registration form",
-    },
-  ]}
-/>
+<SeniorHelperScreenshots />
 
 ## Core Features
 
@@ -110,4 +44,4 @@ Senior Helper is a full-stack web application designed for older adults and care
 - Persistent light/dark theme, mobile-responsive layouts, and consistent navigation patterns.
 - Form-first interaction with inline validation/error states and explicit labels/autocomplete hints.
 
-</ProjectCaseStudyLayout>
+</SeniorHelperCaseStudy>
