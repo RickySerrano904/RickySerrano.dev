@@ -14,6 +14,7 @@ type ProjectCaseStudyLayoutProps = {
   imageAlt?: string;
   projectUrl?: string;
   projectUrlLabel?: string;
+  githubUrl?: string;
   children: ReactNode;
 };
 
@@ -28,9 +29,14 @@ export default function ProjectCaseStudyLayout({
   imageAlt,
   projectUrl,
   projectUrlLabel,
+  githubUrl,
   children,
 }: ProjectCaseStudyLayoutProps) {
-  const hasProjectCta = Boolean(projectUrl && projectUrlLabel);
+  const projectLinks = [
+    ...(projectUrl && projectUrlLabel ? [{ href: projectUrl, label: projectUrlLabel }] : []),
+    ...(githubUrl ? [{ href: githubUrl, label: "View on GitHub" }] : []),
+  ];
+  const hasProjectCta = projectLinks.length > 0;
 
   return (
     <main className="page-intro mx-auto w-full max-w-4xl px-5 pb-16 pt-14 sm:px-6 sm:pb-24 sm:pt-32">
@@ -70,16 +76,19 @@ export default function ProjectCaseStudyLayout({
       </div>
 
       {hasProjectCta ? (
-        <div className="mt-5">
-          <a
-            href={projectUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel)] px-4 py-2 text-sm font-semibold text-[color:var(--fg)] transition-[transform,background-color,border-color,color,box-shadow] duration-200 hover:-translate-y-0.5 hover:border-[color:var(--accent)] hover:bg-[color:var(--accent)] hover:text-[color:var(--bg)] hover:shadow-[0_0_0_1px_var(--accent),0_0_26px_-5px_var(--accent)] focus-visible:border-[color:var(--accent)] focus-visible:bg-[color:var(--accent)] focus-visible:text-[color:var(--bg)] focus-visible:outline-none focus-visible:shadow-[0_0_0_3px_var(--bg),0_0_26px_-4px_var(--accent)]"
-          >
-            {projectUrlLabel}
-            <ArrowRightIcon className="h-4 w-4" />
-          </a>
+        <div className="mt-5 flex flex-wrap gap-3">
+          {projectLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel)] px-4 py-2 text-sm font-semibold text-[color:var(--fg)] transition-[transform,background-color,border-color,color,box-shadow] duration-200 hover:-translate-y-0.5 hover:border-[color:var(--accent)] hover:bg-[color:var(--accent)] hover:text-[color:var(--bg)] hover:shadow-[0_0_0_1px_var(--accent),0_0_26px_-5px_var(--accent)] focus-visible:border-[color:var(--accent)] focus-visible:bg-[color:var(--accent)] focus-visible:text-[color:var(--bg)] focus-visible:outline-none focus-visible:shadow-[0_0_0_3px_var(--bg),0_0_26px_-4px_var(--accent)]"
+            >
+              {link.label}
+              <ArrowRightIcon className="h-4 w-4" />
+            </a>
+          ))}
         </div>
       ) : null}
 
