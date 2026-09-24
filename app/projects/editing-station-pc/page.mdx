@@ -18,8 +18,8 @@ export const metadata = {
     "Avoid paying prebuilt workstation pricing for similar performance.",
     "Make the system look intentional in the room instead of purely utilitarian.",
   ]}
-  imageSrc="/projects/editing-station-pc/maddy-08.jpg"
-  imageAlt="Photo of the Editing Station PC build"
+  imageSrc="/projects/editing-station-pc/01 fractal pc.png"
+  imageAlt="Completed white Fractal North editing PC with blue interior lighting and a wood front panel"
 >
 
 This was a custom PC build I put together for my sister, Madeline, <a href="https://infinitefocusphotography.com" className="accent-link">a Jacksonville/Fernandina-area photographer</a>, designed for productivity and photo editing. It started as my brother-in-law's Christmas gift idea for her, and he funded the build with a target budget of around $2,000.
@@ -42,21 +42,21 @@ This was a custom PC build I put together for my sister, Madeline, <a href="http
 
 <div className="mt-4 grid gap-4 sm:grid-cols-2">
   {[
-    ["Interior view of the Editing Station PC", "/projects/editing-station-pc/maddy-01.jpg"],
-    ["Completed Editing Station PC on the desk", "/projects/editing-station-pc/maddy-02.jpg"],
-    ["Editing Station PC side view", "/projects/editing-station-pc/maddy-03.jpg"],
-    ["Editing Station PC setup detail", "/projects/editing-station-pc/maddy-04.jpg"],
-    ["Editing Station PC case and desk setup", "/projects/editing-station-pc/maddy-05.jpg"],
-    ["Editing Station PC thumbnail view", "/projects/editing-station-pc/maddy-06.jpg"],
-    ["Editing Station PC lighting detail", "/projects/editing-station-pc/maddy-09.png"],
-    ["Main photo of the Editing Station PC build", "/projects/editing-station-pc/maddy-08.jpg"],
+    ["Completed white Fractal North editing PC with blue interior lighting", "/projects/editing-station-pc/01 fractal pc.png"],
+    ["Fractal North case, components, and tools laid out before assembly", "/projects/editing-station-pc/02 fractal pc.jpg"],
+    ["Asus motherboard with the Ryzen processor and memory installed beside the empty case", "/projects/editing-station-pc/03 fractal pc.jpg"],
+    ["Motherboard and white liquid cooler installed in the Fractal North case", "/projects/editing-station-pc/04 fractal pc.jpg"],
+    ["Top view of the radiator and fan wiring during assembly", "/projects/editing-station-pc/05 fractal pc.jpg"],
+    ["Assembled editing PC running the Asus BIOS on a connected monitor", "/projects/editing-station-pc/06 fractal pc.jpg"],
+    ["Close-up of the illuminated liquid cooler, memory, graphics card, and white cable extensions", "/projects/editing-station-pc/07 fractal pc.jpg"],
+    ["Completed editing workstation with dual monitors and the white Fractal North PC", "/projects/editing-station-pc/08 fractal pc.jpg"],
   ].map(([alt, src]) => (
     <figure key={src} className="overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel-strong)]">
       <img
         src={src}
         alt={alt}
         loading="lazy"
-        className="aspect-[4/3] h-full w-full object-cover"
+        className="aspect-[4/3] h-full w-full object-contain"
       />
     </figure>
   ))}

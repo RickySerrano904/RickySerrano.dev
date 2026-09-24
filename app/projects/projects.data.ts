@@ -45,16 +45,14 @@ export const projects: Project[] = [
     title: "My First PC Build",
     summary: "My first custom desktop PC build, documenting the component choices that started my hands-on experience with computer hardware.",
     tags: ["PC Building", "Hardware", "Gaming"],
-    thumbnailSrc: "/projects/first-pc-build/first-pc-build-screenshot.jpg",
-    thumbnailAlt: "My First PC Build completed setup",
   },
   {
     slug: "editing-station-pc",
     title: "Fractal North Editing PC",
     summary: "A custom-built PC optimized for video editing workloads, featuring a high-performance CPU, GPU, and fast storage to handle large media files and complex timelines.",
     tags: ["PC Building", "Hardware Optimization"],
-    thumbnailSrc: "/projects/editing-station-pc/maddy-09.png",
-    thumbnailAlt: "Photo of Editing Station PC",
+    thumbnailSrc: "/projects/editing-station-pc/01 fractal pc.png",
+    thumbnailAlt: "Completed white Fractal North editing PC with blue interior lighting and a wood front panel",
   },
   {
     slug: "lancool-207-gaming-pc",
