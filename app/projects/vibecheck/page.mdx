@@ -1,3 +1,4 @@
+import { getProjectSummary } from "@/app/projects/projects.data";
 import ProjectCaseStudyLayout from "@/app/projects/ProjectCaseStudyLayout";
 import ScreenshotGallery from "@/app/projects/ScreenshotGallery";
 
@@ -10,7 +11,7 @@ export const metadata = {
 <ProjectCaseStudyLayout
   eyebrow="Live Music + Group Planning"
   title="VibeCheck"
-  summary="A full-stack application that helps friends discover nearby live music, match events to their shared listening preferences, and choose where to go through group voting."
+  summary={getProjectSummary("vibecheck")}
   problem="Choosing a live music event gets complicated when everyone has different tastes. Groups need a relevant shortlist and a shared way to make a decision without an endless back-and-forth in the group chat."
   solution="Built an Angular and Spring Boot application that imports Last.fm music profiles, scores nearby Ticketmaster events against group preferences, and guides members through voting to a winning event."
   imageSrc="/projects/vibecheck/01 landing page.png"

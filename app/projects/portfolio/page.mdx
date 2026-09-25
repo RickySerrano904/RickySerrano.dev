@@ -1,3 +1,4 @@
+import { getProjectSummary } from "@/app/projects/projects.data";
 import ProjectCaseStudyLayout from "@/app/projects/ProjectCaseStudyLayout";
 
 export const metadata = {
@@ -9,7 +10,7 @@ export const metadata = {
 <ProjectCaseStudyLayout
   eyebrow="Personal Brand + Case Studies"
   title="Portfolio Website"
-  summary="A responsive portfolio website designed to present my work, experience, skills, and project case studies in a polished, maintainable format."
+  summary={getProjectSummary("portfolio")}
   problem="Create a professional home base that clearly communicates my technical background while making projects easy to browse, understand, and update over time."
   solution="Built a content-driven Next.js site with reusable sections, MDX project pages, typed content data, and responsive styling so the portfolio can grow without duplicating layout code."
   imageSrc="/projects/portfolio-project/portfolio screenshot.png"

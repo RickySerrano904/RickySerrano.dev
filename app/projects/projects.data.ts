@@ -11,7 +11,7 @@ export const projects: Project[] = [
   {
     slug: "vibecheck",
     title: "VibeCheck",
-    summary: "Full-stack capstone app that matches nearby live music to a group's Last.fm preferences and helps friends choose an event through voting.",
+    summary: "A full-stack web application that helps friends discover upcoming music events tailored to their music preferences and vote on which to attend, making it easier to plan their next concert together.",
     tags: ["Angular", "Spring Boot", "PostgreSQL", "APIs"],
     thumbnailSrc: "/projects/vibecheck/01 landing page.png",
     thumbnailAlt: "VibeCheck landing page introducing live music matching and group voting",
@@ -19,7 +19,7 @@ export const projects: Project[] = [
   {
     slug: "senior-helper",
     title: "Senior Helper",
-    summary: "Full-stack web app that helps older adults and caregivers coordinate appointments, stay connected, and build online safety skills.",
+    summary: "A full-stack web application that helps older adults and caregivers stay organized, connected, and safer online.",
     tags: ["Java", "TypeScript", "Angular", "Postgres"],
     thumbnailSrc: "/projects/senior-helper/01 landing.png",
     thumbnailAlt: "Senior Helper landing page in light mode",
@@ -27,7 +27,7 @@ export const projects: Project[] = [
   {
     slug: "enzos-world",
     title: "Enzo's World",
-    summary: "A playful Next.js site for Enzo with a curated photo gallery, MDX field reports, a protected contact form, and a merch shop bridge.",
+    summary: "A playful website dedicated to Enzo, featuring a photo gallery, blog, contact page, and a linked Fourthwall merch store.",
     tags: ["Next.js", "React", "TypeScript", "MDX"],
     thumbnailSrc: "/projects/enzos-world/01 dashboard.png",
     thumbnailAlt: "Enzo's World home page in light mode",
@@ -35,7 +35,7 @@ export const projects: Project[] = [
   {
     slug: "portfolio",
     title: "Portfolio Website",
-    summary: "A responsive portfolio website showcasing my projects, experience, and skills as a software developer.",
+    summary: "A responsive portfolio website designed to present my work, experience, skills, and project case studies in a polished, maintainable format.",
     tags: ["Next.js", "React", "TypeScript", "MDX"],
     thumbnailSrc: "/projects/portfolio-project/portfolio screenshot.png",
     thumbnailAlt: "Ricky Serrano's portfolio homepage in dark mode with a profile photo and GitHub contribution graph",
@@ -43,13 +43,13 @@ export const projects: Project[] = [
     {
     slug: "first-pc-build",
     title: "My First PC Build",
-    summary: "My first custom desktop PC build, documenting the component choices that started my hands-on experience with computer hardware.",
+    summary: "The first custom desktop I built for myself back in 2020: a hands-on introduction to researching compatible parts, and assembling a system.",
     tags: ["PC Building", "Hardware", "Gaming"],
   },
   {
     slug: "editing-station-pc",
     title: "Fractal North Editing PC",
-    summary: "A custom-built PC optimized for video editing workloads, featuring a high-performance CPU, GPU, and fast storage to handle large media files and complex timelines.",
+    summary: "A custom workstation built for productivity and photo editing, pairing lasting performance with a clean white aesthetic.",
     tags: ["PC Building", "Hardware Optimization"],
     thumbnailSrc: "/projects/editing-station-pc/01 fractal pc.png",
     thumbnailAlt: "Completed white Fractal North editing PC with blue interior lighting and a wood front panel",
@@ -63,3 +63,11 @@ export const projects: Project[] = [
     thumbnailAlt: "White Lancool 207 gaming PC interior with blue lighting and a GeForce RTX graphics card",
   },
 ];
+
+export function getProjectSummary(slug: string): string {
+  const project = projects.find((project) => project.slug === slug);
+  if (!project) {
+    throw new Error(`Unknown project: ${slug}`);
+  }
+  return project.summary;
+}

@@ -1,3 +1,4 @@
+import { getProjectSummary } from "@/app/projects/projects.data";
 import ProjectCaseStudyLayout from "@/app/projects/ProjectCaseStudyLayout";
 import ScreenshotGallery from "@/app/projects/ScreenshotGallery";
 
@@ -10,7 +11,7 @@ export const metadata = {
 <ProjectCaseStudyLayout
   eyebrow="Interactive Storytelling"
   title="Enzo's World"
-  summary="A clean, playful web application dedicated to Enzo, combining photos, field reports, contact, and merch in one warm home base."
+  summary={getProjectSummary("enzos-world")}
   problem="Create a small but complete site that feels personal and lighthearted while still supporting real content, responsive browsing, accessible interactions, and production form handling."
   solution="Built a Next.js and MDX application with a curated gallery, blog routes, reusable themed components, a protected contact flow, and a merch bridge to Enzo's Fourthwall shop."
   imageSrc="/projects/enzos-world/01 dashboard.png"

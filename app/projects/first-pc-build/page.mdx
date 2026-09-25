@@ -1,3 +1,4 @@
+import { getProjectSummary } from "@/app/projects/projects.data";
 import ProjectCaseStudyLayout from "@/app/projects/ProjectCaseStudyLayout";
 
 export const metadata = {
@@ -9,7 +10,7 @@ export const metadata = {
 <ProjectCaseStudyLayout
   eyebrow="Custom PC Build"
   title="My First PC Build"
-  summary="The first custom desktop I built for myself back in 2020: a hands-on introduction to researching compatible parts, assembling a system, and learning the details that make a PC feel truly personal."
+  summary={getProjectSummary("first-pc-build")}
   problem="Assemble my first desktop from individual components: a balanced, affordable system capable of 1440p gaming that would also teach me the full assembly process. A side goal was to find a case with a reverse layout so that the glass panel would face into the room."
   solution="Started with the case-placement requirement, choosing the reverse-layout darkFlash V22. I then used PCPartPicker to validate compatibility and built around a Ryzen 5 3600 and RTX 2070 Super for affordable 1440p gaming."
   goals={[
