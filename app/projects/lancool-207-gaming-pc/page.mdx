@@ -19,8 +19,8 @@ export const metadata = {
     "Choose parts that leave practical upgrade room instead of building around the bare minimum.",
     "Keep cable routing clean so the finished build looks intentional from every visible angle.",
   ]}
-  imageSrc="/projects/Lancool-207-gaming-pc/lancool-06.jpg"
-  imageAlt="White Lian Li Lancool 207 gaming PC case"
+  imageSrc="/projects/Lancool-207-gaming-pc/01 lancool.jpg"
+  imageAlt="White Lancool 207 gaming PC interior with blue lighting and a GeForce RTX graphics card"
 >
 
 This build was for my younger sister, who has been wanting to get into PC gaming for a while. 
@@ -40,20 +40,24 @@ now for an end product that she will love, than try and save money now and creat
 <div className="mt-4 grid gap-3 sm:grid-cols-2 sm:gap-4">
   {[
     [
-      "/projects/Lancool-207-gaming-pc/lancool-05.jpg",
-      "Completed white Lancool 207 gaming PC build on a desk",
+      "/projects/Lancool-207-gaming-pc/01 lancool.jpg",
+      "Close-up of the blue-lit white liquid cooler, memory, graphics card, and routed power cables",
     ],
     [
-      "/projects/Lancool-207-gaming-pc/lancool-06.jpg",
-      "Side view of the white Lancool 207 gaming PC interior",
+      "/projects/Lancool-207-gaming-pc/02 lancool.jpg",
+      "Full side view of the white Lancool 207 gaming PC with the lighting off",
     ],
     [
-      "/projects/Lancool-207-gaming-pc/lancool-07.jpg",
-      "Angled view of the white Lancool 207 gaming PC build",
+      "/projects/Lancool-207-gaming-pc/03 lancool.jpg",
+      "Angled close-up of the white GeForce RTX graphics card, liquid cooler, and cable routing",
     ],
     [
-      "/projects/Lancool-207-gaming-pc/lancool-04.jpg",
-      "Close-up of the white Lancool 207 gaming PC components",
+      "/projects/Lancool-207-gaming-pc/04 lancool.jpg",
+      "Completed white Lancool 207 gaming PC with blue interior lighting viewed from the side",
+    ],
+    [
+      "/projects/Lancool-207-gaming-pc/05 lancool.jpg",
+      "Front three-quarter view of the white Lancool 207 with blue-lit intake fans and interior",
     ],
   ].map(([src, alt]) => (
     <figure
@@ -64,7 +68,7 @@ now for an end product that she will love, than try and save money now and creat
         src={src}
         alt={alt}
         loading="lazy"
-        className="aspect-[4/3] h-full w-full object-cover"
+        className="aspect-[4/3] h-full w-full object-contain"
       />
     </figure>
   ))}

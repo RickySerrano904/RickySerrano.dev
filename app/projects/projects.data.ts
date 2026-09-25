@@ -37,8 +37,8 @@ export const projects: Project[] = [
     title: "Portfolio Website",
     summary: "A responsive portfolio website showcasing my projects, experience, and skills as a software developer.",
     tags: ["Next.js", "React", "TypeScript", "MDX"],
-    thumbnailSrc: "/projects/portfolio-project/portfolio-screenshot.jpg",
-    thumbnailAlt: "Screenshot of portfolio homepage",
+    thumbnailSrc: "/projects/portfolio-project/portfolio screenshot.png",
+    thumbnailAlt: "Ricky Serrano's portfolio homepage in dark mode with a profile photo and GitHub contribution graph",
   },
     {
     slug: "first-pc-build",
@@ -59,7 +59,7 @@ export const projects: Project[] = [
     title: "Lancool 207 Gaming PC",
     summary: "A white 1440p gaming PC built around a Ryzen 5 9600X, RTX 5070, fast DDR5 memory, and long-term upgrade headroom.",
     tags: ["PC Building", "Gaming", "Hardware"],
-    thumbnailSrc: "/projects/Lancool-207-gaming-pc/lancool-05.jpg",
-    thumbnailAlt: "Completed white Lancool 207 gaming PC build",
+    thumbnailSrc: "/projects/Lancool-207-gaming-pc/01 lancool.jpg",
+    thumbnailAlt: "White Lancool 207 gaming PC interior with blue lighting and a GeForce RTX graphics card",
   },
 ];
