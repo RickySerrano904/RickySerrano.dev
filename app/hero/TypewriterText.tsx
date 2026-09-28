@@ -88,24 +88,26 @@ export default function TypewriterText({
   const widestWordLength = safeWords.reduce((max, word) => Math.max(max, word.length), 0);
 
   return (
-    <span
-      className={className}
-      style={{
-        minWidth: `min(${widestWordLength}ch, 100%)`,
-        maxWidth: "100%",
-        minHeight: "1em",
-        display: "inline-flex",
-        flexWrap: "wrap",
-        alignItems: "baseline",
-        whiteSpace: "normal",
-      }}
-      aria-label={currentWord}
-    >
-      {renderedText}
+    <>
+      <span className="sr-only">{safeWords.join(", ")}</span>
       <span
+        className={className}
+        style={{
+          minWidth: `min(${widestWordLength}ch, 100%)`,
+          maxWidth: "100%",
+          minHeight: "1em",
+          display: "inline-flex",
+          flexWrap: "wrap",
+          alignItems: "baseline",
+          whiteSpace: "normal",
+        }}
         aria-hidden="true"
-        className={`typewriter-cursor${reduceMotion ? " typewriter-cursor-static" : ""}`}
-      />
-    </span>
+      >
+        {renderedText}
+        <span
+          className={`typewriter-cursor${reduceMotion ? " typewriter-cursor-static" : ""}`}
+        />
+      </span>
+    </>
   );
 }
