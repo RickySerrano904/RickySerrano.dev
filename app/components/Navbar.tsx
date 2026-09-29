@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import type { MouseEvent } from "react";
 import { useTheme } from "./useTheme";
 
@@ -59,8 +59,40 @@ export default function FloatingNav() {
   const pathname = usePathname();
   const { mounted, theme, toggleTheme } = useTheme();
   const [activeSection, setActiveSection] = useState("home");
+  const [menuOpen, setMenuOpen] = useState(false);
+  const navRef = useRef<HTMLElement>(null);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   const normalizedPath = useMemo(() => normalizePath(pathname ?? "/"), [pathname]);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+
+    const dismissOutside = (event: PointerEvent) => {
+      if (event.target instanceof Node && !navRef.current?.contains(event.target)) {
+        setMenuOpen(false);
+      }
+    };
+    const dismissWithEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setMenuOpen(false);
+        menuButtonRef.current?.focus();
+      }
+    };
+    const desktopQuery = window.matchMedia("(min-width: 768px)");
+    const dismissOnDesktop = () => {
+      if (desktopQuery.matches) setMenuOpen(false);
+    };
+
+    document.addEventListener("pointerdown", dismissOutside);
+    document.addEventListener("keydown", dismissWithEscape);
+    desktopQuery.addEventListener("change", dismissOnDesktop);
+    return () => {
+      document.removeEventListener("pointerdown", dismissOutside);
+      document.removeEventListener("keydown", dismissWithEscape);
+      desktopQuery.removeEventListener("change", dismissOnDesktop);
+    };
+  }, [menuOpen]);
 
   useEffect(() => {
     if (!mounted || normalizedPath !== "/") {
@@ -153,6 +185,10 @@ export default function FloatingNav() {
     item: NavItem,
     isSectionRoute: boolean,
   ) => {
+    if (menuOpen) {
+      setMenuOpen(false);
+      menuButtonRef.current?.focus();
+    }
     if (!isSectionRoute) {
       return;
     }
@@ -189,10 +225,33 @@ export default function FloatingNav() {
   };
 
   return (
-    <nav className="fixed inset-x-3 top-3 z-50 md:left-1/2 md:right-auto md:top-6 md:w-[min(92vw,760px)] md:-translate-x-1/2">
-      <div className="flex items-center justify-between gap-2 rounded-2xl border border-[color:var(--border)] bg-[color:var(--nav)] px-2 py-2 shadow-[0_16px_40px_-24px_rgba(10,12,16,0.7)] backdrop-blur md:gap-3 md:rounded-full md:px-3">
-        <div className="min-w-0 flex-1 overflow-x-auto md:overflow-visible">
-          <div className="flex w-max items-center gap-1 md:w-auto md:flex-wrap">
+    <nav
+      ref={navRef}
+      aria-label="Main navigation"
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget)) setMenuOpen(false);
+      }}
+      className="fixed inset-x-3 top-3 z-50 md:left-1/2 md:right-auto md:top-6 md:w-[min(92vw,760px)] md:-translate-x-1/2"
+    >
+      <div className="flex flex-wrap items-center justify-between gap-2 rounded-2xl border border-[color:var(--border)] bg-[color:var(--nav)] px-2 py-2 shadow-[0_16px_40px_-24px_rgba(10,12,16,0.7)] backdrop-blur md:flex-nowrap md:gap-3 md:rounded-full md:px-3">
+        <button
+          ref={menuButtonRef}
+          type="button"
+          aria-expanded={menuOpen}
+          aria-controls="navigation-links"
+          onClick={() => setMenuOpen((open) => !open)}
+          className="inline-flex min-h-11 items-center gap-3 rounded-xl px-3 text-sm font-semibold text-[color:var(--fg)] hover:bg-[color:var(--nav-active)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--accent)] md:hidden"
+        >
+          <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
+            <path d={menuOpen ? "M6 6l12 12M6 18 18 6" : "M4 6h16M4 12h16M4 18h16"} />
+          </svg>
+          {menuOpen ? "Close menu" : "Menu"}
+        </button>
+        <div
+          id="navigation-links"
+          className={`${menuOpen ? "block" : "hidden"} order-last max-h-[calc(100dvh-6rem)] min-w-0 basis-full overflow-y-auto border-t border-[color:var(--border)] pt-2 md:order-none md:block md:max-h-none md:flex-1 md:basis-auto md:overflow-visible md:border-0 md:pt-0`}
+        >
+          <div className="flex flex-col gap-1 md:flex-row md:flex-wrap md:items-center">
           {navItems.map((item) => {
             const isSectionRoute = normalizedPath === "/";
             const isRouteMatch = item.routePrefixes.some(
@@ -210,7 +269,7 @@ export default function FloatingNav() {
                 href={item.href}
                 onClick={(event) => handleNavClick(event, item, isSectionRoute)}
                 aria-current={isActive ? (isSectionRoute ? "location" : "page") : undefined}
-                className={`rounded-full px-2.5 py-2 text-xs font-medium transition-[color,background-color,box-shadow,transform] duration-200 md:px-3 md:text-sm ${
+                className={`flex min-h-11 items-center rounded-xl px-3 py-3 text-sm font-medium transition-[color,background-color,box-shadow,transform] duration-200 focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[color:var(--accent)] md:min-h-0 md:rounded-full md:py-2 ${
                   isActive
                     ? "bg-[color:var(--nav-active)] text-[color:var(--fg)] shadow-[0_0_0_1px_var(--border),0_0_16px_-10px_var(--accent)]"
                     : "text-[color:var(--muted)] hover:bg-[color:var(--nav-active)] hover:text-[color:var(--fg)] hover:shadow-[0_0_0_1px_var(--border),0_0_18px_-10px_var(--accent)]"
