@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
+import { headers } from "next/headers";
 import { connection } from "next/server";
 import FloatingNav from "./components/Navbar";
 import "./globals.css";
@@ -35,6 +36,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   await connection();
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
 
   return (
     <html
@@ -43,7 +45,7 @@ export default async function RootLayout({
       suppressHydrationWarning
     >
       <head>
-        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+        <script nonce={nonce} dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
       <body className="min-h-screen antialiased text-[color:var(--fg)]">
         <FloatingNav />
