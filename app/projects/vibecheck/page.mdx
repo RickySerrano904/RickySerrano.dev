@@ -25,7 +25,7 @@ VibeCheck was developed by a nine-member team for FSCJ's CEN4940 Application Dev
 - **Music profiles:** Members connect Last.fm to import listening preferences and tag data. Stored profiles provide the musical context for personalized and group event matching.
 - **Private groups:** Users create or join groups and invite friends, giving each group a shared space to coordinate its next event.
 - **Event matching:** When a voting session starts, the backend retrieves nearby Ticketmaster events, maps Last.fm tags to Ticketmaster genres, and scores the options against the group's combined preferences.
-- **Group voting and results:** Group leaders launch sessions with a curated event shortlist. Members vote on multiple options, and completed or expired sessions produce a winning event and results. A scheduled backend task closes expired sessions and saves the winner.
+- **Group voting and results:** Group leaders launch sessions with a curated event shortlist. Members vote on multiple options, and completed sessions produce a winning event and results.
 - **Authenticated access:** Registration and login lead to protected profile, group, and voting screens. Spring Security validates JWTs on the backend, while Angular route guards and an HTTP interceptor support authenticated navigation and requests.
 
 ##  User Flow
@@ -95,6 +95,17 @@ VibeCheck was developed by a nine-member team for FSCJ's CEN4940 Application Dev
 - **Persistence:** Supabase-hosted PostgreSQL stores users, music profiles, groups, memberships, event details and occurrences, scores, voting sessions, votes, and winners. Spring Data JPA handles persistence, with direct SQL for simultaneous vote updates.
 - **Integrations:** Last.fm supplies listening preferences and tags; Ticketmaster supplies nearby event data. The backend translates between the two services to build the group's voting options.
 - **Security and configuration:** BCrypt hashes passwords, Spring Security authorizes requests with JWTs, and environment variables supply database credentials, API credentials, callback configuration, and the JWT signing key. Foreign keys and unique constraints protect relationships and prevent duplicate memberships, profiles, and votes.
+
+## External API Integrations
+
+We integrated two external APIs, Last.fm and Ticketmaster, to connect the group's music preferences with live events they could attend together.
+
+- **Last.fm API:** Imports listening preferences and music tags from connected accounts to build each member's music profile.
+- **Ticketmaster API:** Retrieves nearby events for the group's voting session, providing the event options that members review and vote on.
+
+The two APIs describe music differently, so their data could not be compared directly. We normalized the tag and genre data in the Spring Boot backend, mapping Last.fm tags to corresponding Ticketmaster genres before scoring events. This gave us a consistent basis for comparing the group's music preferences with available events and turning the results into a ranked shortlist for voting.
+
+Our approach combined automatic matching with manual curation: standardize capitalization and whitespace, match tags against Ticketmaster's genre and subgenre names, then account for simple punctuation and spacing differences such as "synthpop" and "Synth Pop." Ambiguous labels needed curated mappings rather than text cleanup alone. Non-genre tags such as "seen live" and "bookmark" were excluded from genre matching to avoid misleading recommendations.
 
 {/* ## Challenges and Lessons Learned
 
