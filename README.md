@@ -6,16 +6,28 @@ My personal portfolio built with Next.js, React, TypeScript, Tailwind CSS, and M
 
 <table>
   <tr>
-    <td><img src="public/readme-screenshots/screenshot-01.png" alt="Portfolio homepage hero section" width="100%" /></td>
-    <td><img src="public/readme-screenshots/screenshot-02.png" alt="Portfolio homepage content section" width="100%" /></td>
+    <th width="50%">Light theme</th>
+    <th width="50%">Dark theme</th>
   </tr>
   <tr>
-    <td><img src="public/readme-screenshots/screenshot-03.png" alt="Portfolio project cards section" width="100%" /></td>
-    <td><img src="public/readme-screenshots/screenshot-04.png" alt="Portfolio project detail section" width="100%" /></td>
+    <td><img src="public/readme-screenshots/01%20home.png" alt="Portfolio home section in light theme" width="100%" /></td>
+    <td><img src="public/readme-screenshots/01%20home-dark.png" alt="Portfolio home section in dark theme" width="100%" /></td>
   </tr>
   <tr>
-    <td><img src="public/readme-screenshots/screenshot-05.png" alt="Portfolio skills and experience section" width="100%" /></td>
-    <td><img src="public/readme-screenshots/screenshot-06.png" alt="Portfolio contact section" width="100%" /></td>
+    <td><img src="public/readme-screenshots/02%20experience.png" alt="Portfolio experience section in light theme" width="100%" /></td>
+    <td><img src="public/readme-screenshots/02%20experience-dark.png" alt="Portfolio experience section in dark theme" width="100%" /></td>
+  </tr>
+  <tr>
+    <td><img src="public/readme-screenshots/03%20skills.png" alt="Portfolio skills section in light theme" width="100%" /></td>
+    <td><img src="public/readme-screenshots/03%20skills-dark.png" alt="Portfolio skills section in dark theme" width="100%" /></td>
+  </tr>
+  <tr>
+    <td><img src="public/readme-screenshots/04%20projects.png" alt="Portfolio projects section in light theme" width="100%" /></td>
+    <td><img src="public/readme-screenshots/04%20projects-dark.png" alt="Portfolio projects section in dark theme" width="100%" /></td>
+  </tr>
+  <tr>
+    <td><img src="public/readme-screenshots/05%20contact.png" alt="Portfolio contact section in light theme" width="100%" /></td>
+    <td><img src="public/readme-screenshots/05%20contact-dark.png" alt="Portfolio contact section in dark theme" width="100%" /></td>
   </tr>
 </table>
 
