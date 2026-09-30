@@ -1,5 +1,6 @@
 import { getProjectSummary } from "@/app/projects/projects.data";
-import SeniorHelperCaseStudy, { SeniorHelperScreenshots } from "@/app/projects/senior-helper/SeniorHelperCaseStudy";
+import ProjectCaseStudyLayout from "@/app/projects/ProjectCaseStudyLayout";
+import ScreenshotGallery from "@/app/projects/ScreenshotGallery";
 
 export const metadata = {
   title: "Senior Helper | Projects",
@@ -7,9 +8,11 @@ export const metadata = {
     "Case study for Senior Helper, a full-stack care coordination and cybersecurity education app for older adults and caregivers.",
 };
 
-<SeniorHelperCaseStudy
+<ProjectCaseStudyLayout
   eyebrow="Accessibility + Safety"
   title="Senior Helper"
+  imageSrc="/projects/senior-helper/01 landing.png"
+  imageAlt="Senior Helper landing page in light mode"
   githubUrl="https://github.com/RickySerrano904/SeniorHelper"
   summary={getProjectSummary("senior-helper")}
   problem="Older adults and caregivers need practical coordination tools that make appointments, support links, and online safety learning easier to manage without adding visual or cognitive friction."
@@ -20,7 +23,76 @@ Senior Helper is a full-stack web application designed for older adults and care
 
 ## Screenshots
 
-<SeniorHelperScreenshots />
+<ScreenshotGallery
+  items={[
+    {
+      title: "Landing Page",
+      src: "/projects/senior-helper/01 landing.png",
+      darkSrc: "/projects/senior-helper/01 landing-dark.png",
+      alt: "Senior Helper landing page",
+    },
+    {
+      title: "Sign In",
+      src: "/projects/senior-helper/02 login.png",
+      darkSrc: "/projects/senior-helper/02 login-dark.png",
+      alt: "Senior Helper sign in form",
+    },
+    {
+      title: "Register",
+      src: "/projects/senior-helper/03 register.png",
+      darkSrc: "/projects/senior-helper/03 register-dark.png",
+      alt: "Senior Helper account registration form",
+    },
+    {
+      title: "Dashboard",
+      src: "/projects/senior-helper/04 dashboard.png",
+      darkSrc: "/projects/senior-helper/04 dashboard-dark.png",
+      alt: "Senior Helper dashboard",
+    },
+    {
+      title: "Calendar",
+      src: "/projects/senior-helper/05 calendar.png",
+      darkSrc: "/projects/senior-helper/05 calendar-dark.png",
+      alt: "Senior Helper appointment calendar",
+    },
+    {
+      title: "Appointment",
+      src: "/projects/senior-helper/06 appointment.png",
+      darkSrc: "/projects/senior-helper/06 appointment-dark.png",
+      alt: "Senior Helper appointment form",
+    },
+    {
+      title: "Connections",
+      src: "/projects/senior-helper/07 connections.png",
+      darkSrc: "/projects/senior-helper/07 connections-dark.png",
+      alt: "Senior Helper caregiver and family connections",
+    },
+    {
+      title: "Education Modules",
+      src: "/projects/senior-helper/08 education.png",
+      darkSrc: "/projects/senior-helper/08 education-dark.png",
+      alt: "Senior Helper online safety education modules",
+    },
+    {
+      title: "Module Overview",
+      src: "/projects/senior-helper/09 module view.png",
+      darkSrc: "/projects/senior-helper/09 module-dark.png",
+      alt: "Senior Helper education module overview",
+    },
+    {
+      title: "Lesson",
+      src: "/projects/senior-helper/10 lesson view.png",
+      darkSrc: "/projects/senior-helper/10 lesson-dark.png",
+      alt: "Senior Helper online safety lesson",
+    },
+    {
+      title: "Settings",
+      src: "/projects/senior-helper/11 settings.png",
+      darkSrc: "/projects/senior-helper/11 settings-dark.png",
+      alt: "Senior Helper account settings",
+    },
+  ]}
+/>
 
 ## Core Features
 
@@ -46,4 +118,4 @@ Senior Helper is a full-stack web application designed for older adults and care
 - Persistent light/dark theme, mobile-responsive layouts, and consistent navigation patterns.
 - Form-first interaction with inline validation/error states and explicit labels/autocomplete hints.
 
-</SeniorHelperCaseStudy>
+</ProjectCaseStudyLayout>
