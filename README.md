@@ -2,12 +2,6 @@
 
 My personal portfolio built with Next.js, React, TypeScript, Tailwind CSS, and MDX to showcase selected projects, technical experience, and professional background. The site includes a responsive homepage, reusable content sections, detailed project case studies, and a contact form for visitors to get in touch.
 
-## Lighthouse Results
-
-The portfolio achieved a perfect **100/100 across all four Lighthouse categories: Performance, Accessibility, Best Practices, and SEO**, in the desktop PageSpeed Insights audit on September 29, 2026.
-
-![Desktop PageSpeed Insights report showing Lighthouse scores of 100 for Performance, Accessibility, Best Practices, and SEO](public/readme-screenshots/lighthouse%20score.png)
-
 ## Screenshots
 
 <table>
@@ -36,6 +30,12 @@ The portfolio achieved a perfect **100/100 across all four Lighthouse categories
     <td><img src="public/readme-screenshots/05%20contact-dark.png" alt="Portfolio contact section in dark theme" width="100%" /></td>
   </tr>
 </table>
+
+## Lighthouse Results
+
+The portfolio achieved a perfect **100/100 across all four Lighthouse categories: Performance, Accessibility, Best Practices, and SEO**, in the desktop PageSpeed Insights audit on September 29, 2026.
+
+![Desktop PageSpeed Insights report showing Lighthouse scores of 100 for Performance, Accessibility, Best Practices, and SEO](public/readme-screenshots/lighthouse%20score.png)
 
 ## Architecture and Stack
 
