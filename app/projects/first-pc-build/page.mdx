@@ -1,15 +1,18 @@
 import { getProjectSummary } from "@/app/projects/projects.data";
 import ProjectCaseStudyLayout from "@/app/projects/ProjectCaseStudyLayout";
+import ScreenshotGallery from "@/app/projects/ScreenshotGallery";
 
 export const metadata = {
-  title: "My First PC Build | Projects",
+  title: "Darkflash PC - My First Build | Projects",
   description:
     "Case study for Ricky Serrano's first custom PC build, featuring an AMD Ryzen 5 3600 and RTX 2070 Super.",
 };
 
 <ProjectCaseStudyLayout
   eyebrow="Custom PC Build"
-  title="My First PC Build"
+  title="Darkflash PC - My First Build"
+  imageSrc="/projects/first-build/01 darkflash build.jpg"
+  imageAlt="My first PC build inside a darkFlash V22 case with the glass door open, showing the vertical graphics card and liquid cooler"
   summary={getProjectSummary("first-pc-build")}
   problem="Assemble my first desktop from individual components: a balanced, affordable system capable of 1440p gaming that would also teach me the full assembly process. A side goal was to find a case with a reverse layout so that the glass panel would face into the room."
   solution="Started with the case-placement requirement, choosing the reverse-layout darkFlash V22. I then used PCPartPicker to validate compatibility and built around a Ryzen 5 3600 and RTX 2070 Super for affordable 1440p gaming."
@@ -63,6 +66,23 @@ gaming performance. I also expanded the storage capacity by adding a couple more
 this PC as my primary system, though I'm already looking forward to starting a new custom build in the near future.
 
 
+
+## Build Photos
+
+<ScreenshotGallery
+  items={[
+    {
+      title: "Completed Build",
+      src: "/projects/first-build/01 darkflash build.jpg",
+      alt: "Open darkFlash V22 case showing the reverse-layout interior, vertical Gigabyte graphics card, and liquid cooler",
+    },
+    {
+      title: "First Boot into BIOS",
+      src: "/projects/first-build/02 darkflash build.jpg",
+      alt: "Powered-on darkFlash PC beside a monitor displaying MSI BIOS with the Ryzen 5 3600 and 16 GB of memory detected",
+    },
+  ]}
+/>
 
 ## Parts List
 

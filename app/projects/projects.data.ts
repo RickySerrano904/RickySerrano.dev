@@ -42,9 +42,11 @@ export const projects: Project[] = [
   },
     {
     slug: "first-pc-build",
-    title: "My First PC Build",
+    title: "Darkflash PC - My First Build",
     summary: "The first custom desktop I built for myself back in 2020: a hands-on introduction to researching compatible parts, and assembling a system.",
     tags: ["PC Building", "Hardware", "Gaming"],
+    thumbnailSrc: "/projects/first-build/01 darkflash build.jpg",
+    thumbnailAlt: "My first PC build in a darkFlash V22 case with the glass door open and a vertical graphics card",
   },
   {
     slug: "editing-station-pc",
