@@ -1,12 +1,17 @@
+/**
+ * Provides the shared case-study layout: heading, hero, links, goals, and content.
+ * Looks up the title, summary, and default hero image by slug in projectCatalog.ts;
+ * individual case studies supply their own narrative and optional image overrides.
+ */
 import type { ReactNode } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import ArrowRightIcon from "@/app/components/ArrowRightIcon";
+import { getProject } from "@/app/projects/projectCatalog";
 
-type ProjectCaseStudyLayoutProps = {
+type ProjectDetailLayoutProps = {
   eyebrow: string;
-  title: string;
-  summary: string;
+  slug: string;
   problem: string;
   solution: string;
   goals?: string[];
@@ -18,20 +23,23 @@ type ProjectCaseStudyLayoutProps = {
   children: ReactNode;
 };
 
-export default function ProjectCaseStudyLayout({
+export default function ProjectDetailLayout({
   eyebrow,
-  title,
-  summary,
+  slug,
   problem,
   solution,
   goals,
-  imageSrc,
-  imageAlt,
+  imageSrc: customImageSrc,
+  imageAlt: customImageAlt,
   projectUrl,
   projectUrlLabel,
   githubUrl,
   children,
-}: ProjectCaseStudyLayoutProps) {
+}: ProjectDetailLayoutProps) {
+  const project = getProject(slug);
+  const { title, summary } = project;
+  const imageSrc = customImageSrc ?? project.thumbnailSrc;
+  const imageAlt = customImageAlt ?? (customImageSrc ? undefined : project.thumbnailAlt);
   const projectLinks = [
     ...(projectUrl && projectUrlLabel ? [{ href: projectUrl, label: projectUrlLabel }] : []),
     ...(githubUrl ? [{ href: githubUrl, label: "View on GitHub" }] : []),

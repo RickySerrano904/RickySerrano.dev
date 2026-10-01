@@ -1,21 +1,18 @@
-import { getProjectSummary } from "@/app/projects/projects.data";
-import ProjectCaseStudyLayout from "@/app/projects/ProjectCaseStudyLayout";
-import ScreenshotGallery from "@/app/projects/ScreenshotGallery";
+import { getProject } from "@/app/projects/projectCatalog";
+import ProjectDetailLayout from "@/app/projects/ProjectDetailLayout";
+import ProjectImageGallery from "@/app/projects/ProjectImageGallery";
 
 export const metadata = {
-  title: "Enzo's World | Projects",
+  title: `${getProject("enzos-world").title} | Projects`,
   description:
     "Case study for Enzo's World, a playful Next.js site with a gallery, MDX blog, contact form, and merch shop bridge.",
 };
 
-<ProjectCaseStudyLayout
+<ProjectDetailLayout
   eyebrow="Interactive Storytelling"
-  title="Enzo's World"
-  summary={getProjectSummary("enzos-world")}
+  slug="enzos-world"
   problem="Create a small but complete site that feels personal and lighthearted while still supporting real content, responsive browsing, accessible interactions, and production form handling."
   solution="Built a Next.js and MDX application with a curated gallery, blog routes, reusable themed components, a protected contact flow, and a merch bridge to Enzo's Fourthwall shop."
-  imageSrc="/projects/enzos-world/01 dashboard.png"
-  imageAlt="Enzo's World home page in light mode"
   projectUrl="https://enzosworld.com"
   projectUrlLabel="Visit enzosworld.com"
   githubUrl="https://github.com/RickySerrano904/EnzosWorld.com"
@@ -30,7 +27,7 @@ Enzo's World is designed to feel like a small, complete home base for everything
 
 ## Screenshots
 
-<ScreenshotGallery
+<ProjectImageGallery
   items={[
     {
       title: "Home",
@@ -109,4 +106,4 @@ Enzo's World is designed to feel like a small, complete home base for everything
 ## Deployment
 
 The main site is deployed on Vercel. DNS is managed through Cloudflare, and the shop subdomain points visitors to the Fourthwall storefront.
-</ProjectCaseStudyLayout>
+</ProjectDetailLayout>

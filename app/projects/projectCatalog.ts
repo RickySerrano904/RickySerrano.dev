@@ -1,3 +1,8 @@
+/**
+ * Central project catalog for display order, titles, summaries, tags, and thumbnails.
+ * Cards and case studies share these values, including browser titles and default
+ * hero images. getProject retrieves an entry by slug and rejects unknown slugs.
+ */
 export type Project = {
   slug: string;
   title: string;
@@ -66,10 +71,10 @@ export const projects: Project[] = [
   },
 ];
 
-export function getProjectSummary(slug: string): string {
+export function getProject(slug: string): Project {
   const project = projects.find((project) => project.slug === slug);
   if (!project) {
     throw new Error(`Unknown project: ${slug}`);
   }
-  return project.summary;
+  return project;
 }

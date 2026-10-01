@@ -1,3 +1,8 @@
+/**
+ * Displays captioned project screenshots or build photos in a shared gallery.
+ * Adds Light/Dark controls when items include darkSrc; items without a dark
+ * image keep their original image in either mode. Defaults to Light.
+ */
 "use client";
 
 import { useState } from "react";
@@ -10,11 +15,11 @@ type Screenshot = {
   alt: string;
 };
 
-type ScreenshotGalleryProps = {
+type ProjectImageGalleryProps = {
   items: Screenshot[];
 };
 
-export default function ScreenshotGallery({ items }: ScreenshotGalleryProps) {
+export default function ProjectImageGallery({ items }: ProjectImageGalleryProps) {
   const [mode, setMode] = useState<"light" | "dark">("light");
   const hasThemePairs = items.some((item) => item.darkSrc);
 

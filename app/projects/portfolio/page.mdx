@@ -1,20 +1,17 @@
-import { getProjectSummary } from "@/app/projects/projects.data";
-import ProjectCaseStudyLayout from "@/app/projects/ProjectCaseStudyLayout";
+import { getProject } from "@/app/projects/projectCatalog";
+import ProjectDetailLayout from "@/app/projects/ProjectDetailLayout";
 
 export const metadata = {
-  title: "Portfolio Website | Projects",
+  title: `${getProject("portfolio").title} | Projects`,
   description:
     "Case study for Ricky Serrano's portfolio website, built with Next.js, TypeScript, Tailwind CSS, and MDX.",
 };
 
-<ProjectCaseStudyLayout
+<ProjectDetailLayout
   eyebrow="Personal Brand + Case Studies"
-  title="Portfolio Website"
-  summary={getProjectSummary("portfolio")}
+  slug="portfolio"
   problem="Create a professional home base that clearly communicates my technical background while making projects easy to browse, understand, and update over time."
   solution="Built a content-driven Next.js site with reusable sections, MDX project pages, typed content data, and responsive styling so the portfolio can grow without duplicating layout code."
-  imageSrc="/projects/portfolio-project/portfolio screenshot.png"
-  imageAlt="Ricky Serrano's portfolio homepage in dark mode with a profile photo and GitHub contribution graph"
 >
 
 This portfolio is a Next.js application built to showcase my development work, technical experience, and background in IT support. The site balances a clean personal brand with practical project documentation, giving each project room for both a quick summary and deeper technical context.
@@ -40,4 +37,4 @@ This portfolio is a Next.js application built to showcase my development work, t
 - The shared case-study layout reduces repeated markup across project pages.
 - Image paths and alt text are defined alongside project content to keep visual assets easy to audit.
 - The structure leaves room for additional projects, live links, repositories, and expanded technical notes as the portfolio evolves.
-</ProjectCaseStudyLayout>
+</ProjectDetailLayout>

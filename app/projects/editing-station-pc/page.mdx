@@ -1,16 +1,16 @@
-import { getProjectSummary } from "@/app/projects/projects.data";
-import ProjectCaseStudyLayout from "@/app/projects/ProjectCaseStudyLayout";
+import PcPartsList from "@/app/projects/PcPartsList";
+import { getProject } from "@/app/projects/projectCatalog";
+import ProjectDetailLayout from "@/app/projects/ProjectDetailLayout";
 
 export const metadata = {
-  title: "Editing Station PC | Projects",
+  title: `${getProject("editing-station-pc").title} | Projects`,
   description:
     "Case study for a custom productivity and photo editing PC built around performance, budget, and home aesthetics.",
 };
 
-<ProjectCaseStudyLayout
+<ProjectDetailLayout
   eyebrow="Custom PC Build"
-  title="Editing Station PC"
-  summary={getProjectSummary("editing-station-pc")}
+  slug="editing-station-pc"
   problem="Build a capable photo editing and productivity PC within a $2,000 budget while keeping the system visually aligned with a Bohemian home setup."
   solution="Prioritized reliable creator-focused parts, reused a spare GPU to control cost, and chose a white Fractal North case to make the system feel intentional in the room."
   goals={[
@@ -19,8 +19,6 @@ export const metadata = {
     "Avoid paying prebuilt workstation pricing for similar performance.",
     "Make the system look intentional in the room instead of purely utilitarian.",
   ]}
-  imageSrc="/projects/editing-station-pc/01 fractal pc.png"
-  imageAlt="Completed white Fractal North editing PC with blue interior lighting and a wood front panel"
 >
 
 This was a custom PC build I put together for my sister, Madeline, <a href="https://infinitefocusphotography.com" className="accent-link">a Jacksonville/Fernandina-area photographer</a>, designed for productivity and photo editing. It started as my brother-in-law's Christmas gift idea for her, and he funded the build with a target budget of around $2,000.
@@ -65,54 +63,26 @@ This was a custom PC build I put together for my sister, Madeline, <a href="http
 
 ## Parts List
 
-<div className="mt-4 overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel-strong)]">
-  {[
-    ["CPU", "AMD Ryzen 9 9900X 4.4 GHz 12-Core Processor", "$389.00", "/projects/editing-station-pc/AMDRyzen9.jpg"],
-    ["Cooler", "Corsair NAUTILUS 240 RS ARGB 74.37 CFM Liquid CPU Cooler", "$100.00", "/projects/editing-station-pc/CorsairNautilus.jpg"],
-    ["Motherboard", "Asus X870 MAX GAMING WIFI7 W ATX AM5 Motherboard", "$187.00", "/projects/editing-station-pc/AsusX870.jpg"],
-    ["Memory", "G.Skill Flare X5 64 GB (2 x 32 GB) DDR5-6000 CL36 Memory", "$669.00", "/projects/editing-station-pc/RAM.jpg"],
-    ["Storage", "Samsung 9100 PRO 2 TB M.2-2280 PCIe 5.0 X4 NVME Solid State Drive", "$254.00", "/projects/editing-station-pc/Samsung9100.jpg"],
-    ["GPU", "Gigabyte WINDFORCE OC 3X GeForce RTX 2070 SUPER 8 GB Video Card", "$500.00", "/projects/editing-station-pc/RTX2070.jpg", true],
-    ["Case", "Fractal Design North ATX Mid Tower Case", "$145.00", "/projects/editing-station-pc/FractalNorth.jpg"],
-    ["PSU", "MSI MAG A750GL PCIE5 750 W 80+ Gold Certified Fully Modular ATX Power Supply", "$86.00", "/projects/editing-station-pc/MSIMag.jpg"],
-    ["OS", "Microsoft Windows 11 Home OEM - DVD 64-bit", "$100.00", "/projects/editing-station-pc/Windows11.jpg"],
-    ["Fans", "3 x NZXT F120Q (2024) 74.26 CFM 120 mm Fan", "$15.00 x 3", "/projects/editing-station-pc/NZXTF120.jpg"],
-    ["Cables", "AsiaHorse white sleeved PSU extension cable kit", "$30.00", "/projects/editing-station-pc/AsiaHorseCables.jpg", true],
-  ].map(([category, part, price, imageSrc, donated]) => (
-    <div
-      key={`${category}-${part}`}
-      className="grid grid-cols-[3.25rem_minmax(0,1fr)] gap-3 border-b border-[color:var(--border)] px-3 py-4 last:border-b-0 sm:grid-cols-[4.5rem_7rem_minmax(0,1fr)_5.5rem] sm:items-center sm:gap-4 sm:px-4"
-    >
-      <span className="flex h-[3.25rem] w-[3.25rem] items-center justify-center overflow-hidden rounded-xl border border-[color:var(--border)] bg-white p-2 sm:h-16 sm:w-16">
-        <img
-          src={imageSrc}
-          alt=""
-          loading="lazy"
-          className="h-full w-full object-contain"
-        />
-      </span>
-      <span className="col-start-2 inline-flex w-fit rounded-full border border-[color:var(--border)] bg-[color:var(--panel)] px-2 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-[color:var(--muted)] sm:col-start-auto sm:tracking-[0.18em]">
-        {category}
-      </span>
-      <span className="col-span-2 text-sm font-semibold leading-6 text-[color:var(--fg)] sm:col-span-1">
-        {part}
-      </span>
-      <span
-        className={`col-start-2 text-sm font-semibold text-[color:var(--muted)] sm:col-start-auto sm:text-right ${
-          donated ? "line-through opacity-60" : ""
-        }`}
-      >
-        {price}
-      </span>
-    </div>
-  ))}
-</div>
-
-<p className="mt-4 pr-2 text-right text-sm font-semibold text-[color:var(--muted)]">Out-of-pocket total: $1,975.00</p>
+<PcPartsList
+  items={[
+    { category: "CPU", name: "AMD Ryzen 9 9900X 4.4 GHz 12-Core Processor", imageSrc: "/projects/editing-station-pc/AMDRyzen9.jpg", price: "$389.00" },
+    { category: "Cooler", name: "Corsair NAUTILUS 240 RS ARGB 74.37 CFM Liquid CPU Cooler", imageSrc: "/projects/editing-station-pc/CorsairNautilus.jpg", price: "$100.00" },
+    { category: "Motherboard", name: "Asus X870 MAX GAMING WIFI7 W ATX AM5 Motherboard", imageSrc: "/projects/editing-station-pc/AsusX870.jpg", price: "$187.00" },
+    { category: "Memory", name: "G.Skill Flare X5 64 GB (2 x 32 GB) DDR5-6000 CL36 Memory", imageSrc: "/projects/editing-station-pc/RAM.jpg", price: "$669.00" },
+    { category: "Storage", name: "Samsung 9100 PRO 2 TB M.2-2280 PCIe 5.0 X4 NVME Solid State Drive", imageSrc: "/projects/editing-station-pc/Samsung9100.jpg", price: "$254.00" },
+    { category: "GPU", name: "Gigabyte WINDFORCE OC 3X GeForce RTX 2070 SUPER 8 GB Video Card", imageSrc: "/projects/editing-station-pc/RTX2070.jpg", price: "$500.00", donated: true },
+    { category: "Case", name: "Fractal Design North ATX Mid Tower Case", imageSrc: "/projects/editing-station-pc/FractalNorth.jpg", price: "$145.00" },
+    { category: "PSU", name: "MSI MAG A750GL PCIE5 750 W 80+ Gold Certified Fully Modular ATX Power Supply", imageSrc: "/projects/editing-station-pc/MSIMag.jpg", price: "$86.00" },
+    { category: "OS", name: "Microsoft Windows 11 Home OEM - DVD 64-bit", imageSrc: "/projects/editing-station-pc/Windows11.jpg", price: "$100.00" },
+    { category: "Fans", name: "3 x NZXT F120Q (2024) 74.26 CFM 120 mm Fan", imageSrc: "/projects/editing-station-pc/NZXTF120.jpg", price: "$15.00 x 3" },
+    { category: "Cables", name: "AsiaHorse white sleeved PSU extension cable kit", imageSrc: "/projects/editing-station-pc/AsiaHorseCables.jpg", price: "$30.00", donated: true },
+  ]}
+  total="Out-of-pocket total: $1,975.00"
+/>
 
 ## What I Learned
 
 This build was a good reminder that a PC project is not only about raw specs. The final system needed to fit the user, the room, the budget, and the intended workload. It may be more machine than she strictly needs right now, but it should serve her well for years and still came in as a better value than many prebuilt photo editing PCs with similar advertised specs.
 
 I was honored to build it for them, and I had a lot of fun putting together something that felt both personal and practical.
-</ProjectCaseStudyLayout>
+</ProjectDetailLayout>

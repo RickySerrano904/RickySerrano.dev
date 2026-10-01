@@ -1,21 +1,18 @@
-import { getProjectSummary } from "@/app/projects/projects.data";
-import ProjectCaseStudyLayout from "@/app/projects/ProjectCaseStudyLayout";
-import ScreenshotGallery from "@/app/projects/ScreenshotGallery";
+import { getProject } from "@/app/projects/projectCatalog";
+import ProjectDetailLayout from "@/app/projects/ProjectDetailLayout";
+import ProjectImageGallery from "@/app/projects/ProjectImageGallery";
 
 export const metadata = {
-  title: "VibeCheck | Projects",
+  title: `${getProject("vibecheck").title} | Projects`,
   description:
     "Case study for VibeCheck, an Angular and Spring Boot application that combines Last.fm music profiles, Ticketmaster event matching, and group voting to simplify live music planning.",
 };
 
-<ProjectCaseStudyLayout
+<ProjectDetailLayout
   eyebrow="Music Taste Algorithm + Group Event Voting"
-  title="VibeCheck"
-  summary={getProjectSummary("vibecheck")}
+  slug="vibecheck"
   problem="Choosing a live music event gets complicated when everyone has different tastes. Groups need a relevant shortlist and a shared way to make a decision without an endless back-and-forth in the group chat."
   solution="Built an Angular and Spring Boot application that imports Last.fm music profiles, scores nearby Ticketmaster events against group preferences, and guides members through voting to a winning event."
-  imageSrc="/projects/vibecheck/01 landing page.png"
-  imageAlt="VibeCheck landing page introducing music matching and group voting"
 >
 
 VibeCheck was developed by a nine-member team for FSCJ's CEN4940 Application Development Capstone in Summer 2026. The application brings music preferences, event discovery, and collaborative decision-making into one workflow, from connecting a Last.fm account to revealing the group's winning event.
@@ -38,7 +35,7 @@ VibeCheck was developed by a nine-member team for FSCJ's CEN4940 Application Dev
 
 ## Screenshots
 
-<ScreenshotGallery
+<ProjectImageGallery
   items={[
     {
       title: "Landing Page",
@@ -132,4 +129,4 @@ Potential next steps beyond the MVP include AI-assisted recommendations and expl
 - <a className="accent-link" href="https://github.com/FireSagg">Tamia Jenkins</a> Full-Stack Developer • Group Creation  &  Invitation System
 - <a className="accent-link" href="https://github.com/S3771361">Baudelaire Messago Ngumouo</a> Full-Stack Developer • Group Creation & Invitation System
 
-</ProjectCaseStudyLayout>
+</ProjectDetailLayout>

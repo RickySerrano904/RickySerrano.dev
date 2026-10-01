@@ -1,19 +1,23 @@
+/**
+ * Renders a linked project preview with its thumbnail, title, summary, and tags.
+ * Shared by the homepage carousel and the all-projects grid.
+ */
 import Image from "next/image";
 import Link from "next/link";
 import ArrowRightIcon from "@/app/components/ArrowRightIcon";
-import type { Project } from "@/app/projects/projects.data";
+import type { Project } from "@/app/projects/projectCatalog";
 
-type ProjectCardProps = {
+type ProjectPreviewCardProps = {
   project: Project;
   className?: string;
   imageSizes?: string;
 };
 
-export default function ProjectCard({
+export default function ProjectPreviewCard({
   project,
   className = "",
   imageSizes = "(min-width: 1280px) 500px, (min-width: 768px) 72vw, 88vw",
-}: ProjectCardProps) {
+}: ProjectPreviewCardProps) {
   return (
     <Link
       href={`/projects/${project.slug}`}

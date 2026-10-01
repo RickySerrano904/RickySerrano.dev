@@ -1,7 +1,9 @@
+/**
+ * Next.js route entry for /projects; this filename is required by the router.
+ * Keeps browser metadata here and delegates the page design to AllProjectsView.
+ */
 import type { Metadata } from "next";
-import Link from "next/link";
-import ProjectCard from "@/app/projects/ProjectCard";
-import { projects } from "@/app/projects/projects.data";
+import AllProjectsView from "@/app/projects/AllProjectsView";
 
 export const metadata: Metadata = {
   title: "Projects | Portfolio",
@@ -9,49 +11,5 @@ export const metadata: Metadata = {
 };
 
 export default function ProjectsPage() {
-  const hasProjects = projects.length > 0;
-
-  return (
-    <main className="page-intro mx-auto w-full max-w-6xl px-5 pb-16 pt-24 sm:px-6 sm:pb-24 sm:pt-32">
-      <Link
-        href="/#projects"
-        className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--fg)] transition-[transform,color,text-shadow] duration-200 hover:-translate-y-0.5 hover:text-[color:var(--accent)] hover:[text-shadow:0_0_8px_var(--accent),0_0_18px_var(--accent)] focus-visible:text-[color:var(--accent)] focus-visible:underline focus-visible:underline-offset-4 focus-visible:outline-none focus-visible:[text-shadow:0_0_8px_var(--accent),0_0_18px_var(--accent)]"
-      >
-        <span aria-hidden="true">&larr;</span>
-        Back to home
-      </Link>
-
-      <header className="mt-6 max-w-3xl">
-        <p className="text-xs uppercase tracking-[0.2em] text-[color:var(--muted)] sm:tracking-[0.35em]">
-          Selected Work
-        </p>
-        <h1 className="mt-3 font-display text-3xl font-semibold tracking-tight text-[color:var(--fg)] sm:text-5xl">
-          All Projects
-        </h1>
-        <p className="mt-4 text-base leading-7 text-[color:var(--muted)]">
-          Browse the full set of projects, builds, and case studies currently
-          featured in my portfolio.
-        </p>
-      </header>
-
-      {hasProjects ? (
-        <section
-          aria-label="All projects"
-          className="mt-8 grid gap-4 sm:mt-10 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3"
-        >
-          {projects.map((project) => (
-            <ProjectCard
-              key={project.slug}
-              project={project}
-              imageSizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-            />
-          ))}
-        </section>
-      ) : (
-        <div className="mt-10 rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel)] p-4 text-[color:var(--muted)] sm:rounded-3xl sm:p-6">
-          Projects will be added here soon.
-        </div>
-      )}
-    </main>
-  );
+  return <AllProjectsView />;
 }

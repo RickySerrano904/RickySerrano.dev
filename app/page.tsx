@@ -2,12 +2,12 @@ import AboutSection from "@/app/about/AboutSection";
 import ContactSection from "@/app/contact/ContactSection";
 import ExperienceSection from "@/app/experience/ExperienceSection";
 import HeroSection from "@/app/hero/HeroSection";
-import ProjectsSection from "@/app/projects/ProjectsSection";
+import HomepageProjectsSection from "@/app/projects/HomepageProjectsSection";
 import SkillsSection from "@/app/skills/SkillsSection";
 import { aboutParagraphs } from "@/app/about/about.data";
 import { certifications, education, roles } from "@/app/experience/experience.data";
 import { heroDescription, heroLocation, heroWords, socialLinks } from "@/app/hero/hero.data";
-import { projects } from "@/app/projects/projects.data";
+import { projects } from "@/app/projects/projectCatalog";
 import { skills } from "@/app/skills/skills.data";
 
 export default function Home() {
@@ -35,7 +35,7 @@ export default function Home() {
         skills={skills} 
       />
 
-      <ProjectsSection 
+      <HomepageProjectsSection
         projects={projects} 
       />
 

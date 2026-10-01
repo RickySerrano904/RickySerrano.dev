@@ -1,20 +1,17 @@
-import { getProjectSummary } from "@/app/projects/projects.data";
-import ProjectCaseStudyLayout from "@/app/projects/ProjectCaseStudyLayout";
-import ScreenshotGallery from "@/app/projects/ScreenshotGallery";
+import { getProject } from "@/app/projects/projectCatalog";
+import ProjectDetailLayout from "@/app/projects/ProjectDetailLayout";
+import ProjectImageGallery from "@/app/projects/ProjectImageGallery";
 
 export const metadata = {
-  title: "Senior Helper | Projects",
+  title: `${getProject("senior-helper").title} | Projects`,
   description:
     "Case study for Senior Helper, a full-stack care coordination and cybersecurity education app for older adults and caregivers.",
 };
 
-<ProjectCaseStudyLayout
+<ProjectDetailLayout
   eyebrow="Accessibility + Safety"
-  title="Senior Helper"
-  imageSrc="/projects/senior-helper/01 landing.png"
-  imageAlt="Senior Helper landing page in light mode"
+  slug="senior-helper"
   githubUrl="https://github.com/RickySerrano904/SeniorHelper"
-  summary={getProjectSummary("senior-helper")}
   problem="Older adults and caregivers need practical coordination tools that make appointments, support links, and online safety learning easier to manage without adding visual or cognitive friction."
   solution="Senior Helper combines shared appointments, caregiver connections, guided cybersecurity lessons, quizzes, progress tracking, and account security tools in a high-legibility Angular and Spring Boot application."
 >
@@ -23,7 +20,7 @@ Senior Helper is a full-stack web application designed for older adults and care
 
 ## Screenshots
 
-<ScreenshotGallery
+<ProjectImageGallery
   items={[
     {
       title: "Landing Page",
@@ -127,4 +124,4 @@ Senior Helper is a full-stack web application designed for older adults and care
 - <a className="accent-link" href="https://github.com/FireSagg">Tamia Jenkins</a> - Full-Stack Developer • User Connections, User FAQ
 - <a className="accent-link" href="https://github.com/S3771361">Baudelaire Messago Ngumouo</a> - Full-Stack Developer • User Connections, User Feedback
 
-</ProjectCaseStudyLayout>
+</ProjectDetailLayout>

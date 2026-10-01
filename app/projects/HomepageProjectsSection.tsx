@@ -1,16 +1,20 @@
+/**
+ * Renders the homepage Projects section with its featured-project carousel
+ * and a link to the full project grid. Receives project data from the homepage.
+ */
 "use client";
 
 import Link from "next/link";
 import ArrowRightIcon from "@/app/components/ArrowRightIcon";
 import Marquee from "@/app/components/Marquee";
-import ProjectCard from "@/app/projects/ProjectCard";
-import type { Project } from "@/app/projects/projects.data";
+import ProjectPreviewCard from "@/app/projects/ProjectPreviewCard";
+import type { Project } from "@/app/projects/projectCatalog";
 
-type ProjectsSectionProps = {
+type HomepageProjectsSectionProps = {
   projects: Project[];
 };
 
-export default function ProjectsSection({ projects }: ProjectsSectionProps) {
+export default function HomepageProjectsSection({ projects }: HomepageProjectsSectionProps) {
   const hasProjects = projects.length > 0;
 
   return (
@@ -43,7 +47,7 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
           itemWidth="min(82vw, 20rem)"
         >
           {projects.map((project) => (
-            <ProjectCard
+            <ProjectPreviewCard
               key={project.slug}
               project={project}
               imageSizes="(max-width: 390px) 82vw, 320px"
