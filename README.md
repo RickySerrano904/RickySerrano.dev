@@ -1,6 +1,33 @@
 # Portfolio
 
-My personal portfolio built with Next.js, React, TypeScript, Tailwind CSS, and MDX to showcase selected projects, technical experience, and professional background. The site includes a responsive homepage, reusable content sections, detailed project case studies, and a contact form for visitors to get in touch.
+**Live site:** [rickyserrano.dev](https://rickyserrano.dev)
+
+My personal portfolio showcasing software projects, PC builds, experience, and skills, with light/dark themes, project case studies, and a contact form.
+
+## Running Locally
+
+Requires Node.js 20.9 or newer. After cloning the repository, run these commands from the project folder:
+
+```sh
+npm install
+npm run dev
+```
+
+Then open http://localhost:3000
+
+| Command | Purpose |
+| --- | --- |
+| `npm install` | Install the project's dependencies |
+| `npm run dev` | Start the development server; saved edits update the site |
+| `npm run build` | Create an optimized production build and check TypeScript |
+| `npm start` | Serve the last production build; run `npm run build` first |
+| `npm run lint` | Check code for ESLint errors and warnings |
+
+## Deployment
+
+Hosted on Vercel. Pushes to `main` automatically build and deploy the production site.
+
+Configure the variables listed under [Contact Form Setup](#contact-form-setup) in the Vercel project's production environment to enable contact messages.
 
 ## Screenshots
 
@@ -33,39 +60,43 @@ My personal portfolio built with Next.js, React, TypeScript, Tailwind CSS, and M
 
 ## Lighthouse Results
 
-The portfolio achieved a perfect **100/100 across all four Lighthouse categories: Performance, Accessibility, Best Practices, and SEO**, in the desktop PageSpeed Insights audit on September 29, 2026.
+Desktop PageSpeed Insights audit, September 29, 2026: **100/100 for Performance, Accessibility, Best Practices, and SEO**.
 
 ![Desktop PageSpeed Insights report showing Lighthouse scores of 100 for Performance, Accessibility, Best Practices, and SEO](public/readme-screenshots/lighthouse%20score.png)
 
-## Architecture and Stack
+## Stack
 
-- **Framework:** Next.js App Router with React and TypeScript.
-- **Content:** Typed project, experience, education, certification, and skill data managed in local content modules.
-- **Case studies:** MDX project pages using a shared layout for consistent summaries, screenshots, problem statements, implementation notes, and project details.
-- **Styling:** Tailwind CSS with CSS variables for theme-aware color tokens and responsive layouts.
-- **Assets:** Project screenshots served from the public project asset directory.
-- **Contact:** Cloudflare Turnstile protects the contact form before messages are sent through Resend.
+- **Framework:** Next.js 16 App Router with React 19 and TypeScript.
+- **Content:** Local TypeScript data modules and MDX case studies.
+- **Styling:** Tailwind CSS 4 with CSS variables and a saved light/dark preference.
+- **Contact:** The `/api/contact` route validates submissions, checks a honeypot field, and verifies Cloudflare Turnstile before sending messages through Resend.
 
-## Environment Variables
+## Updating Projects
 
-The contact form requires these values in local development and production:
+1. Edit [`app/projects/projectCatalog.ts`](app/projects/projectCatalog.ts) for names, summaries, tags, thumbnails, and display order. Names also set case-study headings and browser titles; thumbnails supply default hero images.
+2. Edit `app/projects/<slug>/page.mdx` for the writeup, SEO description, links, galleries, and PC parts. A new project needs both a catalog entry and a matching case-study folder.
+3. Place images in `public/projects/` and reference them as `/projects/...`. Gallery entries use `src` and optional `darkSrc` paths with descriptive `alt` text. The gallery's Light/Dark control is independent of the site theme.
 
-- `NEXT_PUBLIC_TURNSTILE_SITE_KEY`
-- `TURNSTILE_SECRET_KEY`
-- `RESEND_API_KEY`
-- `CONTACT_FROM_EMAIL`
-- `CONTACT_TO_EMAIL`
+## Contact Form Setup
 
-## Design and UX Decisions
+Sending contact messages requires these values in `.env.local` at the repository root, or in the production host's environment settings. They are not needed to browse the portfolio.
 
-- Kept the homepage focused on scanning: hero, about, experience, projects, skills, and contact sections are easy to move through without extra navigation friction.
-- Used project cards with screenshots and tags so visitors can quickly understand the type, stack, and purpose of each build.
-- Added dedicated case-study pages for projects that need more explanation than a card can provide.
-- Used consistent spacing, typography, and theme tokens so the site feels cohesive across sections.
+```dotenv
+NEXT_PUBLIC_TURNSTILE_SITE_KEY=your_turnstile_site_key
+TURNSTILE_SECRET_KEY=your_turnstile_secret_key
+RESEND_API_KEY=your_resend_api_key
+CONTACT_FROM_EMAIL=sender@example.com
+CONTACT_TO_EMAIL=recipient@example.com
+```
 
-## Maintainability Choices
+`CONTACT_FROM_EMAIL` sends the message; `CONTACT_TO_EMAIL` receives it. Replies go to the visitor's email. Restart the development server after changing these values.
 
-- Project metadata lives in one typed content source, while long-form writeups live in MDX pages.
-- The shared case-study layout reduces repeated markup across project pages.
-- Image paths and alt text are defined alongside project content to keep visual assets easy to audit.
-- The structure leaves room for additional projects, live links, repositories, and expanded technical notes as the portfolio evolves.
+## License
+
+The source code is open source and available under the [MIT License](LICENSE). You're welcome to use it as a starting point for your own portfolio and adapt it to your needs.
+
+My personal photos, branding, personal information, and project writeups are not covered by the MIT license; please replace them with your own. Third-party assets and dependencies remain subject to their respective licenses.
+
+If you use this portfolio, a credit or link back to the [original repository](https://github.com/RickySerrano904/RickySerrano.dev) would be appreciated ❤️
+
+
