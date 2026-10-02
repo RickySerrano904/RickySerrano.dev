@@ -60,7 +60,7 @@ Configure the variables listed under [Contact Form Setup](#contact-form-setup) i
 
 ## Lighthouse Results
 
-Desktop PageSpeed Insights audit, September 29, 2026: **100/100 for Performance, Accessibility, Best Practices, and SEO**.
+The portfolio achieved a perfect **100/100 across all four Lighthouse categories: Performance, Accessibility, Best Practices, and SEO**, in the desktop PageSpeed Insights audit on September 29, 2026.
 
 ![Desktop PageSpeed Insights report showing Lighthouse scores of 100 for Performance, Accessibility, Best Practices, and SEO](public/readme-screenshots/lighthouse%20score.png)
 
