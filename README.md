@@ -79,6 +79,8 @@ The portfolio achieved a perfect **100/100 across all four Lighthouse categories
 
 ## Contact Form Setup
 
+Cloudflare Turnstile loads when a visitor focuses the contact form, and sending stays disabled until verification completes. The `/api/contact` route checks a hidden spam-trap field, validates the submission, and verifies the Turnstile token with Cloudflare. Accepted messages are sent through Resend, with the visitor's email set as the reply-to address.
+
 Sending contact messages requires these values in `.env.local` at the repository root, or in the production host's environment settings. They are not needed to browse the portfolio.
 
 ```dotenv
@@ -89,7 +91,9 @@ CONTACT_FROM_EMAIL=sender@example.com
 CONTACT_TO_EMAIL=recipient@example.com
 ```
 
-`CONTACT_FROM_EMAIL` sends the message; `CONTACT_TO_EMAIL` receives it. Replies go to the visitor's email. Restart the development server after changing these values.
+`CONTACT_FROM_EMAIL` is the sender address; `CONTACT_TO_EMAIL` is the recipient address. The Turnstile secret and Resend API key stay on the server.
+
+Restart the development server after changing these values.
 
 ## License
 
@@ -98,5 +102,3 @@ The source code is open source and available under the [MIT License](LICENSE). Y
 My personal photos, branding, personal information, and project writeups are not covered by the MIT license; please replace them with your own. Third-party assets and dependencies remain subject to their respective licenses.
 
 If you use this portfolio, a credit or link back to the [original repository](https://github.com/RickySerrano904/RickySerrano.dev) would be appreciated ❤️
-
-
