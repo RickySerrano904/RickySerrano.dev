@@ -82,8 +82,12 @@ export const roles: Role[] = [
     company: "AutoZone",
     period: "May 2023 - Dec 2023",
     points: [
+      // "Managed store inventory, customer orders, and incoming product shipments.",
+      // "Used internal systems to process sales and maintain customer records.",
+      // "Executed opening and closing procedures, including daily cash reconciliation.",
+
       "Managed store inventory, customer orders, and incoming product shipments.",
-      "Used internal systems to process sales and maintain customer records.",
+      "Processed sales transactions and maintained accurate customer records using internal retail systems.",
       "Executed opening and closing procedures, including daily cash reconciliation.",
     ],
   },
