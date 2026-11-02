@@ -92,9 +92,13 @@ export const roles: Role[] = [
     company: "US Navy",
     period: "Dec 2016 - Nov 2022",
     points: [
-      "Managed aircraft records and maintenance repair data.",
-      "Led and qualified a team of 25 sailors through maintenance inspections.",
-      "Supported aircraft launch and recovery operations in high-tempo environments.",
+      // "Managed aircraft records and maintenance repair data.",
+      // "Led and qualified a team of 25 sailors through maintenance inspections.",
+      // "Supported aircraft launch and recovery operations in high-tempo environments.",
+
+      "Supervised and qualified a team of 18 sailors in maintenance inspections, aircraft movements, preflight checks, and flight deck launch and recovery operations while deployed aboard an aircraft carrier.",
+      "Managed aircraft maintenance records and repair documentation for 11 MH-60R helicopters, supporting fleet readiness.",
+      "Diagnosed mechanical and hydraulic system faults using technical manuals and maintenance procedures to identify issues and determine corrective actions.",
     ],
   },
 ];
