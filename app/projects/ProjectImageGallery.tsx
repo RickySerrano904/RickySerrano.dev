@@ -6,7 +6,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+import ShimmerImage from "@/app/components/ShimmerImage";
 
 type Screenshot = {
   title: string;
@@ -50,7 +50,7 @@ export default function ProjectImageGallery({ items }: ProjectImageGalleryProps)
             className="overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel-strong)]"
           >
             <div className="relative aspect-[16/10] bg-[color:var(--panel)]">
-              <Image
+              <ShimmerImage
                 src={mode === "dark" && item.darkSrc ? item.darkSrc : item.src}
                 alt={item.darkSrc ? `${item.alt} in ${mode} mode` : item.alt}
                 fill

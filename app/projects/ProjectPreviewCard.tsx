@@ -2,7 +2,7 @@
  * Renders a linked project preview with its thumbnail, title, summary, and tags.
  * Shared by the homepage carousel and the all-projects grid.
  */
-import Image from "next/image";
+import ShimmerImage from "@/app/components/ShimmerImage";
 import Link from "next/link";
 import ArrowRightIcon from "@/app/components/ArrowRightIcon";
 import type { Project } from "@/app/projects/projectCatalog";
@@ -27,7 +27,7 @@ export default function ProjectPreviewCard({
     >
       <div className="relative aspect-[16/10] shrink-0 overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel-strong)]">
         {project.thumbnailSrc ? (
-          <Image
+          <ShimmerImage
             src={project.thumbnailSrc}
             alt={project.thumbnailAlt ?? `${project.title} project thumbnail`}
             fill

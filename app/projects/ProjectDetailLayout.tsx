@@ -5,7 +5,7 @@
  */
 import type { ReactNode } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import ShimmerImage from "@/app/components/ShimmerImage";
 import ArrowRightIcon from "@/app/components/ArrowRightIcon";
 import { getProject } from "@/app/projects/projectCatalog";
 
@@ -70,7 +70,7 @@ export default function ProjectDetailLayout({
 
       <div className="relative mt-6 aspect-[16/10] overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel-strong)] sm:mt-8 sm:rounded-3xl">
         {imageSrc ? (
-          <Image
+          <ShimmerImage
             src={imageSrc}
             alt={imageAlt ?? `${title} project preview`}
             fill

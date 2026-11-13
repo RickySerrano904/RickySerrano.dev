@@ -1,3 +1,4 @@
+import ShimmerImage from "@/app/components/ShimmerImage";
 import PcPartsList from "@/app/projects/PcPartsList";
 import { getProject } from "@/app/projects/projectCatalog";
 import ProjectDetailLayout from "@/app/projects/ProjectDetailLayout";
@@ -50,12 +51,12 @@ This was a custom PC build I put together for my sister, Madeline, <a href="http
     ["Close-up of the illuminated liquid cooler, memory, graphics card, and white cable extensions", "/projects/editing-station-pc/07 fractal pc.jpg"],
     ["Completed editing workstation with dual monitors and the white Fractal North PC", "/projects/editing-station-pc/08 fractal pc.jpg"],
   ].map(([alt, src]) => (
-    <figure key={src} className="overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel-strong)]">
-      <img
+    <figure key={src} className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel-strong)]">
+      <ShimmerImage
         src={src}
         alt={alt}
-        loading="lazy"
-        className="aspect-[4/3] h-full w-full object-contain"
+        fill sizes="(min-width: 896px) 390px, (min-width: 640px) 45vw, 90vw"
+        className="h-full w-full object-contain"
       />
     </figure>
   ))}

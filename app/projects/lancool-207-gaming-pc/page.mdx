@@ -1,3 +1,4 @@
+import ShimmerImage from "@/app/components/ShimmerImage";
 import PcPartsList from "@/app/projects/PcPartsList";
 import { getProject } from "@/app/projects/projectCatalog";
 import ProjectDetailLayout from "@/app/projects/ProjectDetailLayout";
@@ -61,13 +62,13 @@ now for an end product that she will love, than try and save money now and creat
   ].map(([src, alt]) => (
     <figure
       key={src}
-      className="overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel-strong)]"
+      className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel-strong)]"
     >
-      <img
+      <ShimmerImage
         src={src}
         alt={alt}
-        loading="lazy"
-        className="aspect-[4/3] h-full w-full object-contain"
+        fill sizes="(min-width: 896px) 390px, (min-width: 640px) 45vw, 90vw"
+        className="h-full w-full object-contain"
       />
     </figure>
   ))}

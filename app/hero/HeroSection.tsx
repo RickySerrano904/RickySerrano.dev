@@ -1,5 +1,5 @@
 import TypewriterText from "@/app/hero/TypewriterText";
-import Image from "next/image";
+import ShimmerImage from "@/app/components/ShimmerImage";
 import ArrowRightIcon from "@/app/components/ArrowRightIcon";
 import type { SocialIcon, SocialLink } from "@/app/hero/hero.data";
 
@@ -58,7 +58,7 @@ export default function HeroSection({
         </div>
         <div className="hero-headshot flex justify-center">
           <div className="relative aspect-square w-full max-w-[180px] overflow-hidden rounded-full border border-[color:var(--border)] bg-[color:var(--panel-strong)] shadow-[0_24px_50px_-42px_rgba(10,12,16,0.7)] sm:max-w-[220px]">
-            <Image
+            <ShimmerImage
               src="/me/headshot.jpg"
               alt="Headshot of Ricky Serrano"
               fill
