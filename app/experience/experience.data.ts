@@ -53,7 +53,7 @@ export const roles: Role[] = [
     period: "Sep 2025 - Present",
     points: [
       "Provide technical support for workstation, phone, printer, and network issues, including hardware troubleshooting, software support, and device maintenance.",
-      "Troubleshoot wired and wireless connectivity issues and install and maintain network cabling and connected devices.",
+      "Troubleshoot wired and wireless connectivity issues; install and maintain network cabling and connected devices.",
       "Create user accounts, configure software, and prepare workstations for new employees.",
       "Coordinate with users, vendors, and internal IT teams to resolve technical issues.",
     ],
