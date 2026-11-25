@@ -52,9 +52,10 @@ export const roles: Role[] = [
     company: "Natural Life",
     period: "Sep 2025 - Present",
     points: [
-      "Provided technical support for workstation, phone, printer, and network issues, including hardware troubleshooting, software support, and device maintenance.",
-      "Installed and maintained IT infrastructure including network cabling, workstation deployments, charging stations, surveillance systems, and other supported devices.",
-      "Coordinated with users, vendors, and internal teams to resolve technical issues and support daily operations.",
+      "Provide technical support for workstation, phone, printer, and network issues, including hardware troubleshooting, software support, and device maintenance.",
+      "Troubleshoot wired and wireless connectivity issues and install and maintain network cabling and connected devices.",
+      "Create user accounts, configure software, and prepare workstations for new employees.",
+      "Coordinate with users, vendors, and internal IT teams to resolve technical issues.",
     ],
   },
   {
@@ -62,9 +63,10 @@ export const roles: Role[] = [
     company: "Wounded Warrior Project",
     period: "Jun 2025 - Sep 2025",
     points: [
-      "Resolved hardware, software, and network issues through service desk ticket workflows.",
-      "Managed user accounts, password resets, group permissions, and access requests through Active Directory.",
-      "Handled endpoint deployment, lifecycle management, and secure decommissioning.",
+      "Provided technical support and troubleshooting for end users, documenting and resolving support tickets",
+      "Managed user accounts and permissions across Active Directory and other systems.",
+      "Deployed, configured, and maintained endpoints and handled equipment decommissioning and secure disposal.",
+      "Diagnosed and resolved end-user issues remotely using ConnectWise.",
     ],
   },
   {
@@ -72,9 +74,8 @@ export const roles: Role[] = [
     company: "ProJax Pressure Washing, LLC",
     period: "Jan 2024 - May 2025",
     points: [
-      "Managed service delivery and client relationships for 200+ residential and commercial customers.",
-      "Oversaw budgeting, scheduling, and day-to-day resource management.",
-      "Designed efficient workflows that reduced job time and improved consistency.",
+      "Managed service delivery and client relationships for over 200 residential and commercial customers.",
+      "Oversaw daily operations, including budgeting, scheduling, and resource management.",
     ],
   },
   {
@@ -82,13 +83,8 @@ export const roles: Role[] = [
     company: "AutoZone",
     period: "May 2023 - Dec 2023",
     points: [
-      // "Managed store inventory, customer orders, and incoming product shipments.",
-      // "Used internal systems to process sales and maintain customer records.",
-      // "Executed opening and closing procedures, including daily cash reconciliation.",
-
-      "Managed store inventory, customer orders, and incoming product shipments.",
-      "Processed sales transactions and maintained accurate customer records using internal retail systems.",
-      "Executed opening and closing procedures, including daily cash reconciliation.",
+      "Managed inventory, customer orders, store audits, and daily cash reconciliation.",
+      "Processed sales transactions and maintained accurate customer records using internal retail systems. ",
     ],
   },
   {
@@ -96,13 +92,9 @@ export const roles: Role[] = [
     company: "US Navy",
     period: "Dec 2016 - Nov 2022",
     points: [
-      // "Managed aircraft records and maintenance repair data.",
-      // "Led and qualified a team of 25 sailors through maintenance inspections.",
-      // "Supported aircraft launch and recovery operations in high-tempo environments.",
-
-      "Supervised and qualified a team of 18 sailors in maintenance inspections, aircraft movements, preflight checks, and flight deck launch and recovery operations while deployed aboard an aircraft carrier.",
-      "Managed aircraft maintenance records and repair documentation for 11 MH-60R helicopters, supporting fleet readiness.",
-      "Diagnosed mechanical and hydraulic system faults using technical manuals and maintenance procedures to identify issues and determine corrective actions.",
+      "Led and qualified 18 sailors in maintenance inspections, aircraft movements, preflight checks, and flight deck launch and recovery operations.",
+      "Maintained aircraft maintenance records and repair data for 11 forward-deployed combat aircraft using specialized software.",
+      "Diagnosed mechanical and hydraulic system faults using technical manuals and maintenance publications to determine corrective actions.",
     ],
   },
 ];
